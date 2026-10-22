@@ -225,7 +225,12 @@ def main():
         for e in entries:
             if local_copy(e["id"]) == "commons":
                 continue
-            data = get(e["downloaded"], binary=True)
+            try:
+                data = get(e["downloaded"], binary=True)
+            except RuntimeError:
+                # Wikimedia's limit applies to every file, so stop and try again later.
+                print("Wikimedia is still rate-limiting downloads; run this again later.")
+                break
             check_image(e["commons"], data, e)
             (RAW_DIR / f"{e['id']}.jpg").write_bytes(data)
             print(f"{e['id']}: downloaded", flush=True)

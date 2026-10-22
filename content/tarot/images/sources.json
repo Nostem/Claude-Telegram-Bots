@@ -357,7 +357,7 @@
     "credit": "https://blog.goo.ne.jp/valet_de_coupe/e/10b39ab41d023e6b44bb7d7b7209c772",
     "description": "Sun card from the Waite–Smith Tarot deck. This card is from an original 1909 \"Roses &amp; Lilies\" deck scanned by Saskia Jansen from her personal collection.",
     "downloaded": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/RWS1909_-_19_Sun.jpeg/960px-RWS1909_-_19_Sun.jpeg",
-    "copy": "fallback"
+    "copy": "commons"
   },
   {
     "id": "major-20-judgement",
@@ -375,7 +375,7 @@
     "credit": "https://blog.goo.ne.jp/valet_de_coupe/e/10b39ab41d023e6b44bb7d7b7209c772",
     "description": "Judgement card from the Waite–Smith Tarot deck. This card is from an original 1909 \"Roses &amp; Lilies\" deck scanned by Saskia Jansen from her personal collection.",
     "downloaded": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/RWS1909_-_20_Judgement.jpeg/960px-RWS1909_-_20_Judgement.jpeg",
-    "copy": "fallback"
+    "copy": "commons"
   },
   {
     "id": "major-21-the-world",
