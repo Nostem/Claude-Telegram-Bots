@@ -19,6 +19,7 @@ class Payments:
         return bool(user["lifetime_at"])
 
     def record(self, charge_id, user_id, stars, now):
+        self.db.get_user(user_id)   # make sure the user row exists before granting Lifetime
         with self.db.conn:
             self.db.conn.execute(
                 "INSERT OR IGNORE INTO payments (charge_id, user_id, stars, created_at) "

@@ -109,3 +109,8 @@ def test_delete_user_removes_everything(db, now):
     db.delete_user(1)
     for table in ("users", "draws", "draw_cards", "schedules", "feedback"):
         assert db.one(f"SELECT COUNT(*) FROM {table}")[0] == 0
+
+
+def test_payment_for_unknown_user_still_grants_lifetime(db, now):
+    Payments(db).record("c", 42, 750, now)
+    assert db.get_user(42)["lifetime_at"]
