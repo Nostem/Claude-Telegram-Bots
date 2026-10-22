@@ -117,20 +117,23 @@ swords", "Death", "XIII"). These are generated in code, not written by hand.
 
 ## 6. Writing workflow
 
-1. **You approve the 3 samples.** Adjust the voice, length or fields until they feel
-   right.
-2. Write in batches, with your review after each:
-   - Batch 1: Major Arcana (22 cards)
-   - Batches 2–5: one suit each (14 cards per suit)
-3. The test checks every batch's fields and lengths before you review it.
-4. A final consistency pass checks that reversals follow rule 3, that keywords aren't
-   repeated too often, and that the voice is the same across all 78 cards.
+**Status: all 78 cards written.** Review pages, with each card's image beside its text:
+`docs/review/major.md`, `cups.md`, `swords.md`, `wands.md` and `pentacles.md`.
+
+Checks to run after any edit:
+
+| Command | What it checks |
+|---|---|
+| `python3 tools/check_cards.py` | Every field present, length limits, image exists, Telegram caption limit, no keyword used more than 3 times |
+| `python3 tools/check_waite.py` | Every `waite_1910` quote matches Waite's text (Gutenberg #43548) |
+| `python3 tools/build_review.py <group>` | Rebuilds a review page (`major`, `cups`, `swords`, `wands`, `pentacles`) |
 
 That's 78 cards at about 600 words each, roughly 45,000 words in total.
 
-## 7. Open questions
+## 7. Decisions
 
-- Should reversed meanings also get love, work and advice lines? That would add 234
-  short lines. Recommendation: not in v1. The reversed meaning already covers it.
-- Is `yes_no` worth keeping? It's popular, but some serious readers dislike it.
-  Recommendation: keep it, but only use it when someone asks for a yes/no draw.
+- Reversed meanings don't get separate love, work and advice lines in v1. The reversed
+  meaning already covers it.
+- `yes_no` stays, and is used only when someone asks for a yes/no draw.
+- Where Waite gives no reversed meaning in his main list (the Two of Cups), the quote
+  comes from his "Additional Meanings" section, with a note in the card file.
