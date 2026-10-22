@@ -79,10 +79,20 @@ shows why we write our own.
   in `content/tarot/images/CREDITS.md`.
 - Quick check for the wrong version: US Games cards have "© 1971 U.S. Games" printed
   along the right edge, and brighter, flatter colors.
-- Keep the **vintage look**, but polished. `tools/clean_card_images.py` turns `raw/` scans
-  into `cards/` images the same way for every card: straighten, crop the worn edges,
-  brighten the paper without changing the colors, sharpen slightly, and add an even
-  cream border. Run `python3 tools/clean_card_images.py` after adding raw scans.
+- **Getting the scans:** `python3 tools/fetch_card_images.py` downloads all 78 into
+  `content/tarot/images/raw/` (not stored in git). It checks each file's Commons page for
+  the 1909 date and a public-domain license first, and records the details in
+  `sources.json` and `CREDITS.md`. Wikimedia limits bulk downloads from shared servers,
+  so it fetches the standard 960px thumbnails, slowly, and waits when asked to.
+- Keep the **vintage look**, but polished. `python3 tools/clean_card_images.py` turns
+  `raw/` scans into `cards/` images the same way for every card: straighten, crop the
+  worn edges, brighten the paper without changing the colors, sharpen slightly, and add
+  an even cream border. Output is 844 × 1416.
+- The crop is found from each card's printed black frame line. Faded lines and scans
+  cropped tight to the frame are handled, and the bottom edge is chosen by the frame's
+  usual proportions so titles aren't cut off. The script prints `CHECK` for any crop whose
+  proportions or margins look wrong, and `FAILED` for any card it can't crop. Look at
+  those cards before committing.
 - File names match the card IDs, for example `major-00-the-fool.jpg`.
 - Reversed cards are shown by rotating the image 180° in code, so we only store 78 files.
 - After the first upload, keep Telegram's `file_id` for each image, so later sends are
