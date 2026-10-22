@@ -1,0 +1,60 @@
+id: wands-09
+name: Nine of Wands
+arcana: minor
+suit: wands
+number: 9
+image: wands-09.jpg
+
+keywords:
+  upright: [resilience, persistence, last stretch, guardedness, courage under pressure]
+  reversed: [exhaustion, paranoia, giving up, overwhelm, too guarded]
+
+short:
+  upright: You're tired but nearly there. Hold on; one last push will get you through.
+  reversed: You're worn out and on guard against everything. Rest, and let someone help.
+
+meaning:
+  upright: >-
+    A man with a bandaged head leans on his wand, watching warily, with eight more wands
+    standing behind him like a fence. He has clearly been through battles already. The
+    Nine of Wands is about resilience: you've been tested, you're tired, but you're still
+    standing. The finish line is close. The card encourages you to keep going and to
+    protect your energy. Your wounds show how much you've survived, and that experience is
+    exactly what will carry you through this last stretch.
+  reversed: >-
+    Reversed, the Nine of Wands suggests your reserves are running low. You may be
+    exhausted, feel like giving up, or be so guarded that you see threats everywhere.
+    Past hurts can make it hard to trust anyone. The card asks you to rest and to accept
+    help. Being strong doesn't mean doing it all alone. Sometimes it also means checking
+    whether the fight is still worth it. You don't have to hold every line forever;
+    choose the ones that truly matter.
+
+in_context:
+  love: Feeling guarded after being hurt. Protect your heart, but don't wall it off.
+  work: A demanding final stretch. Push through, and pace yourself.
+  advice: Hold on; you're almost there.
+
+symbolism:
+  - "Bandaged head: wounds from past battles."
+  - "Leaning on a wand: tired, but still standing."
+  - "Wary glance: guardedness and readiness for more."
+  - "Eight wands behind him: defenses built from experience."
+
+reflection:
+  - What have I already survived that shows my strength?
+  - Am I protecting myself, or closing myself off?
+  - Who could help me through this last stretch?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire
+  astrology: Moon in Sagittarius
+
+waite_1910:
+  upright: >-
+    The card signifies strength in opposition. If attacked, the person will meet an
+    onslaught boldly; and his build shows that he may prove a formidable antagonist. With
+    this main significance there are all its possible adjuncts—delay, suspension,
+    adjournment.
+  reversed: Obstacles, adversity, calamity.

@@ -1,0 +1,60 @@
+id: wands-page
+name: Page of Wands
+arcana: minor
+suit: wands
+court: page
+image: wands-page.jpg
+
+keywords:
+  upright: [enthusiasm, exploration, free spirit, discovery, exciting news]
+  reversed: [lack of direction, procrastination, impatience, half-finished ideas, boredom]
+
+short:
+  upright: An eager explorer. Follow your curiosity and say yes to something exciting.
+  reversed: Lots of excitement, little follow-through. Pick one idea and stick with it.
+
+meaning:
+  upright: >-
+    A young figure in a feathered hat and a tunic patterned with salamanders stands in a
+    desert, gazing at the tip of a tall wand. Pyramids rise in the distance. The Page of
+    Wands is full of enthusiasm and curiosity: the urge to explore, try something new,
+    or follow a passion. It can point to exciting news, a creative idea, or the first steps
+    of an adventure. It may also represent a free-spirited, energetic person. The card
+    encourages you to follow what lights you up, even if you don't know where it leads.
+  reversed: >-
+    Reversed, the Page of Wands suggests enthusiasm without direction. You may have lots
+    of ideas but start none of them, or start many and finish few. Impatience,
+    procrastination or boredom can creep in when the exciting beginning gives way to
+    steady work. The card asks you to choose one idea and give it real attention.
+    Excitement is a wonderful spark, but projects grow through commitment. Ask which of
+    your passions is worth seeing through, and start there. Small, steady progress keeps the fire burning.
+
+in_context:
+  love: Flirty, adventurous energy. Have fun and explore the connection.
+  work: A new passion project, course or idea. Explore with an open mind.
+  advice: Follow what excites you.
+
+symbolism:
+  - "Gazing at the wand: fascination with a new idea."
+  - "Salamanders on the tunic: fire, passion and transformation."
+  - "Feathered hat: free spirit and confidence."
+  - "Desert and pyramids: unexplored territory and ancient wisdom."
+
+reflection:
+  - What am I curious to explore?
+  - Which of my ideas deserves real commitment?
+  - What excites me enough to take a risk?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth of Fire
+
+waite_1910:
+  upright: >-
+    Dark young man, faithful, a lover, an envoy, a postman. Beside a man, he will bear
+    favourable testimony concerning him. A dangerous rival, if followed by the Page of
+    Cups. Has the chief qualities of his suit. He may signify family intelligence.
+  reversed: >-
+    Anecdotes, announcements, evil news. Also indecision and the instability which
+    accompanies it.

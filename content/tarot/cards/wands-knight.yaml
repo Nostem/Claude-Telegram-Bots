@@ -1,0 +1,59 @@
+id: wands-knight
+name: Knight of Wands
+arcana: minor
+suit: wands
+court: knight
+image: wands-knight.jpg
+
+keywords:
+  upright: [adventure, passion, boldness, impulsiveness, charisma]
+  reversed: [hotheadedness, scattered energy, recklessness, stalled plans, frustration]
+
+short:
+  upright: Bold and fiery, ready for adventure. Chase your passion with confidence.
+  reversed: Passion without patience. Cool down before you rush into something.
+
+meaning:
+  upright: >-
+    A knight in armor and a salamander-patterned tunic rides a rearing horse, wand raised,
+    with pyramids in the distance. The Knight of Wands is energy in motion: adventurous,
+    confident, passionate and a little impulsive. It can point to travel, a move, or
+    jumping into something new with excitement. It may represent a charismatic, daring
+    person, or your own urge to chase what you want. The card encourages bold action. Just
+    remember that the horse is rearing: keep enough control to steer.
+  reversed: >-
+    Reversed, the Knight of Wands' fire can burn out of control. You might be rushing
+    into decisions, starting fights, or charging from one thing to the next without
+    finishing anything. It can also show frustration when plans are delayed or energy
+    has nowhere to go. The card asks you to slow down and channel your passion. Think
+    before you leap, and finish what you've started. Your energy is a gift; give it a
+    direction, and a finish line, so it builds something that lasts.
+
+in_context:
+  love: Passionate, exciting romance, but possibly short-lived. Enjoy it with open eyes.
+  work: Bold moves, travel or a fresh challenge. Act with confidence and some planning.
+  advice: Be bold, but keep hold of the reins.
+
+symbolism:
+  - "Rearing horse: raw energy and impulsiveness."
+  - "Raised wand: passion and determination."
+  - "Salamanders on the tunic: fire and transformation."
+  - "Pyramids in the distance: adventure and faraway places."
+  - "Flame-like plume: enthusiasm and drive."
+
+reflection:
+  - What passion do I want to chase?
+  - Am I acting boldly, or just impulsively?
+  - Where does my energy need direction?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire of Fire
+  astrology: Late Scorpio to mid Sagittarius
+
+waite_1910:
+  upright: >-
+    Departure, absence, flight, emigration. A dark young man, friendly. Change of
+    residence.
+  reversed: Rupture, division, interruption, discord.

@@ -1,0 +1,61 @@
+id: wands-04
+name: Four of Wands
+arcana: minor
+suit: wands
+number: 4
+image: wands-04.jpg
+
+keywords:
+  upright: [celebration, homecoming, milestones, stability, community joy]
+  reversed: [cancelled celebration, unstable home, lack of support, transition, feeling unwelcome]
+
+short:
+  upright: A joyful milestone. Celebrate with the people who make you feel at home.
+  reversed: Celebrations feel strained or home feels unsettled. Find where you truly belong.
+
+meaning:
+  upright: >-
+    Four wands hold up a garland of flowers and fruit, and behind it two figures raise
+    bouquets in celebration, with a castle and a crowd beyond. The Four of Wands is a card
+    of joy and arrival: a milestone reached, a homecoming, a wedding, a housewarming or a
+    community celebration. It's a moment to pause and enjoy what you've built. The card
+    also speaks of stability and a sense of belonging. Gather your people and mark the
+    occasion. Happy moments deserve to be celebrated.
+  reversed: >-
+    Reversed, the Four of Wands can show celebrations that fall flat or plans that are
+    postponed. Home might not feel like a safe or welcoming place right now, or you may be
+    in a transition between homes, jobs or communities. It can also point to a lack of
+    support from the people around you. The card invites you to look for belonging where
+    it truly exists, and to create small moments of joy even when things feel unsettled.
+    Home is often built from people, not places.
+
+in_context:
+  love: Celebration, commitment or moving in together. A happy milestone.
+  work: A completed project, a launch or a team celebration. Enjoy the win.
+  advice: Celebrate what you've built.
+
+symbolism:
+  - "Four wands with a garland: a stable structure crowned with celebration."
+  - "Raised bouquets: joy and welcome."
+  - "Castle in the background: home and security."
+  - "Crowd gathering: community and shared happiness."
+
+reflection:
+  - What milestone have I reached that deserves celebrating?
+  - Where do I feel most at home?
+  - Who would I want to celebrate with?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire
+  astrology: Venus in Aries
+
+waite_1910:
+  upright: >-
+    They are for once almost on the surface—country life, haven of refuge, a species of
+    domestic harvest-home, repose, concord, harmony, prosperity, peace, and the perfected
+    work of these.
+  reversed: >-
+    The meaning remains unaltered; it is prosperity, increase, felicity, beauty,
+    embellishment.

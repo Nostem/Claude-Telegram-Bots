@@ -1,0 +1,60 @@
+id: wands-10
+name: Ten of Wands
+arcana: minor
+suit: wands
+number: 10
+image: wands-10.jpg
+
+keywords:
+  upright: [burden, overcommitment, heavy responsibility, hard work, stress]
+  reversed: [delegating, putting it down, breaking point, saying no, release of burdens]
+
+short:
+  upright: You're carrying too much. Look at what you can put down, share or say no to.
+  reversed: The load is finally getting lighter, or about to break you. Delegate and let go.
+
+meaning:
+  upright: >-
+    A man struggles toward a village carrying a bundle of ten heavy wands, so many that
+    they block his view. The Ten of Wands is about burden and overcommitment. You may have
+    taken on too much: work, responsibilities, other people's problems. Even good things
+    become heavy when you carry them all at once. The card asks you to notice how hard
+    you're working and whether it's sustainable. You're close to your goal, but you don't
+    have to carry everything alone. What could you put down or hand to someone else?
+  reversed: >-
+    Reversed, the Ten of Wands can show the moment you start putting the load down:
+    delegating, saying no, or letting go of responsibilities that were never yours. It
+    can also warn of burnout, a sign that you've been carrying too much for too long. The
+    card encourages you to be honest about your limits. You don't earn rest by
+    exhausting yourself first. Sharing the work isn't failure. It's what lets you finish
+    the journey with something left for yourself, and with energy to enjoy arriving.
+
+in_context:
+  love: One partner carrying too much. Share the load more evenly.
+  work: Overwork and too many responsibilities. Delegate, prioritize and say no.
+  advice: Put some of it down.
+
+symbolism:
+  - "Ten wands carried in a bundle: too many responsibilities at once."
+  - "Bent back: the strain of overcommitment."
+  - "Wands blocking his view: losing sight of the goal."
+  - "Village ahead: the destination is close."
+
+reflection:
+  - What am I carrying that isn't mine to carry?
+  - What could I delegate or say no to?
+  - Is my effort sustainable?
+
+yes_no: "No"
+
+correspondences:
+  element: Fire
+  astrology: Saturn in Sagittarius
+
+waite_1910:
+  upright: >-
+    A card of many significances, and some of the readings cannot be harmonized. I set
+    aside that which connects it with honour and good faith. The chief meaning is
+    oppression simply, but it is also fortune, gain, any kind of success, and then it is
+    the oppression of these things.
+  reversed: Contrarieties, difficulties, intrigues, and their analogies.

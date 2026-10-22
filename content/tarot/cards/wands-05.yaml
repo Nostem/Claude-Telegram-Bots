@@ -1,0 +1,59 @@
+id: wands-05
+name: Five of Wands
+arcana: minor
+suit: wands
+number: 5
+image: wands-05.jpg
+
+keywords:
+  upright: [competition, disagreement, rivalry, clashing ideas, struggle]
+  reversed: [avoiding conflict, finding common ground, truce, inner conflict, cooperation]
+
+short:
+  upright: Competing egos and clashing ideas. A little friction can be healthy if it stays fair.
+  reversed: The squabbling is settling down. Look for common ground or step away from pointless fights.
+
+meaning:
+  upright: >-
+    Five young men wave their wands at each other in a chaotic scuffle. Nobody seems hurt;
+    it looks more like a heated game than a war. The Five of Wands is about competition and
+    disagreement: clashing opinions, rivalry, too many voices trying to be heard at once.
+    It can be frustrating, but it isn't always bad. Healthy competition can sharpen ideas
+    and push everyone to improve. The card asks you to keep it fair, listen as much as you
+    argue, and find a way to turn friction into progress.
+  reversed: >-
+    Reversed, the Five of Wands suggests conflict is easing, or being avoided. You might
+    be finding common ground, calling a truce, or learning to work together. It can also
+    show conflict being swept under the rug because nobody wants to deal with it.
+    Sometimes the struggle is internal: competing wants pulling you in different
+    directions. The card asks you to address conflicts honestly but calmly. Not every
+    disagreement needs a winner, and cooperation can get further than competition. Ask what you're really fighting for.
+
+in_context:
+  love: Arguments, competing priorities or rivals. Fight fair and stay on the same team.
+  work: Competition, debates or a chaotic team. Let good ideas win, not loud ones.
+  advice: Let friction make you better, not bitter.
+
+symbolism:
+  - "Five figures waving wands: competing ideas and egos."
+  - "No one is hurt: more of a scuffle than a battle."
+  - "Different clothes on each figure: different viewpoints and backgrounds."
+  - "Open ground: plenty of room, if they stopped fighting over it."
+
+reflection:
+  - Is this conflict helping me grow or just draining me?
+  - Am I listening to the other side?
+  - Where could competition become cooperation?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Fire
+  astrology: Saturn in Leo
+
+waite_1910:
+  upright: >-
+    Imitation, as, for example, sham fight, but also the strenuous competition and
+    struggle of the search after riches and fortune. In this sense it connects with the
+    battle of life. Hence some attributions say that it is a card of gold, gain, opulence.
+  reversed: Litigation, disputes, trickery, contradiction.

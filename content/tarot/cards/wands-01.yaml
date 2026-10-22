@@ -1,0 +1,62 @@
+id: wands-01
+name: Ace of Wands
+arcana: minor
+suit: wands
+number: 1
+image: wands-01.jpg
+
+keywords:
+  upright: [inspiration, spark, new venture, enthusiasm, creative potential]
+  reversed: [delays, lack of motivation, false start, creative block, hesitation]
+
+short:
+  upright: A spark of inspiration. A new passion or project is ready to grow, so act on it.
+  reversed: The spark is there but not catching. Find what's blocking your energy.
+
+meaning:
+  upright: >-
+    A hand reaches out of a cloud holding a sturdy wand that is sprouting fresh leaves,
+    with a castle on a hill in the distance. The Ace of Wands is a burst of creative
+    energy: a new idea, a passion, a project or an adventure waiting to begin. It's the
+    feeling of excitement that makes you want to start right now. Aces are opportunities,
+    and this one is about drive and inspiration. Don't overthink it. Take the first step
+    while the energy is fresh, and let the idea grow as you go.
+  reversed: >-
+    Reversed, the Ace of Wands suggests the spark isn't catching. You may have an idea but
+    lack the motivation to start, or you might start something with lots of energy and
+    lose interest quickly. Delays or obstacles may be slowing things down. The card asks
+    what's getting in the way. Is it fear of failure, too many ideas at once, or simply
+    exhaustion? Sometimes the answer is rest; sometimes it's a smaller first step. The
+    spark can be relit once you know what's smothering it.
+
+in_context:
+  love: New passion, attraction or excitement. Let the chemistry show.
+  work: A new project, idea or business venture. Act while you're inspired.
+  advice: Start now, while the spark is fresh.
+
+symbolism:
+  - "Hand from a cloud: an opportunity being offered."
+  - "Sprouting wand: growth, life and creative energy."
+  - "Falling leaves: energy and possibilities to spare."
+  - "Castle on the hill: a goal you can reach."
+  - "River and trees: fertile ground for new ventures."
+
+reflection:
+  - What idea excites me right now?
+  - What would I start if I weren't afraid?
+  - What small step could I take today?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire
+  astrology: Root of the powers of Fire
+
+waite_1910:
+  upright: >-
+    Creation, invention, enterprise, the powers which result in these; principle,
+    beginning, source; birth, family, origin, and in a sense the virility which is behind
+    them; the starting point of enterprises; according to another account, money,
+    fortune, inheritance.
+  reversed: >-
+    Fall, decadence, ruin, perdition, to perish; also a certain clouded joy.

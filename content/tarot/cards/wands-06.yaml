@@ -1,0 +1,62 @@
+id: wands-06
+name: Six of Wands
+arcana: minor
+suit: wands
+number: 6
+image: wands-06.jpg
+
+keywords:
+  upright: [victory, recognition, public success, confidence, good news]
+  reversed: [lack of recognition, ego, fall from grace, fear of failure, private success]
+
+short:
+  upright: Victory and recognition. Your hard work is being noticed, so enjoy the moment.
+  reversed: The applause hasn't come, or it's gone to your head. Define success for yourself.
+
+meaning:
+  upright: >-
+    A rider wearing a laurel wreath rides a white horse through a cheering crowd, holding
+    up a wand topped with another wreath. The Six of Wands is about victory and
+    recognition: a win, a promotion, good news or simply a moment where others see what
+    you've achieved. It brings a boost of confidence and well-earned pride. Enjoy it. You
+    worked for this. The card also reminds you that success is often shared, so thank
+    the people who helped you along the way.
+  reversed: >-
+    Reversed, the Six of Wands suggests that recognition is missing or misplaced. You
+    may feel your efforts are going unnoticed, or that someone else is getting the credit.
+    It can also show success going to someone's head, or fear of failing in public. The
+    card invites you to define success by your own values instead of outside applause.
+    Celebrate your private wins too. Confidence that depends only on praise is fragile;
+    confidence rooted in your own effort lasts. Notice your quiet progress, too.
+
+in_context:
+  love: Feeling proud of each other, or a relationship that others admire.
+  work: Recognition, promotion or a public win. Step into the spotlight.
+  advice: Own your success, and share the credit.
+
+symbolism:
+  - "Laurel wreath on his head: victory and achievement."
+  - "Wreath on the wand: success that is public and celebrated."
+  - "White horse: confidence and purity of purpose."
+  - "Cheering crowd: recognition and support from others."
+
+reflection:
+  - What achievement am I proud of?
+  - Who helped me get here?
+  - How do I define success for myself?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire
+  astrology: Jupiter in Leo
+
+waite_1910:
+  upright: >-
+    The card has been so designed that it can cover several significations; on the
+    surface, it is a victor triumphing, but it is also great news, such as might be
+    carried in state by the King's courier; it is expectation crowned with its own
+    desire, the crown of hope, and so forth.
+  reversed: >-
+    Apprehension, fear, as of a victorious enemy at the gate; treachery, disloyalty, as
+    of gates being opened to the enemy; also indefinite delay.

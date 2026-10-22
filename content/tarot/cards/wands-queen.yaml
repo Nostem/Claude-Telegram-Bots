@@ -1,0 +1,62 @@
+id: wands-queen
+name: Queen of Wands
+arcana: minor
+suit: wands
+court: queen
+image: wands-queen.jpg
+
+keywords:
+  upright: [confidence, warmth, determination, independence, vibrancy]
+  reversed: [jealousy, insecurity, demanding, short temper, comparison]
+
+short:
+  upright: Confident, warm and magnetic. Own your power and let yourself shine.
+  reversed: Your fire is flickering with doubt or jealousy. Rebuild your confidence from within.
+
+meaning:
+  upright: >-
+    A queen sits on a throne decorated with lions, holding a wand in one hand and a
+    sunflower in the other. A black cat sits at her feet. The Queen of Wands is confident,
+    warm and full of life. She knows who she is and isn't afraid to be seen. She may
+    represent a vibrant, independent person in your life, or your own ability to lead with
+    enthusiasm and courage. The card encourages you to own your strengths, take up space,
+    and bring warmth and energy to everything you do.
+  reversed: >-
+    Reversed, the Queen of Wands' fire can turn inward or out of control. You might be
+    doubting yourself, comparing yourself to others, or feeling jealous of someone's
+    success. It can also show a demanding, short-tempered side, or burnout from trying to
+    do everything. The card asks you to reconnect with your own worth. Your value doesn't
+    depend on outshining anyone. Rest, do something that makes you feel like yourself, and
+    let your natural confidence return. The light you admire in others is in you too.
+
+in_context:
+  love: Confident, warm attraction. Be yourself; it's your best quality.
+  work: Leadership, confidence and visibility. Step forward and take charge.
+  advice: Shine without apology.
+
+symbolism:
+  - "Sunflower: joy, warmth and growth toward the light."
+  - "Lions on the throne: courage and strength."
+  - "Black cat at her feet: intuition and independence."
+  - "Wand in hand: creative power and determination."
+
+reflection:
+  - Where can I let myself shine more?
+  - What makes me feel confident and alive?
+  - Am I comparing myself to others?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water of Fire
+  astrology: Late Pisces to mid Aries
+
+waite_1910:
+  upright: >-
+    A dark woman, country-woman, friendly, chaste, loving, honourable. If the card beside
+    her signifies a man, she is well disposed towards him; if a woman, she is interested
+    in the Querent. Also, love of money, or a certain success in business.
+  reversed: >-
+    Good, economical, obliging, serviceable. Signifies also—but in certain positions and
+    in the neighbourhood of other cards tending in such directions—opposition, jealousy,
+    even deceit and infidelity.

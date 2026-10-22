@@ -1,0 +1,62 @@
+id: wands-03
+name: Three of Wands
+arcana: minor
+suit: wands
+number: 3
+image: wands-03.jpg
+
+keywords:
+  upright: [expansion, foresight, progress, opportunities ahead, waiting for results]
+  reversed: [setbacks, frustration, limited vision, slow returns, plans falling short]
+
+short:
+  upright: Your plans are underway and your ships are sailing. Look ahead to growing opportunities.
+  reversed: Progress is slower than you hoped. Adjust your plans instead of giving up.
+
+meaning:
+  upright: >-
+    A figure stands on a cliff with their back to us, leaning on one of three wands and
+    watching ships sail across a golden sea. The Three of Wands shows plans in motion. You
+    have done the groundwork, and now you're watching your efforts start to pay off. It's a
+    card of expansion, foresight and new opportunities, sometimes involving travel or
+    connections far away. Keep looking ahead. The horizon is wide, and more is coming
+    toward you than you might expect.
+  reversed: >-
+    Reversed, the Three of Wands suggests your ships are delayed. Plans may be stalled,
+    results slower than expected, or opportunities not as big as you hoped. It can also
+    show short-term thinking, or frustration that makes you want to quit. The card asks
+    you to be patient and flexible. Look at what's causing the delay, and adjust course if
+    needed. Setbacks are part of any real venture, and they often teach you exactly what
+    the next attempt needs. The ships may simply be taking the long way home.
+
+in_context:
+  love: A relationship growing, or a long-distance connection. Look ahead together.
+  work: Business growth, travel, or results starting to arrive. Keep expanding.
+  advice: Keep your eyes on the horizon.
+
+symbolism:
+  - "Figure looking out to sea: foresight and vision."
+  - "Ships sailing: plans and ventures in motion."
+  - "Three planted wands: a solid foundation built."
+  - "Golden sea and sky: optimism and opportunity."
+  - "High cliff: a broad view of what's possible."
+
+reflection:
+  - What efforts of mine are starting to pay off?
+  - What opportunities lie just over the horizon?
+  - How can I stay patient while I wait for results?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire
+  astrology: Sun in Aries
+
+waite_1910:
+  upright: >-
+    He symbolizes established strength, enterprise, effort, trade, commerce, discovery;
+    those are his ships, bearing his merchandise, which are sailing over the sea. The card
+    also signifies able co-operation in business, as if the successful merchant prince
+    were looking from his side towards yours with a view to help you.
+  reversed: >-
+    The end of troubles, suspension or cessation of adversity, toil and disappointment.

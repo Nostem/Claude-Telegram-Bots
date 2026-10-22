@@ -1,0 +1,59 @@
+id: wands-king
+name: King of Wands
+arcana: minor
+suit: wands
+court: king
+image: wands-king.jpg
+
+keywords:
+  upright: [visionary leadership, entrepreneurship, boldness, inspiration, big picture]
+  reversed: [arrogance, impulsiveness, high expectations, domineering, unrealistic goals]
+
+short:
+  upright: A bold visionary. Lead with inspiration and turn big ideas into reality.
+  reversed: Vision has tipped into arrogance or impatience. Listen as well as lead.
+
+meaning:
+  upright: >-
+    A king sits on a throne decorated with lions and salamanders, holding a flowering wand.
+    A small salamander rests at his feet. The King of Wands is a natural leader with big
+    ideas and the drive to make them happen. He inspires others, takes risks and sees the
+    bigger picture. He may represent a visionary, entrepreneurial person in your life, or
+    your own capacity to lead boldly. The card encourages you to take charge of your
+    vision, share it with confidence, and bring others along with you.
+  reversed: >-
+    Reversed, the King of Wands' confidence can become overbearing. You might be pushing
+    too hard, expecting too much of others, or acting on impulse without thinking things
+    through. It can also show a leader who talks big but doesn't follow through, or who
+    doesn't listen to anyone. The card asks you to balance vision with patience and
+    humility. Great leaders inspire through example and respect, not force. Make room for
+    other people's ideas, and your vision will grow stronger and go further than you could take it alone.
+
+in_context:
+  love: A confident, passionate partner, or taking the lead in a relationship.
+  work: Leadership, entrepreneurship and bold moves. Lead with vision.
+  advice: Lead boldly, and bring others with you.
+
+symbolism:
+  - "Flowering wand: creative vision that keeps growing."
+  - "Lions and salamanders on the throne: courage, fire and transformation."
+  - "Salamander at his feet: passion that is ready to act."
+  - "Turned to the side: looking toward the future."
+
+reflection:
+  - What vision am I ready to lead?
+  - Am I inspiring others or pushing them?
+  - How can I turn a big idea into a first step?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air of Fire
+  astrology: Late Cancer to mid Leo
+
+waite_1910:
+  upright: >-
+    Dark man, friendly, countryman, generally married, honest and conscientious. The card
+    always signifies honesty, and may mean news concerning an unexpected heritage to fall
+    in before very long.
+  reversed: Good, but severe; austere, yet tolerant.

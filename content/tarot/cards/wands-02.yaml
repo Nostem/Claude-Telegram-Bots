@@ -1,0 +1,60 @@
+id: wands-02
+name: Two of Wands
+arcana: minor
+suit: wands
+number: 2
+image: wands-02.jpg
+
+keywords:
+  upright: [planning, future vision, decisions, personal power, leaving your comfort zone]
+  reversed: [fear of the unknown, playing it safe, poor planning, restlessness, staying put]
+
+short:
+  upright: The world is in your hands. Plan your next move and dare to think bigger.
+  reversed: Fear is keeping you in your comfort zone. A bit of planning will make the leap easier.
+
+meaning:
+  upright: >-
+    A man stands on a castle wall holding a small globe, one wand in his hand and another
+    fixed beside him, looking out over land and sea. The Two of Wands is about planning
+    your future and thinking bigger. You've made a start, and now you're deciding where to
+    go next. It's a card of vision, ambition and choice: staying where it's safe, or
+    venturing into the wider world. The card encourages you to make a plan, trust your
+    abilities, and step beyond what's familiar.
+  reversed: >-
+    Reversed, the Two of Wands suggests hesitation about the future. You might be sticking
+    with what's safe because the unknown feels too risky, or making plans that never turn
+    into action. It can also show restlessness: knowing you want more without knowing
+    what. The card asks you to name what you really want, then break it into smaller,
+    less frightening steps. Planning doesn't remove all risk, but it gives you the
+    confidence to begin, and it shows you that the first step is smaller than it looks.
+
+in_context:
+  love: Thinking about the future together, or deciding whether to take a relationship further.
+  work: Long-term planning, expansion or a career decision. Think bigger.
+  advice: Make a plan for the future you want.
+
+symbolism:
+  - "Globe in his hand: the world of possibilities."
+  - "Two wands: the choice between staying and going."
+  - "Castle wall: security and what's already been built."
+  - "View of land and sea: the wider world waiting to be explored."
+  - "Rose and lily emblem: passion and purity in balance."
+
+reflection:
+  - What do I want my life to look like a year from now?
+  - What's keeping me in my comfort zone?
+  - What is one step toward a bigger goal?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire
+  astrology: Mars in Aries
+
+waite_1910:
+  upright: >-
+    Between the alternative readings there is no marriage possible; on the one hand,
+    riches, fortune, magnificence; on the other, physical suffering, disease, chagrin,
+    sadness, mortification.
+  reversed: Surprise, wonder, enchantment, emotion, trouble, fear.
