@@ -73,8 +73,12 @@ shows why we write our own.
 - Use scans of the **original 1909 Pamela Colman Smith printing**. These are public domain
   in the US, and in the UK and EU since 2022. **Don't** use the US Games 1971 recoloring,
   which is what most "Rider-Waite" images online are.
-- Check where every image file came from before using it. Wikimedia Commons has scans of
-  the original deck; confirm each file's source is a pre-1971 printing.
+- Source: the **"RWS1909" set on Wikimedia Commons**, scans of an original 1909 "Roses &
+  Lilies" printing. Avoid the more common "RWS Tarot 00 Fool.jpg" style files: they are a
+  1910 "Pam-A" printing from a less clearly documented source. Every image is credited
+  in `content/tarot/images/CREDITS.md`.
+- Quick check for the wrong version: US Games cards have "© 1971 U.S. Games" printed
+  along the right edge, and brighter, flatter colors.
 - Clean the scans up the same way for all cards: crop, straighten, about 600px wide, JPEG.
 - File names match the card IDs, for example `major-00-the-fool.jpg`.
 - Reversed cards are shown by rotating the image 180° in code, so we only store 78 files.
