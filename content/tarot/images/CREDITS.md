@@ -37,8 +37,8 @@ line on the card edge and must not be used.
 | Wheel of Fortune | `major-10-wheel-of-fortune.jpg` | [RWS1909 - 10 Wheel of Fortune.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_10_Wheel_of_Fortune.jpeg) | 1909 | Public domain | commons |
 | Justice | `major-11-justice.jpg` | [RWS1909 - 11 Justice.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_11_Justice.jpeg) | 1909 | Public domain | commons |
 | The Hanged Man | `major-12-the-hanged-man.jpg` | [RWS1909 - 12 Hanged Man.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_12_Hanged_Man.jpeg) | 1909 | Public domain | commons |
-| Death | `major-13-death.jpg` | [RWS1909 - 13 Death.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_13_Death.jpeg) | 1909 | Public domain | fallback |
-| Temperance | `major-14-temperance.jpg` | [RWS1909 - 14 Temperance.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_14_Temperance.jpeg) | 1909 | Public domain | fallback |
+| Death | `major-13-death.jpg` | [RWS1909 - 13 Death.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_13_Death.jpeg) | 1909 | Public domain | commons |
+| Temperance | `major-14-temperance.jpg` | [RWS1909 - 14 Temperance.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_14_Temperance.jpeg) | 1909 | Public domain | commons |
 | The Devil | `major-15-the-devil.jpg` | [RWS1909 - 15 Devil.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_15_Devil.jpeg) | 1909 | Public domain | fallback |
 | The Tower | `major-16-the-tower.jpg` | [RWS1909 - 16 Tower.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_16_Tower.jpeg) | 1909 | Public domain | fallback |
 | The Star | `major-17-the-star.jpg` | [RWS1909 - 17 Star.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_17_Star.jpeg) | 1909 | Public domain | fallback |
