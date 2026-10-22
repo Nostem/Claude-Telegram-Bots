@@ -1,0 +1,60 @@
+id: major-01-the-magician
+name: The Magician
+arcana: major
+number: 1
+image: major-01-the-magician.jpg
+
+keywords:
+  upright: [willpower, skill, focus, resourcefulness, manifestation]
+  reversed: [scattered energy, manipulation, self-doubt, untapped talent, trickery]
+
+short:
+  upright: You have the tools you need. Focus your will and turn an idea into something real.
+  reversed: Your talents are scattered or misused. Check your motives and gather your focus.
+
+meaning:
+  upright: >-
+    The Magician stands with one hand raised to the sky and the other pointing to the
+    earth, a living bridge between idea and action. On the table before him lie the
+    symbols of all four suits: everything he needs is already within reach. This card
+    appears when you have more power over a situation than you might think. Your skills,
+    your words and your focus are tools, and now is a good time to use them on purpose.
+    Decide what you want, gather what you have, and take the first concrete step. The
+    Magician reminds you that intention matters most when it's followed by action.
+  reversed: >-
+    Reversed, the Magician's energy loses its direction. You might be juggling too many
+    plans and finishing none of them, or doubting skills you clearly have. It can also be
+    a warning about manipulation, whether someone is using clever words to steer you or
+    you're tempted to bend the truth to get your way. Ask yourself whether your talents are
+    serving what you actually care about. Bring your attention back to one goal, be honest
+    about your methods, and the Magician's power returns.
+
+in_context:
+  love: Confident, intentional connection. Say what you want clearly, and watch for charm without substance.
+  work: A great time to launch, pitch or build. Your skills are ready; use them with focus.
+  advice: Stop waiting for more tools. Use what you already have.
+
+symbolism:
+  - "Raised wand and pointing hand: 'as above, so below,' drawing ideas down into the world."
+  - "Infinity sign above his head: limitless potential and focused will."
+  - "Cup, sword, pentacle and wand on the table: all four elements at his command."
+  - "Roses and lilies in the garden: passion and pure intention growing together."
+  - "Snake biting its own tail as a belt: renewal and energy that keeps flowing."
+
+reflection:
+  - What resources do I already have that I'm not using?
+  - Where am I scattering my energy instead of focusing it?
+  - What is one concrete step I can take today toward what I want?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air
+  astrology: Mercury
+  hebrew_letter: Beth
+
+waite_1910:
+  upright: >-
+    Skill, diplomacy, address, subtlety; sickness, pain, loss, disaster, snares of
+    enemies; self-confidence, will; the Querent, if male.
+  reversed: Physician, Magus, mental disease, disgrace, disquiet.

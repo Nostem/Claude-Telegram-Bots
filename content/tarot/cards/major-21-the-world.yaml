@@ -1,0 +1,60 @@
+id: major-21-the-world
+name: The World
+arcana: major
+number: 21
+image: major-21-the-world.jpg
+
+keywords:
+  upright: [completion, fulfillment, wholeness, achievement, travel]
+  reversed: [incompletion, loose ends, delays, lack of closure, shortcuts]
+
+short:
+  upright: A cycle completes. Celebrate how far you've come before the next journey begins.
+  reversed: Almost there, but something is unfinished. Tie up loose ends before moving on.
+
+meaning:
+  upright: >-
+    A dancer moves freely inside a large wreath, surrounded at the corners by four winged
+    figures. The World is the final card of the Major Arcana, and it represents
+    completion: a goal reached, a lesson fully learned, a chapter wrapped up with a
+    feeling of wholeness. It can mean graduation, achievement, travel, or simply feeling
+    at home in yourself. Take time to celebrate and to recognize how much you've grown.
+    Every ending in the tarot leads to a new beginning, and the Fool's journey is ready to
+    start again.
+  reversed: >-
+    Reversed, the World suggests that something isn't quite finished. You may be close to
+    a goal but stalled by loose ends, delays or a lack of closure. Sometimes you might be
+    looking for a shortcut, or moving on before a chapter has really ended. The card asks
+    what still needs your attention. Finish the last steps, have the conversation, wrap
+    things up. It can also ask you to notice progress you've overlooked; you may be
+    closer to the finish than it feels. Completion is satisfying because it's whole,
+    and you're nearly there.
+
+in_context:
+  love: Fulfillment and a sense of wholeness together. A relationship reaches a meaningful milestone.
+  work: Completion, success and recognition. A project or phase ends well.
+  advice: Finish what you started, then celebrate.
+
+symbolism:
+  - "Dancer in the wreath: freedom, joy and being whole."
+  - "Laurel wreath: victory and successful completion."
+  - "Four creatures in the corners: the four elements in balance."
+  - "Two wands held lightly: mastery and balance between opposites."
+  - "Red ribbons tied in an infinity shape: endless cycles of growth."
+
+reflection:
+  - What have I completed that I haven't fully celebrated?
+  - What loose ends still need tying up?
+  - What new journey am I ready for?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth
+  astrology: Saturn
+  hebrew_letter: Tau
+
+waite_1910:
+  upright: >-
+    Assured success, recompense, voyage, route, emigration, flight, change of place.
+  reversed: Inertia, fixity, stagnation, permanence.

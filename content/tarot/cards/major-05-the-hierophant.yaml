@@ -1,0 +1,60 @@
+id: major-05-the-hierophant
+name: The Hierophant
+arcana: major
+number: 5
+image: major-05-the-hierophant.jpg
+
+keywords:
+  upright: [tradition, teaching, belief, community, guidance]
+  reversed: [rebellion, questioning, nonconformity, dogma, personal path]
+
+short:
+  upright: Learn from tradition and trusted teachers. Shared wisdom and community can guide you.
+  reversed: An old rule no longer fits. Question it, and find the path that's truly yours.
+
+meaning:
+  upright: >-
+    The Hierophant sits between two pillars, raising a hand in blessing over two students
+    at his feet. He represents tradition and the wisdom passed from teacher to student:
+    religion, education, mentors, rituals and community values. When this card appears,
+    there may be value in learning the established way before you change it, or in
+    seeking out someone with experience. It can also point to commitments made within a
+    group, such as ceremonies or memberships. Belonging to something larger than yourself
+    can offer real support and meaning.
+  reversed: >-
+    Reversed, the Hierophant suggests that a rule, belief or expectation no longer fits
+    who you are. You might be questioning what you were taught, pushing back against a
+    group, or feeling pressure to conform. This isn't automatically rebellion for its own
+    sake: sometimes growth means writing your own rules. The card asks you to examine
+    beliefs honestly. Keep what still rings true, and let go of what you only follow out
+    of habit or fear. It can also warn against rigid thinking, in others or in yourself.
+
+in_context:
+  love: Traditional commitment, shared values, or a relationship blessed by family or community.
+  work: Mentorship, training and working within established systems. Learn the rules before you break them.
+  advice: Seek out a teacher or a tradition that speaks to you.
+
+symbolism:
+  - "Raised hand in blessing: passing on spiritual knowledge."
+  - "Two students at his feet: learning, and wisdom shared across generations."
+  - "Crossed keys: access to hidden knowledge, and the keys to understanding."
+  - "Triple crown and triple cross: authority over body, mind and spirit."
+  - "Two pillars: the structure of established institutions."
+
+reflection:
+  - Which of the beliefs I was raised with still feel true to me?
+  - Who could I learn from right now?
+  - Where am I following a rule that no longer serves me?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth
+  astrology: Taurus
+  hebrew_letter: Vav
+
+waite_1910:
+  upright: >-
+    Marriage, alliance, captivity, servitude; by another account, mercy and goodness;
+    inspiration; the man to whom the Querent has recourse.
+  reversed: Society, good understanding, concord, overkindness, weakness.

@@ -1,0 +1,58 @@
+id: major-07-the-chariot
+name: The Chariot
+arcana: major
+number: 7
+image: major-07-the-chariot.jpg
+
+keywords:
+  upright: [determination, willpower, victory, direction, self-control]
+  reversed: [lack of direction, scattered effort, aggression, losing control, obstacles]
+
+short:
+  upright: Move forward with focus and determination. Steer conflicting forces toward one goal.
+  reversed: You're pulled in different directions. Regain control before pushing harder.
+
+meaning:
+  upright: >-
+    A charioteer stands tall in his chariot, guiding two sphinxes, one black and one
+    white, without any reins. The Chariot is about moving forward through willpower and
+    focus. It often appears when you're facing a challenge that needs commitment: a goal
+    to reach, a test to pass, an obstacle to push through. The two sphinxes show opposite
+    forces, and the card suggests you can steer both in the same direction. Success comes
+    from discipline and confidence, not from force. Keep your eyes on where you're going.
+  reversed: >-
+    Reversed, the Chariot loses its steering. You may feel stuck, pulled in two
+    directions, or pushing hard without getting anywhere. Sometimes this card shows
+    frustration turning into aggression, or a need to win that has become more important
+    than the goal itself. Pause before you push harder. Ask what you're really aiming for,
+    and whether your energy is pointed at it. It may help to drop one of the things
+    pulling at you, so the rest can move together. Getting clear on direction usually
+    brings the momentum back.
+
+in_context:
+  love: Taking charge of a relationship's direction. Pursue what you want with confidence, not pressure.
+  work: Drive, ambition and a win within reach. Stay focused and keep going.
+  advice: Pick your direction and commit to it.
+
+symbolism:
+  - "Black and white sphinxes: opposing forces brought under control."
+  - "No reins: control that comes from willpower, not force."
+  - "Starry canopy: guidance from above and a higher purpose."
+  - "City behind him: leaving the familiar to pursue a goal."
+  - "Armor with crescent moons: protection and emotional resilience."
+
+reflection:
+  - What goal deserves my full focus right now?
+  - Which conflicting parts of me need to work together?
+  - Am I steering, or just pushing?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water
+  astrology: Cancer
+  hebrew_letter: Cheth
+
+waite_1910:
+  upright: Succour, providence; also war, triumph, presumption, vengeance, trouble.
+  reversed: Riot, quarrel, dispute, litigation, defeat.

@@ -1,0 +1,58 @@
+id: major-10-wheel-of-fortune
+name: Wheel of Fortune
+arcana: major
+number: 10
+image: major-10-wheel-of-fortune.jpg
+
+keywords:
+  upright: [cycles, change, luck, turning point, fate]
+  reversed: [resisting change, bad luck, setbacks, repeating patterns, feeling stuck]
+
+short:
+  upright: The wheel is turning. Change is coming, so ride the cycle instead of fighting it.
+  reversed: A rough patch or a pattern on repeat. Look at what you can change, and let go of what you can't.
+
+meaning:
+  upright: >-
+    A great wheel turns in the clouds, with creatures rising and falling around it and a
+    sphinx sitting calmly on top. The Wheel of Fortune is about cycles: nothing stays the
+    same, good times or hard ones. This card often marks a turning point, a stroke of
+    luck, or circumstances shifting in ways you didn't plan. You can't control the wheel,
+    but you can choose how you respond to it. If things are going well, enjoy them and
+    stay grounded. If things are hard, remember the wheel keeps turning. Look for the
+    opportunity hidden in the change.
+  reversed: >-
+    Reversed, the Wheel can feel like a run of bad luck, or like being stuck in the same
+    pattern again and again. You might be resisting a change that's already happening, or
+    feeling powerless about events outside your control. The card asks two questions:
+    what part of this is truly out of your hands, and what part repeats because of your
+    own choices? Let go of the first. Change the second. Even a stuck wheel starts turning
+    once you stop holding it in place.
+
+in_context:
+  love: A turning point or a fated-feeling meeting. Things are shifting; go with the flow.
+  work: New opportunities and changes in fortune. Be ready to adapt and take your chance.
+  advice: Go with the change instead of fighting it.
+
+symbolism:
+  - "Turning wheel: the cycles of life, and the fact that nothing stays the same."
+  - "Sphinx on top: calm wisdom that stays balanced while everything moves."
+  - "Snake going down and jackal-headed figure rising: falling and rising fortunes."
+  - "Four winged creatures reading books: stability and learning amid change."
+  - "Letters on the wheel: hidden laws and the order behind change."
+
+reflection:
+  - What cycle am I in right now, and what is it teaching me?
+  - What pattern keeps repeating in my life?
+  - What change am I resisting that might actually help me?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire
+  astrology: Jupiter
+  hebrew_letter: Kaph
+
+waite_1910:
+  upright: Destiny, fortune, success, elevation, luck, felicity.
+  reversed: Increase, abundance, superfluity.

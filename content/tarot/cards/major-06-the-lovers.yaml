@@ -1,0 +1,60 @@
+id: major-06-the-lovers
+name: The Lovers
+arcana: major
+number: 6
+image: major-06-the-lovers.jpg
+
+keywords:
+  upright: [love, connection, choice, alignment, values]
+  reversed: [disharmony, imbalance, misaligned values, avoidance, temptation]
+
+short:
+  upright: Deep connection and an important choice. Choose what truly aligns with your values.
+  reversed: Something is out of alignment, in a relationship or within yourself. Be honest about it.
+
+meaning:
+  upright: >-
+    Under a radiant angel, two figures stand open to each other in a garden. The Lovers is
+    about deep connection, and romance is only one form of it. At its heart, this card is
+    about choice: the decisions that show what you truly value. It may point to a
+    meaningful relationship, a partnership, or a crossroads where you have to choose
+    between two paths. The card asks you to choose with your whole self, heart and mind
+    together. When your actions match your values, relationships and decisions feel
+    right, even when they're hard.
+  reversed: >-
+    Reversed, the Lovers points to something out of balance. In relationships, it can
+    show poor communication, mismatched values, or one person giving far more than the
+    other. It can also show an inner conflict: you may want one thing but keep choosing
+    another, or avoid a decision because both options feel risky. Temptation can play a
+    role too. The card asks for honesty, with the other person and with yourself. What do
+    you actually value, and are your choices reflecting it?
+
+in_context:
+  love: Strong connection, attraction and partnership. A relationship may be ready to deepen.
+  work: An important decision or partnership. Choose the option that fits your values, not just the easy one.
+  advice: Choose with your heart and your head together.
+
+symbolism:
+  - "Angel above the couple: blessing, and a higher purpose behind the connection."
+  - "The two figures: openness and vulnerability with each other."
+  - "Tree with a serpent behind her: temptation and the knowledge that comes with choice."
+  - "Tree of flames behind him: passion and desire."
+  - "Mountain between them: the challenges a relationship must climb together."
+
+reflection:
+  - What do I truly value in this situation?
+  - Is there a choice I keep putting off?
+  - Where are my actions out of step with what I say I want?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air
+  astrology: Gemini
+  hebrew_letter: Zain
+
+waite_1910:
+  upright: Attraction, love, beauty, trials overcome.
+  reversed: >-
+    Failure, foolish designs. Another account speaks of marriage frustrated and
+    contrarieties of all kinds.

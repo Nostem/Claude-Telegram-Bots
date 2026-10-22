@@ -1,0 +1,60 @@
+id: major-02-the-high-priestess
+name: The High Priestess
+arcana: major
+number: 2
+image: major-02-the-high-priestess.jpg
+
+keywords:
+  upright: [intuition, inner knowing, mystery, stillness, the subconscious]
+  reversed: [ignored intuition, secrets, disconnection, surface thinking, withdrawal]
+
+short:
+  upright: Be still and listen inward. Your intuition knows more than you've put into words.
+  reversed: You're tuning out your inner voice, or something is being kept hidden. Make space to listen.
+
+meaning:
+  upright: >-
+    The High Priestess sits quietly between a dark pillar and a light one, holding a
+    scroll she doesn't fully reveal. She is the keeper of what can't be rushed: intuition,
+    dreams and the knowing that comes from beneath the surface. When she appears, the
+    answer you're looking for probably won't come from more research or more opinions. It
+    will come from slowing down, paying attention to your gut, and noticing signs and
+    feelings you've been brushing aside. Not everything needs to be explained right away.
+    Trust that some things become clear only when you stop chasing them.
+  reversed: >-
+    Reversed, the High Priestess suggests a gap between you and your inner voice. Life may
+    be so loud or busy that you can't hear yourself think, or you may be overriding a gut
+    feeling because it's inconvenient. Sometimes this card points to secrets, either
+    something hidden from you or something you're keeping from yourself. Rather than
+    forcing answers, create quiet: a walk, a journal page, a night's sleep. Notice what
+    keeps coming back to you. That is usually the message.
+
+in_context:
+  love: Unspoken feelings and slow-building connection. Trust your instincts about someone, and don't rush to define things.
+  work: Hold your cards close and observe before acting. Your quiet read on the situation is valuable.
+  advice: Get quiet and trust your gut.
+
+symbolism:
+  - "Black and white pillars, marked B and J: opposites, with her sitting calmly between them."
+  - "Partly hidden scroll marked TORA: wisdom that is revealed only in part."
+  - "Crescent moon at her feet: intuition, cycles and the subconscious."
+  - "Veil of pomegranates behind her: hidden knowledge and the mysteries beyond."
+  - "Flowing blue robe: water, feeling and depth."
+
+reflection:
+  - What does my gut already know about this?
+  - What am I trying to figure out that might need patience instead?
+  - When do I feel most connected to my inner voice?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Water
+  astrology: The Moon
+  hebrew_letter: Gimel
+
+waite_1910:
+  upright: >-
+    Secrets, mystery, the future as yet unrevealed; the woman who interests the Querent,
+    if male; the Querent herself, if female; silence, tenacity; mystery, wisdom, science.
+  reversed: Passion, moral or physical ardour, conceit, surface knowledge.

@@ -1,0 +1,58 @@
+id: major-17-the-star
+name: The Star
+arcana: major
+number: 17
+image: major-17-the-star.jpg
+
+keywords:
+  upright: [hope, healing, renewal, inspiration, faith]
+  reversed: [discouragement, lost faith, disconnection, despair, self-doubt]
+
+short:
+  upright: Hope and healing after a hard time. Trust that things can and will get better.
+  reversed: Hope feels far away right now. Look for one small light and hold on to it.
+
+meaning:
+  upright: >-
+    After the storm of the Tower comes the Star. A woman kneels by a pool under a sky full
+    of stars, pouring water onto the land and back into the pool. This is a card of hope,
+    healing and quiet renewal. It often appears after a hard time, reminding you that
+    things can get better and that you're allowed to rest and recover. It also brings
+    inspiration and a renewed sense of purpose. The Star doesn't promise everything will
+    be fixed overnight. It promises that you're on the way, and that the light hasn't gone
+    out.
+  reversed: >-
+    Reversed, the Star suggests that hope feels far away. You may feel discouraged,
+    disconnected from what used to inspire you, or doubtful that things will improve.
+    This is a very human place to be, especially after a difficult stretch. The card asks
+    you not to give up, but to look for small sources of light: one good conversation,
+    one thing to look forward to, one moment of rest. If the heaviness lasts, reach out
+    for support. Hope often returns through small steps, not big leaps.
+
+in_context:
+  love: Healing and renewed hope in love. Open your heart again, gently.
+  work: Inspiration returns and the path ahead looks brighter. Follow what gives you purpose.
+  advice: Keep hoping, and take care of yourself while you heal.
+
+symbolism:
+  - "Large eight-pointed star: hope and guidance shining after darkness."
+  - "Water poured onto land and into the pool: renewal flowing to body and spirit."
+  - "Her openness: honesty and vulnerability, nothing left to hide."
+  - "One foot in the water, one on land: balance between feeling and practicality."
+  - "Bird in the tree: thoughts lifting toward higher ideals."
+
+reflection:
+  - What gives me hope right now, even a little?
+  - What do I need in order to heal?
+  - What inspired me before, and how can I reconnect with it?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air
+  astrology: Aquarius
+  hebrew_letter: Tzaddi
+
+waite_1910:
+  upright: Loss, theft, privation, abandonment; another reading says—hope and bright prospects.
+  reversed: Arrogance, haughtiness, impotence.

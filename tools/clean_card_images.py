@@ -24,7 +24,7 @@ BORDER = 24  # cream border width in pixels
 BORDER_COLOR = (238, 228, 204)
 DARK = 110  # luminance below this counts as ink
 FRAME_DARK = 160  # looser ink threshold for the frame line, which is faded on some scans
-LINE_MIN = 0.88  # share of a row/column that must be ink to count as the frame line
+LINE_MIN = 0.8  # share of a row/column that must be ink to count as the frame line
 EDGE_SKIP = 3  # ignore the outermost pixels
 PAPER_WARMTH = 40  # card paper is warm cream (red minus blue); the scanner bed is neutral
 JPEG_QUALITY = 90
@@ -73,10 +73,15 @@ def frame_box(img):
     rows = d[:, int(w * 0.1) : int(w * 0.9)].mean(1)
 
     def first(profile, indices, outside):
+        indices = list(indices)
         for i in indices:
             paper = warmth[outside(i)]
             if profile[i] >= LINE_MIN and paper.size and paper.mean() > PAPER_WARMTH:
                 return i
+        # Some scans are cropped right at the frame line, with no paper outside it.
+        edge = indices[0]
+        if profile[edge] >= LINE_MIN:
+            return edge
         raise ValueError("frame line not found")
 
     ys, xs = slice(int(h * 0.1), int(h * 0.9)), slice(int(w * 0.1), int(w * 0.9))
