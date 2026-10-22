@@ -45,34 +45,34 @@ line on the card edge and must not be used.
 | The Moon | `major-18-the-moon.jpg` | [RWS1909 - 18 Moon.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_18_Moon.jpeg) | 1909 | Public domain | commons |
 | The Sun | `major-19-the-sun.jpg` | [RWS1909 - 19 Sun.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_19_Sun.jpeg) | 1909 | Public domain | commons |
 | Judgement | `major-20-judgement.jpg` | [RWS1909 - 20 Judgement.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_20_Judgement.jpeg) | 1909 | Public domain | commons |
-| The World | `major-21-the-world.jpg` | [RWS1909 - 21 World.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_21_World.jpeg) | 1909 | Public domain | fallback |
-| Ace of Cups | `cups-01.jpg` | [RWS1909 - Cups 01.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_01.jpeg) | 1909 | Public domain | fallback |
-| Two of Cups | `cups-02.jpg` | [RWS1909 - Cups 02.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_02.jpeg) | 1909 | Public domain | fallback |
-| Three of Cups | `cups-03.jpg` | [RWS1909 - Cups 03.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_03.jpeg) | 1909 | Public domain | fallback |
-| Four of Cups | `cups-04.jpg` | [RWS1909 - Cups 04.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_04.jpeg) | 1909 | Public domain | fallback |
-| Five of Cups | `cups-05.jpg` | [RWS1909 - Cups 05.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_05.jpeg) | 1909 | Public domain | fallback |
-| Six of Cups | `cups-06.jpg` | [RWS1909 - Cups 06.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_06.jpeg) | 1909 | Public domain | fallback |
-| Seven of Cups | `cups-07.jpg` | [RWS1909 - Cups 07.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_07.jpeg) | 1909 | Public domain | fallback |
-| Eight of Cups | `cups-08.jpg` | [RWS1909 - Cups 08.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_08.jpeg) | 1909 | Public domain | fallback |
-| Nine of Cups | `cups-09.jpg` | [RWS1909 - Cups 09.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_09.jpeg) | 1909 | Public domain | fallback |
-| Ten of Cups | `cups-10.jpg` | [RWS1909 - Cups 10.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_10.jpeg) | 1909 | Public domain | fallback |
-| Page of Cups | `cups-page.jpg` | [RWS1909 - Cups 11.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_11.jpeg) | 1909 | Public domain | fallback |
-| Knight of Cups | `cups-knight.jpg` | [RWS1909 - Cups 12.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_12.jpeg) | 1909 | Public domain | fallback |
-| Queen of Cups | `cups-queen.jpg` | [RWS1909 - Cups 13.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_13.jpeg) | 1909 | Public domain | fallback |
-| King of Cups | `cups-king.jpg` | [RWS1909 - Cups 14.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_14.jpeg) | 1909 | Public domain | fallback |
-| Ace of Pentacles | `pentacles-01.jpg` | [RWS1909 - Pentacles 01.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_01.jpeg) | 1909 | Public domain | fallback |
-| Two of Pentacles | `pentacles-02.jpg` | [RWS1909 - Pentacles 02.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_02.jpeg) | 1909 | Public domain | fallback |
-| Three of Pentacles | `pentacles-03.jpg` | [RWS1909 - Pentacles 03.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_03.jpeg) | 1909 | Public domain | fallback |
-| Four of Pentacles | `pentacles-04.jpg` | [RWS1909 - Pentacles 04.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_04.jpeg) | 1909 | Public domain | fallback |
-| Five of Pentacles | `pentacles-05.jpg` | [RWS1909 - Pentacles 05.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_05.jpeg) | 1909 | Public domain | fallback |
-| Six of Pentacles | `pentacles-06.jpg` | [RWS1909 - Pentacles 06.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_06.jpeg) | 1909 | Public domain | fallback |
-| Seven of Pentacles | `pentacles-07.jpg` | [RWS1909 - Pentacles 07.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_07.jpeg) | 1909 | Public domain | fallback |
-| Eight of Pentacles | `pentacles-08.jpg` | [RWS1909 - Pentacles 08.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_08.jpeg) | 1909 | Public domain | fallback |
-| Nine of Pentacles | `pentacles-09.jpg` | [RWS1909 - Pentacles 09.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_09.jpeg) | 1909 | Public domain | fallback |
-| Ten of Pentacles | `pentacles-10.jpg` | [RWS1909 - Pentacles 10.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_10.jpeg) | 1909 | Public domain | fallback |
-| Page of Pentacles | `pentacles-page.jpg` | [RWS1909 - Pentacles 11.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_11.jpeg) | 1909 | Public domain | fallback |
-| Knight of Pentacles | `pentacles-knight.jpg` | [RWS1909 - Pentacles 12.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_12.jpeg) | 1909 | Public domain | fallback |
-| Queen of Pentacles | `pentacles-queen.jpg` | [RWS1909 - Pentacles 13.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_13.jpeg) | 1909 | Public domain | fallback |
+| The World | `major-21-the-world.jpg` | [RWS1909 - 21 World.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_21_World.jpeg) | 1909 | Public domain | commons |
+| Ace of Cups | `cups-01.jpg` | [RWS1909 - Cups 01.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_01.jpeg) | 1909 | Public domain | commons |
+| Two of Cups | `cups-02.jpg` | [RWS1909 - Cups 02.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_02.jpeg) | 1909 | Public domain | commons |
+| Three of Cups | `cups-03.jpg` | [RWS1909 - Cups 03.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_03.jpeg) | 1909 | Public domain | commons |
+| Four of Cups | `cups-04.jpg` | [RWS1909 - Cups 04.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_04.jpeg) | 1909 | Public domain | commons |
+| Five of Cups | `cups-05.jpg` | [RWS1909 - Cups 05.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_05.jpeg) | 1909 | Public domain | commons |
+| Six of Cups | `cups-06.jpg` | [RWS1909 - Cups 06.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_06.jpeg) | 1909 | Public domain | commons |
+| Seven of Cups | `cups-07.jpg` | [RWS1909 - Cups 07.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_07.jpeg) | 1909 | Public domain | commons |
+| Eight of Cups | `cups-08.jpg` | [RWS1909 - Cups 08.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_08.jpeg) | 1909 | Public domain | commons |
+| Nine of Cups | `cups-09.jpg` | [RWS1909 - Cups 09.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_09.jpeg) | 1909 | Public domain | commons |
+| Ten of Cups | `cups-10.jpg` | [RWS1909 - Cups 10.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_10.jpeg) | 1909 | Public domain | commons |
+| Page of Cups | `cups-page.jpg` | [RWS1909 - Cups 11.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_11.jpeg) | 1909 | Public domain | commons |
+| Knight of Cups | `cups-knight.jpg` | [RWS1909 - Cups 12.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_12.jpeg) | 1909 | Public domain | commons |
+| Queen of Cups | `cups-queen.jpg` | [RWS1909 - Cups 13.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_13.jpeg) | 1909 | Public domain | commons |
+| King of Cups | `cups-king.jpg` | [RWS1909 - Cups 14.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Cups_14.jpeg) | 1909 | Public domain | commons |
+| Ace of Pentacles | `pentacles-01.jpg` | [RWS1909 - Pentacles 01.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_01.jpeg) | 1909 | Public domain | commons |
+| Two of Pentacles | `pentacles-02.jpg` | [RWS1909 - Pentacles 02.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_02.jpeg) | 1909 | Public domain | commons |
+| Three of Pentacles | `pentacles-03.jpg` | [RWS1909 - Pentacles 03.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_03.jpeg) | 1909 | Public domain | commons |
+| Four of Pentacles | `pentacles-04.jpg` | [RWS1909 - Pentacles 04.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_04.jpeg) | 1909 | Public domain | commons |
+| Five of Pentacles | `pentacles-05.jpg` | [RWS1909 - Pentacles 05.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_05.jpeg) | 1909 | Public domain | commons |
+| Six of Pentacles | `pentacles-06.jpg` | [RWS1909 - Pentacles 06.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_06.jpeg) | 1909 | Public domain | commons |
+| Seven of Pentacles | `pentacles-07.jpg` | [RWS1909 - Pentacles 07.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_07.jpeg) | 1909 | Public domain | commons |
+| Eight of Pentacles | `pentacles-08.jpg` | [RWS1909 - Pentacles 08.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_08.jpeg) | 1909 | Public domain | commons |
+| Nine of Pentacles | `pentacles-09.jpg` | [RWS1909 - Pentacles 09.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_09.jpeg) | 1909 | Public domain | commons |
+| Ten of Pentacles | `pentacles-10.jpg` | [RWS1909 - Pentacles 10.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_10.jpeg) | 1909 | Public domain | commons |
+| Page of Pentacles | `pentacles-page.jpg` | [RWS1909 - Pentacles 11.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_11.jpeg) | 1909 | Public domain | commons |
+| Knight of Pentacles | `pentacles-knight.jpg` | [RWS1909 - Pentacles 12.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_12.jpeg) | 1909 | Public domain | commons |
+| Queen of Pentacles | `pentacles-queen.jpg` | [RWS1909 - Pentacles 13.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_13.jpeg) | 1909 | Public domain | commons |
 | King of Pentacles | `pentacles-king.jpg` | [RWS1909 - Pentacles 14.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_14.jpeg) | 1909 | Public domain | fallback |
 | Ace of Swords | `swords-01.jpg` | [RWS1909 - Swords 01.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Swords_01.jpeg) | 1909 | Public domain | fallback |
 | Two of Swords | `swords-02.jpg` | [RWS1909 - Swords 02.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Swords_02.jpeg) | 1909 | Public domain | fallback |
