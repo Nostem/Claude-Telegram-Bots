@@ -1,0 +1,60 @@
+id: major-00-the-fool
+name: The Fool
+arcana: major
+number: 0
+image: major-00-the-fool.jpg
+
+keywords:
+  upright: [beginnings, trust, spontaneity, freedom, leap of faith]
+  reversed: [hesitation, recklessness, fear of the unknown, naivety, holding back]
+
+short:
+  upright: A fresh start taken on trust. Step forward with an open heart, even without the whole map.
+  reversed: The leap is stuck, either held back by fear or taken without looking. Find the balance.
+
+meaning:
+  upright: >-
+    The Fool stands at the very start of the journey, carrying almost nothing and
+    worrying about even less. This card shows up when something new is possible: a move,
+    a project, a relationship, a different way of seeing yourself. It doesn't promise the
+    path will be easy, only that it's open. The Fool's gift is willingness: to begin
+    before you feel ready, to be a beginner, to let curiosity lead. Ask yourself where
+    you've been waiting for a certainty that may never come. Sometimes the wisest step is
+    the one you take with a light pack and an open mind.
+  reversed: >-
+    Reversed, the Fool's energy tips out of balance in one of two directions. You might
+    be hovering at the edge, so afraid of getting it wrong that nothing begins. Or you
+    might be rushing ahead, ignoring the warning the little dog is trying to give. Notice
+    which one feels true. If it's fear, the card asks what the smallest possible first
+    step would be. If it's haste, it asks you to slow down long enough to check the
+    ground. Either way, the new beginning is still there; it just needs more honesty
+    about how you're approaching it.
+
+in_context:
+  love: New feelings, or a chance to see love with fresh eyes. Enjoy the openness, but don't skip the warning signs.
+  work: A new role, project or path. Say yes to learning, and do a little homework before you leap.
+  advice: Begin. You can figure out the rest as you go.
+
+symbolism:
+  - "Cliff edge: the moment just before a leap, where risk and possibility meet."
+  - "White rose: innocence and a pure intention."
+  - "Small bundle on a staff: traveling light; what you need is already with you."
+  - "White dog: instinct and loyalty, a reminder to stay alert."
+  - "Bright sun and yellow sky: optimism and clear, open energy."
+  - "Mountains behind: challenges and lessons still ahead."
+
+reflection:
+  - Where in my life am I waiting to feel ready?
+  - What would I try if I didn't have to be good at it yet?
+  - What could I leave behind to travel lighter?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air
+  astrology: Uranus (modern); Air (traditional)
+  hebrew_letter: Aleph
+
+waite_1910:
+  upright: Folly, mania, extravagance, intoxication, delirium, frenzy, bewrayment.
+  reversed: Negligence, absence, distribution, carelessness, apathy, nullity, vanity.

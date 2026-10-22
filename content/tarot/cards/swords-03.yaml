@@ -1,0 +1,59 @@
+id: swords-03
+name: Three of Swords
+arcana: minor
+suit: swords
+number: 3
+image: swords-03.jpg
+
+keywords:
+  upright: [heartbreak, grief, painful truth, sorrow, release]
+  reversed: [recovery, forgiveness, lingering hurt, suppressed grief, letting go]
+
+short:
+  upright: A painful truth or loss. It hurts, and naming the hurt is the first step to healing.
+  reversed: Healing has begun, or pain is being pushed down. Let it move through you.
+
+meaning:
+  upright: >-
+    Few cards are as direct as this one: a heart, three swords and rain. The Three of
+    Swords speaks of grief, disappointment, or words that cut, whether they came from
+    someone else or from your own inner critic. It doesn't mean you've done something
+    wrong, and it isn't a prediction of disaster. It simply acknowledges that something
+    hurts, and that pretending otherwise won't help. Like the storm behind the heart, this
+    kind of pain passes through. Let yourself feel it, talk about it, and be gentle with
+    yourself while it does.
+  reversed: >-
+    Reversed, this card often points to the time after the storm. The swords are
+    loosening: you may be starting to forgive, to understand what happened, or simply to
+    feel lighter. It can also show grief that's been bottled up, a hurt you keep insisting
+    you're "fine" about. If that sounds familiar, the card asks you to find a safe place
+    to let it out, whether that's a friend, a journal or a professional. Healing isn't a
+    straight line, and feeling better one day and worse the next is part of it.
+
+in_context:
+  love: Heartbreak, a painful discovery or a hard conversation. Honesty now makes room for real healing.
+  work: Disappointment, criticism or a setback. One sharp comment isn't the final verdict on you.
+  advice: Let it hurt, then let it go. Talk to someone you trust.
+
+symbolism:
+  - "Heart: emotions and the core of who you are."
+  - "Three swords: thoughts, words or truths that wound. Three can also point to three people involved."
+  - "Storm clouds and rain: sorrow, but also cleansing. Storms pass."
+  - "No people in the scene: a private pain, felt inside."
+
+reflection:
+  - What hurt am I carrying that I haven't said out loud?
+  - Are any of these painful words coming from my own inner critic?
+  - What would help me feel even a little lighter today?
+
+yes_no: "No"
+
+correspondences:
+  element: Air
+  astrology: Saturn in Libra
+
+waite_1910:
+  upright: >-
+    Removal, absence, delay, division, rupture, dispersion, and all that the design
+    signifies naturally, being too simple and obvious to call for specific enumeration.
+  reversed: Mental alienation, error, loss, distraction, disorder, confusion.

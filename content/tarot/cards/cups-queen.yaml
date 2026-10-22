@@ -1,0 +1,62 @@
+id: cups-queen
+name: Queen of Cups
+arcana: minor
+suit: cups
+court: queen
+image: cups-queen.jpg
+
+keywords:
+  upright: [compassion, emotional depth, intuition, care, calm]
+  reversed: [overwhelm, people-pleasing, self-neglect, emotional dependence, moodiness]
+
+short:
+  upright: Deep empathy and intuition. Lead with your heart while keeping your feet on solid ground.
+  reversed: Feelings are flooding in, or you're giving care you never give yourself. Refill your own cup.
+
+meaning:
+  upright: >-
+    The Queen of Cups sits at the edge of the sea, at ease with deep feelings, her own
+    and other people's. She listens closely, notices what isn't said, and offers care
+    without being swept away by it. When she appears, she may point to your own intuition
+    and emotional wisdom, or to a caring, sensitive person in your life. Notice that her
+    throne is on dry land, though the water reaches her feet: she feels deeply but stays
+    steady. The card invites you to trust what your feelings are telling you, and to treat
+    yourself with the same tenderness you give others.
+  reversed: >-
+    Reversed, the Queen's gift for empathy can tip into overwhelm. You may be absorbing
+    everyone's moods, saying yes when you mean no, or caring for others while running on
+    empty. It can also show feelings being shut away because they seem like too much to
+    handle, or leaning on someone else to steady them for you. This card asks for
+    boundaries: you can be kind without carrying everyone's emotions for them. Spend some of that care on yourself, and look for the steady ground
+    beneath the waves.
+
+in_context:
+  love: A caring, emotionally open partner, or the call to be one. Listen deeply and say what you feel.
+  work: Supportive roles and emotional intelligence at work. Trust your read on people.
+  advice: Trust your intuition, and give yourself the care you give others.
+
+symbolism:
+  - "Covered, ornate cup: the only closed cup in the suit. Intuitions and feelings kept private and treasured."
+  - "Throne at the water's edge: balanced between feeling (the sea) and stability (the land)."
+  - "Sea-child carvings and shell-shaped throne: imagination and the world of emotion."
+  - "Calm water and pebbles at her feet: deep feelings held peacefully."
+
+reflection:
+  - What is my intuition telling me that I've been ignoring?
+  - Where am I giving care that I also need to give myself?
+  - How can I stay kind without taking on other people's emotions?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water (Water of Water)
+  astrology: Late Gemini to mid Cancer
+
+waite_1910:
+  upright: >-
+    Good, fair woman; honest, devoted woman, who will do service to her lover; loving
+    intelligence, and hence the gift of vision; success, happiness, pleasure; also wisdom,
+    virtue; a perfect spouse and a good mother.
+  reversed: >-
+    The accounts vary; good woman; otherwise, distinguished woman but one not to be
+    trusted; perverse woman; vice, dishonour, depravity.
