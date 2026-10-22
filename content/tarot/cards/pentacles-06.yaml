@@ -1,0 +1,58 @@
+id: pentacles-06
+name: Six of Pentacles
+arcana: minor
+suit: pentacles
+number: 6
+image: pentacles-06.jpg
+
+keywords:
+  upright: [generosity, giving and receiving, charity, sharing wealth, fairness]
+  reversed: [strings attached, debt, one-sided giving, power imbalance, selfishness]
+
+short:
+  upright: Give and receive with an open hand. Generosity flows both ways.
+  reversed: Giving comes with strings, or the exchange feels unequal. Check the balance of power.
+
+meaning:
+  upright: >-
+    A well-dressed merchant holds a pair of balanced scales in one hand and gives coins to
+    a kneeling person with the other, while another person waits. The Six of Pentacles
+    is about generosity and the flow of resources: giving, receiving and sharing. You may
+    be in a position to help someone, or you may be on the receiving end of support. Both
+    are part of life. The card encourages fairness and kindness, and reminds you that
+    accepting help is just as important as offering it.
+  reversed: >-
+    Reversed, the Six of Pentacles suggests the exchange has become unbalanced. Help might
+    come with strings attached, generosity might be used to control, or one person might
+    always be giving while the other always takes. It can also point to debt or financial
+    dependence. The card asks you to look at the power behind the giving. Is it truly
+    generous, and is it fair? Healthy giving leaves both people with their dignity. Set
+    boundaries where you need them, and give freely where you can.
+
+in_context:
+  love: Balanced give and take. Make sure both partners feel supported.
+  work: Fair pay, mentorship or sharing resources. Be generous, and be fair.
+  advice: Give freely, and let yourself receive.
+
+symbolism:
+  - "Merchant giving coins: generosity and sharing resources."
+  - "Balanced scales: fairness in giving."
+  - "Kneeling figures: those in need, and the humility of receiving."
+  - "One hand gives, one holds the scales: kindness guided by fairness."
+
+reflection:
+  - Where can I be generous right now?
+  - Am I comfortable receiving help?
+  - Is any giving in my life coming with strings attached?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth
+  astrology: Moon in Taurus
+
+waite_1910:
+  upright: >-
+    Presents, gifts, gratification; another account says attention, vigilance; now is
+    the accepted time, present prosperity, etc.
+  reversed: Desire, cupidity, envy, jealousy, illusion.

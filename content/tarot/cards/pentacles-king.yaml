@@ -1,0 +1,58 @@
+id: pentacles-king
+name: King of Pentacles
+arcana: minor
+suit: pentacles
+court: king
+image: pentacles-king.jpg
+
+keywords:
+  upright: [abundance, security, business success, discipline, providing for others]
+  reversed: [greed, materialism, stubbornness, poor financial decisions, status obsession]
+
+short:
+  upright: Hard-earned success and security. Use your resources wisely and generously.
+  reversed: Money or status has taken over. Remember what your success is for.
+
+meaning:
+  upright: >-
+    A king sits on a throne decorated with bull heads, wearing a robe covered in
+    grapevines, with a castle behind him. He holds a pentacle in one hand and a scepter in
+    the other, perfectly at ease. The King of Pentacles represents success built through
+    discipline and hard work: financial security, a thriving business, the ability to
+    provide for others. He may represent a reliable, successful person in your life, or
+    your own capacity to create stability. The card encourages you to manage resources
+    wisely and enjoy what you've built.
+  reversed: >-
+    Reversed, the King of Pentacles suggests a troubled relationship with money or
+    success. It can show greed, stubbornness, or putting status and possessions above
+    people. It may also point to poor financial decisions or a fear of losing control. The
+    card asks you to remember what your resources are for: security, freedom, and taking
+    care of the people and things you love. Wealth used generously creates real
+    abundance, while wealth hoarded tends to isolate. Ask whether your success is giving you
+    more freedom, or less.
+
+in_context:
+  love: A stable, generous, committed partner. Building security together.
+  work: Business success, leadership and financial stability. Lead with integrity.
+  advice: Build wisely, and share generously.
+
+symbolism:
+  - "Bull heads on the throne: determination, strength and Taurus energy."
+  - "Robe of grapevines: abundance and the fruits of hard work."
+  - "Castle behind him: an established, secure life."
+  - "Pentacle and scepter: wealth and the power to use it."
+
+reflection:
+  - What have I built through steady effort?
+  - Am I using my resources wisely and generously?
+  - What does true security mean to me?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air of Earth
+  astrology: Late Aries to mid Taurus
+
+waite_1910:
+  upright: Valour, intelligence, business, mathematical gifts, and success in these paths.
+  reversed: Vice, weakness, perversity, peril.

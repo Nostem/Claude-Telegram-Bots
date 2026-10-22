@@ -1,0 +1,59 @@
+id: pentacles-07
+name: Seven of Pentacles
+arcana: minor
+suit: pentacles
+number: 7
+image: pentacles-07.jpg
+
+keywords:
+  upright: [patience, long-term investment, assessing progress, slow growth, perseverance]
+  reversed: [frustration with slow results, poor returns, wasted effort, rethinking investments, giving up too soon]
+
+short:
+  upright: Growth is slow but real. Pause, assess your progress and keep tending your garden.
+  reversed: Effort isn't paying off yet. Decide whether to wait, change course or let it go.
+
+meaning:
+  upright: >-
+    A farmer leans on his hoe, looking thoughtfully at seven pentacles growing on a leafy
+    bush. He has put in the work; now he's waiting for the harvest. The Seven of
+    Pentacles is about patience and long-term effort. Results may not be visible yet, but
+    growth is happening. It's a good time to step back, review your progress, and decide
+    where to focus next. The card encourages you to keep going. Meaningful things,
+    whether careers, savings, skills or relationships, take time to grow.
+  reversed: >-
+    Reversed, the Seven of Pentacles can show frustration with slow progress. You might
+    feel like your hard work isn't paying off, or be tempted to give up just before things
+    take root. It can also point to putting energy into something that genuinely isn't
+    growing. The card asks for an honest review. Is this worth more patience, or is it time
+    to change your approach or invest elsewhere? Either answer is fine. What matters is
+    choosing on purpose, rather than out of impatience or habit.
+
+in_context:
+  love: A relationship that's growing slowly. Be patient, and keep investing in it.
+  work: Long-term projects and investments. Review progress, and stay the course.
+  advice: Be patient with what you're growing.
+
+symbolism:
+  - "Farmer leaning on a hoe: pausing to assess the work."
+  - "Pentacles growing on a bush: results that take time to ripen."
+  - "Thoughtful expression: reflection and evaluation."
+  - "Pentacle at his feet: the investment already made."
+
+reflection:
+  - What am I growing that needs more patience?
+  - Is my effort going to the right places?
+  - What progress have I overlooked?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Earth
+  astrology: Saturn in Taurus
+
+waite_1910:
+  upright: >-
+    These are exceedingly contradictory; in the main, it is a card of money, business,
+    barter; but one reading gives altercation, quarrel—and another innocence, ingenuity,
+    purgation.
+  reversed: Cause for anxiety regarding money which it may be proposed to lend.

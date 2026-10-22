@@ -1,0 +1,59 @@
+id: pentacles-10
+name: Ten of Pentacles
+arcana: minor
+suit: pentacles
+number: 10
+image: pentacles-10.jpg
+
+keywords:
+  upright: [legacy, family wealth, long-term security, tradition, belonging]
+  reversed: [family conflict, financial loss, broken traditions, short-term thinking, inheritance disputes]
+
+short:
+  upright: Lasting security and family legacy. What you build now can support generations.
+  reversed: Family or money matters feel unsettled. Look at what you truly want to pass on.
+
+meaning:
+  upright: >-
+    Under a stone archway, an old man in a richly patterned robe sits with two dogs, while
+    a couple and a child stand nearby and ten pentacles hang in the air around them. The
+    Ten of Pentacles is about lasting wealth and legacy: family, home, traditions and
+    security that extend across generations. It can point to inheritance, property, a
+    family business or simply the feeling of belonging to something bigger and older than
+    yourself. The card encourages you to think long term and invest in what will last.
+  reversed: >-
+    Reversed, the Ten of Pentacles suggests trouble around family, money or legacy. There
+    might be disagreements over inheritance, financial instability, or pressure to follow
+    family traditions that don't fit you. It can also show short-term thinking that puts
+    long-term security at risk. The card asks what you truly want to build and pass on.
+    Legacy isn't only about money. It's also values, kindness and the way you treat the
+    people around you, and those are always yours to give,
+    whatever your circumstances.
+
+in_context:
+  love: Long-term commitment, family and building a shared future.
+  work: Stable, long-term success, family business or financial security.
+  advice: Build something that lasts.
+
+symbolism:
+  - "Old man with dogs: wisdom, loyalty and the elder generation."
+  - "Couple and child: family continuing through time."
+  - "Ten pentacles in a tree-of-life pattern: wealth woven into the structure of life."
+  - "Archway into the estate: a secure home and an established place in the world."
+
+reflection:
+  - What do I want to leave behind for others?
+  - What traditions in my family do I want to keep, or change?
+  - How can I invest in long-term security?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth
+  astrology: Mercury in Virgo
+
+waite_1910:
+  upright: >-
+    Gain, riches; family matters, archives, extraction, the abode of a family.
+  reversed: >-
+    Chance, fatality, loss, robbery, games of hazard; sometimes gift, dowry, pension.

@@ -1,0 +1,60 @@
+id: pentacles-01
+name: Ace of Pentacles
+arcana: minor
+suit: pentacles
+number: 1
+image: pentacles-01.jpg
+
+keywords:
+  upright: [new opportunity, prosperity, manifestation, solid start, abundance]
+  reversed: [missed opportunity, poor planning, financial worry, lack of foresight, shaky foundations]
+
+short:
+  upright: A real-world opportunity, like money, work or health. Plant the seed and it can grow.
+  reversed: An opportunity may slip by or rest on shaky ground. Plan carefully before you invest.
+
+meaning:
+  upright: >-
+    A hand reaches from a cloud holding a large golden pentacle above a lush garden. An
+    archway in the hedge opens onto a path toward distant mountains. The Ace of Pentacles
+    is the start of something tangible: a job offer, a financial opportunity, a new home,
+    a fresh start for your health, or a practical project. It's a seed with real potential,
+    but it needs tending to grow. The card encourages you to take the opportunity
+    seriously, make a practical plan and commit to it. Small, steady steps can build
+    something lasting.
+  reversed: >-
+    Reversed, the Ace of Pentacles suggests an opportunity may not be what it seems, or
+    that you might miss it through hesitation or poor planning. It can point to money
+    worries, a deal falling through, or a plan built on weak foundations. The card asks
+    you to look carefully at the practical details before committing time or money. It
+    can also be a nudge to get your basics in order: budget, health, routines. Strong
+    roots make the next opportunity much easier to catch when it arrives.
+
+in_context:
+  love: A relationship with real, practical potential. Build something stable together.
+  work: A job offer, a raise or a promising venture. Make a concrete plan.
+  advice: Plant the seed, then tend it.
+
+symbolism:
+  - "Hand holding a golden pentacle: a tangible gift or opportunity."
+  - "Lush garden: fertile ground for growth."
+  - "Archway in the hedge: a doorway to new possibilities."
+  - "Path to the mountains: a long-term journey toward success."
+
+reflection:
+  - What practical opportunity is in front of me?
+  - What would help this seed grow?
+  - Are my foundations strong enough for what I want to build?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth
+  astrology: Root of the powers of Earth
+
+waite_1910:
+  upright: Perfect contentment, felicity, ecstasy; also speedy intelligence; gold.
+  reversed: >-
+    The evil side of wealth, bad intelligence; also great riches. In any case it shows
+    prosperity, comfortable material conditions, but whether these are of advantage to
+    the possessor will depend on whether the card is reversed or not.

@@ -1,0 +1,58 @@
+id: pentacles-09
+name: Nine of Pentacles
+arcana: minor
+suit: pentacles
+number: 9
+image: pentacles-09.jpg
+
+keywords:
+  upright: [self-sufficiency, luxury, independence, enjoying rewards, refinement]
+  reversed: [overworking, dependence, superficial success, financial setback, hollow comfort]
+
+short:
+  upright: You've earned this. Enjoy the comfort and independence your hard work has built.
+  reversed: Success that feels hollow or shaky. Check whether your comfort rests on solid ground.
+
+meaning:
+  upright: >-
+    An elegant woman stands alone in a rich vineyard, a falcon resting on her gloved hand
+    and nine pentacles around her. A snail crawls at her feet. The Nine of Pentacles is
+    about independence and enjoying the rewards of your effort. It can point to financial
+    security, a comfortable home, or simply a sense of self-sufficiency and confidence.
+    You've worked for this, and you're allowed to enjoy it. The card encourages you to
+    appreciate the life you've built and treat yourself with care.
+  reversed: >-
+    Reversed, the Nine of Pentacles suggests something is off with comfort and
+    independence. You might be overworking to keep up appearances, relying on someone
+    else more than you'd like, or finding that success doesn't feel as good as you
+    expected. It can also point to a financial setback. The card asks you to look beneath
+    the surface. What would real security and independence look like for you? Build
+    toward that, rather than toward how things look from the outside. Real comfort feels peaceful,
+    not anxious.
+
+in_context:
+  love: Feeling secure and whole on your own, or a relationship between two independent people.
+  work: Financial independence and the rewards of hard work. Enjoy your success.
+  advice: Enjoy what you've built.
+
+symbolism:
+  - "Woman alone in the vineyard: independence and self-sufficiency."
+  - "Falcon on her glove: discipline and control of the mind."
+  - "Grapevines heavy with fruit: abundance and the rewards of effort."
+  - "Snail at her feet: slow, steady progress that led here."
+  - "Fine robe: refinement and self-care."
+
+reflection:
+  - What have I built that I'm proud of?
+  - How can I enjoy my rewards without guilt?
+  - What does true independence mean to me?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth
+  astrology: Venus in Virgo
+
+waite_1910:
+  upright: Prudence, safety, success, accomplishment, certitude, discernment.
+  reversed: Roguery, deception, voided project, bad faith.

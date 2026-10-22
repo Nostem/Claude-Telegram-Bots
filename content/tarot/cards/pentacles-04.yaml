@@ -1,0 +1,58 @@
+id: pentacles-04
+name: Four of Pentacles
+arcana: minor
+suit: pentacles
+number: 4
+image: pentacles-04.jpg
+
+keywords:
+  upright: [saving, security, control, possessiveness, holding on tightly]
+  reversed: [openhandedness, letting go of control, overspending, financial insecurity, loosening up]
+
+short:
+  upright: You're holding on tightly for security. Make sure caution hasn't turned into fear.
+  reversed: Your grip is loosening, toward generosity or toward overspending. Find the balance.
+
+meaning:
+  upright: >-
+    A crowned man sits outside a city, clutching one pentacle to his chest, with another
+    balanced on his crown and two more under his feet. The Four of Pentacles is about
+    security and control. Saving money, protecting your resources and being careful can
+    be wise. But this figure is holding on so tightly that he can't move or reach out. The
+    card asks whether your caution is serving you or trapping you. Security matters, and
+    so do generosity, flexibility and trust.
+  reversed: >-
+    Reversed, the Four of Pentacles can show a loosening grip. You might be letting go of
+    the need for control, becoming more generous, or learning to trust that you'll be
+    okay. It can also show the opposite extreme: overspending, financial instability, or
+    letting go of things you actually need. The card asks you to find a healthy middle
+    ground between holding on and letting go. Money, possessions and control are tools.
+    They're meant to support your life, not run it, and a balanced hand can both give and
+    keep.
+
+in_context:
+  love: Possessiveness or fear of losing someone. Trust grows when you loosen your grip.
+  work: Financial caution and protecting what you've built. Don't let fear stop growth.
+  advice: Hold on to what matters, but loosen your grip.
+
+symbolism:
+  - "Pentacle clutched to his chest: holding tightly to what he has."
+  - "Pentacle on his crown: thoughts dominated by money or security."
+  - "Pentacles under his feet: standing on material foundations."
+  - "City behind him: separation from others in order to protect his wealth."
+
+reflection:
+  - What am I holding on to out of fear?
+  - Is my caution protecting me or limiting me?
+  - Where could I be a little more generous?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Earth
+  astrology: Sun in Capricorn
+
+waite_1910:
+  upright: >-
+    The surety of possessions, cleaving to that which one has, gift, legacy, inheritance.
+  reversed: Suspense, delay, opposition.

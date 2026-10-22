@@ -1,0 +1,57 @@
+id: pentacles-queen
+name: Queen of Pentacles
+arcana: minor
+suit: pentacles
+court: queen
+image: pentacles-queen.jpg
+
+keywords:
+  upright: [nurturing, practicality, comfort, generosity, down-to-earth]
+  reversed: [overwhelmed caregiver, neglecting self, smothering, work-life imbalance, material focus]
+
+short:
+  upright: Practical care and a warm home. Nurture others and yourself with grounded wisdom.
+  reversed: You're caring for everyone except yourself. Rebalance work, home and rest.
+
+meaning:
+  upright: >-
+    A queen sits on a throne carved with goat heads and fruit, in a lush garden under an
+    arch of roses. She holds a pentacle in her lap and looks at it lovingly. A rabbit sits
+    in the corner. The Queen of Pentacles combines warmth with practicality. She creates
+    comfort, manages resources wisely and takes care of people in very real ways. She may
+    represent a nurturing, down-to-earth person, or your own ability to look after body,
+    home and finances. The card encourages grounded care for yourself and others.
+  reversed: >-
+    Reversed, the Queen of Pentacles suggests care is out of balance. You might be looking
+    after everyone else while neglecting yourself, or feeling overwhelmed by work and home
+    responsibilities. It can also show smothering, or caring too much about appearances
+    and material things. The card asks you to bring the nurturing back to yourself. Rest,
+    eat well, ask for help, and let some things be good enough. You can only keep caring
+    for others if you're cared for too. Let
+    someone return the favor.
+
+in_context:
+  love: A warm, nurturing, stable relationship. Show love through care and comfort.
+  work: Practical, generous leadership, or balancing work and home well.
+  advice: Take care of yourself as well as you care for others.
+
+symbolism:
+  - "Pentacle held lovingly in her lap: valuing and nurturing resources."
+  - "Lush garden and roses: abundance, comfort and beauty."
+  - "Rabbit: fertility and a connection to nature."
+  - "Goat heads on the throne: practicality and hard-won stability."
+
+reflection:
+  - How am I taking care of my body and home?
+  - Am I giving care that I also need to receive?
+  - Where could I create more comfort in my life?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water of Earth
+  astrology: Late Sagittarius to mid Capricorn
+
+waite_1910:
+  upright: Opulence, generosity, magnificence, security, liberty.
+  reversed: Evil, suspicion, suspense, fear, mistrust.

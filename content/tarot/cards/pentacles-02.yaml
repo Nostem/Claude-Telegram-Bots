@@ -1,0 +1,62 @@
+id: pentacles-02
+name: Two of Pentacles
+arcana: minor
+suit: pentacles
+number: 2
+image: pentacles-02.jpg
+
+keywords:
+  upright: [juggling priorities, adaptability, balance, multitasking, flexibility]
+  reversed: [stretched thin, dropping the ball, disorganization, overcommitted, financial strain]
+
+short:
+  upright: You're juggling a lot and keeping it together. Stay flexible and keep your rhythm.
+  reversed: Too many balls in the air. Prioritize before something drops.
+
+meaning:
+  upright: >-
+    A young man in a tall hat dances while juggling two pentacles, joined by a ribbon that
+    loops like an infinity sign. Behind him, ships ride high waves. The Two of Pentacles
+    is about juggling: work and home, money and time, competing priorities. Life is moving
+    and you're keeping up, with some grace and even some fun. The card encourages you to
+    stay flexible and light on your feet. Keep an eye on the balance, adjust as things
+    shift, and don't forget to enjoy the dance.
+  reversed: >-
+    Reversed, the Two of Pentacles suggests the juggling act is slipping. You may be
+    overcommitted, disorganized, or stretched thin with money, time or energy. Small things
+    are starting to fall through the cracks. The card asks you to stop and look at
+    everything you're carrying. What really matters? What can wait, be shared, or be
+    dropped on purpose? Choosing what to let go of is much easier than having things fall
+    by accident. A simpler plan can bring your rhythm back.
+
+in_context:
+  love: Balancing a relationship with busy lives. Make time for each other.
+  work: Multitasking and shifting priorities. Stay organized and adaptable.
+  advice: Stay flexible, and keep your balance.
+
+symbolism:
+  - "Juggling two pentacles: balancing competing demands."
+  - "Infinity-shaped ribbon: the endless flow of give and take."
+  - "Dancing pose: handling challenges with lightness."
+  - "Ships on high waves: life's ups and downs going on around you."
+  - "Tall hat: playfulness and confidence."
+
+reflection:
+  - What am I juggling right now?
+  - What could I set down to keep my balance?
+  - How can I bring more lightness to a busy time?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Earth
+  astrology: Jupiter in Capricorn
+
+waite_1910:
+  upright: >-
+    On the one hand it is represented as a card of gaiety, recreation and its
+    connections, which is the subject of the design; but it is read also as news and
+    messages in writing, as obstacles, agitation, trouble, embroilment.
+  reversed: >-
+    Enforced gaiety, simulated enjoyment, literal sense, handwriting, composition, letters
+    of exchange.

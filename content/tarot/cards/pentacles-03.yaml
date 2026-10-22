@@ -1,0 +1,59 @@
+id: pentacles-03
+name: Three of Pentacles
+arcana: minor
+suit: pentacles
+number: 3
+image: pentacles-03.jpg
+
+keywords:
+  upright: [teamwork, collaboration, skill, building together, recognition of work]
+  reversed: [poor teamwork, misalignment, working alone, lack of effort, unclear roles]
+
+short:
+  upright: Good work happens together. Combine your skills with others to build something lasting.
+  reversed: The team isn't working well. Clarify roles, listen, and recommit to the shared goal.
+
+meaning:
+  upright: >-
+    A stonemason stands on a bench, carving an archway in a cathedral, while a monk and
+    a person holding building plans watch and discuss the work. Three pentacles are
+    carved into the arch above. The Three of Pentacles is about collaboration and skill.
+    Great things get built when people with different talents work together and respect
+    each other's expertise. It can point to teamwork, learning from mentors, or having your
+    skill recognized. The card encourages you to share ideas, ask for input and take
+    pride in good work.
+  reversed: >-
+    Reversed, the Three of Pentacles points to problems in teamwork. People may be
+    pulling in different directions, roles may be unclear, or someone may not be pulling
+    their weight. It can also show you trying to do everything alone, or not getting the
+    recognition your work deserves. The card asks you to improve communication: clarify
+    who does what, listen to other perspectives, and agree on the goal. Sometimes it also
+    asks you to raise the quality of your own effort. Solid work builds trust.
+
+in_context:
+  love: Building a relationship as a team. Respect each other's strengths.
+  work: Collaboration, apprenticeship or skilled work. Your expertise is valued.
+  advice: Build it together.
+
+symbolism:
+  - "Stonemason at work: skill and craftsmanship."
+  - "Monk and person with plans: different roles working toward one goal."
+  - "Cathedral archway: building something meaningful and lasting."
+  - "Three pentacles in the arch: shared effort turned into structure."
+
+reflection:
+  - Who could I collaborate with on something important?
+  - What skill of mine deserves more recognition, from me or others?
+  - Is everyone on my team clear about their role?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth
+  astrology: Mars in Capricorn
+
+waite_1910:
+  upright: >-
+    Métier, trade, skilled labour; usually, however, regarded as a card of nobility,
+    aristocracy, renown, glory.
+  reversed: Mediocrity, in work and otherwise, puerility, pettiness, weakness.

@@ -42,7 +42,7 @@ line on the card edge and must not be used.
 | The Devil | `major-15-the-devil.jpg` | [RWS1909 - 15 Devil.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_15_Devil.jpeg) | 1909 | Public domain | commons |
 | The Tower | `major-16-the-tower.jpg` | [RWS1909 - 16 Tower.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_16_Tower.jpeg) | 1909 | Public domain | commons |
 | The Star | `major-17-the-star.jpg` | [RWS1909 - 17 Star.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_17_Star.jpeg) | 1909 | Public domain | commons |
-| The Moon | `major-18-the-moon.jpg` | [RWS1909 - 18 Moon.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_18_Moon.jpeg) | 1909 | Public domain | fallback |
+| The Moon | `major-18-the-moon.jpg` | [RWS1909 - 18 Moon.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_18_Moon.jpeg) | 1909 | Public domain | commons |
 | The Sun | `major-19-the-sun.jpg` | [RWS1909 - 19 Sun.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_19_Sun.jpeg) | 1909 | Public domain | fallback |
 | Judgement | `major-20-judgement.jpg` | [RWS1909 - 20 Judgement.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_20_Judgement.jpeg) | 1909 | Public domain | fallback |
 | The World | `major-21-the-world.jpg` | [RWS1909 - 21 World.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_21_World.jpeg) | 1909 | Public domain | fallback |

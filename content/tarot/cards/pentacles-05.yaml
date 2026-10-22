@@ -1,0 +1,60 @@
+id: pentacles-05
+name: Five of Pentacles
+arcana: minor
+suit: pentacles
+number: 5
+image: pentacles-05.jpg
+
+keywords:
+  upright: [hardship, financial loss, feeling left out, worry, hard times]
+  reversed: [getting back on your feet, help arriving, improvement, accepting support, end of hardship]
+
+short:
+  upright: A hard time, with money, health or belonging. Help is closer than it seems; look for the light.
+  reversed: The worst is passing. Accept help and let things improve.
+
+meaning:
+  upright: >-
+    Two figures struggle through the snow, one on crutches and both wrapped in thin, worn
+    clothes. They pass a church window glowing with light, without looking up. The Five
+    of Pentacles is about hardship: money troubles, health worries, job loss or feeling
+    shut out. It can bring a sense of being left out in the cold. The card doesn't
+    pretend this is easy. But notice the lit window: help and warmth may be closer than
+    you think. Reach out, and let people in.
+  reversed: >-
+    Reversed, the Five of Pentacles suggests a hard time is beginning to ease. You might
+    be getting back on your feet financially, recovering from illness, or finding the
+    support you needed. It can mean finally accepting help after trying to struggle
+    through alone. Sometimes it shows a lingering sense of lack even after things have
+    improved. The card encourages you to notice the progress you've made and keep reaching
+    for support. You don't have to stay out in the snow, and asking for help is a strength.
+
+in_context:
+  love: Feeling left out or unsupported. Ask for what you need, and let others help.
+  work: Financial strain or job worries. Look for support and resources.
+  advice: Look up, and ask for help.
+
+symbolism:
+  - "Figures in the snow: hardship, cold and struggle."
+  - "Crutches and bandages: illness or injury."
+  - "Lit church window: help and shelter close at hand."
+  - "Five pentacles in the window: resources that aren't being seen."
+
+reflection:
+  - Where am I struggling right now?
+  - What help might be available that I haven't noticed?
+  - Who could I reach out to?
+
+yes_no: "No"
+
+correspondences:
+  element: Earth
+  astrology: Mercury in Taurus
+
+waite_1910:
+  upright: >-
+    The card foretells material trouble above all, whether in the form illustrated—that
+    is, destitution—or otherwise. For some cartomancists, it is a card of love and
+    lovers—wife, husband, friend, mistress; also concordance, affinities. These
+    alternatives cannot be harmonized.
+  reversed: Disorder, chaos, ruin, discord, profligacy.

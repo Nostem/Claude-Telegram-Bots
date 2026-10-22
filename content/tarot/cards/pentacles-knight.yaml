@@ -1,0 +1,61 @@
+id: pentacles-knight
+name: Knight of Pentacles
+arcana: minor
+suit: pentacles
+court: knight
+image: pentacles-knight.jpg
+
+keywords:
+  upright: [reliability, hard work, routine, steady progress, responsibility]
+  reversed: [boredom, being stuck in a rut, laziness, stubbornness, perfectionism]
+
+short:
+  upright: Slow and steady wins. Stay reliable, follow your routine and keep going.
+  reversed: Routine has become a rut. Shake things up without losing your reliability.
+
+meaning:
+  upright: >-
+    A knight sits on a heavy black horse that stands perfectly still in a plowed field,
+    holding up a pentacle and looking at it calmly. Unlike the other knights, he's not
+    rushing anywhere. The Knight of Pentacles is about steady, reliable effort: showing up,
+    doing the work and keeping your commitments. It may point to a dependable person, or
+    ask you to be one. The card encourages patience and consistency. Progress may be
+    slow, but it's solid, and it will get you exactly where you need to go.
+  reversed: >-
+    Reversed, the Knight of Pentacles suggests steadiness has turned into stagnation or
+    stubbornness. You might be stuck in a rut, bored with your routine, or resisting
+    change because the familiar feels safe. It can also show the opposite: losing focus,
+    being careless, or not following through. The card asks you to bring some fresh
+    energy into your routine while keeping your reliability. Small changes can make
+    steady work feel meaningful again. Consistency is valuable; inflexibility isn't. Try one new
+    approach this week and see what it changes.
+
+in_context:
+  love: A reliable, committed partner. Show love through consistency.
+  work: Steady work, routine and responsibility. Keep going; it's paying off.
+  advice: Be steady and dependable.
+
+symbolism:
+  - "Horse standing still: patience, caution and stability."
+  - "Pentacle held up: focus on practical goals."
+  - "Plowed field: hard work and preparation."
+  - "Heavy armor: endurance and protection."
+
+reflection:
+  - Where in my life does consistency matter most?
+  - Is my routine helping me or keeping me stuck?
+  - What small change could make my daily work feel fresh?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire of Earth
+  astrology: Late Leo to mid Virgo
+
+waite_1910:
+  upright: >-
+    Utility, serviceableness, interest, responsibility, rectitude—all on the normal and
+    external plane.
+  reversed: >-
+    Inertia, idleness, repose of that kind, stagnation; also placidity, discouragement,
+    carelessness.

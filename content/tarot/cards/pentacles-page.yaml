@@ -1,0 +1,58 @@
+id: pentacles-page
+name: Page of Pentacles
+arcana: minor
+suit: pentacles
+court: page
+image: pentacles-page.jpg
+
+keywords:
+  upright: [studiousness, new skills, ambition, practical beginnings, diligence]
+  reversed: [procrastination, lack of progress, unrealistic goals, missed lessons, laziness]
+
+short:
+  upright: A diligent student. Learn something practical and take the first steps toward a goal.
+  reversed: Big plans, little progress. Make your goal concrete and start small.
+
+meaning:
+  upright: >-
+    A young figure stands in a green field, holding up a pentacle and studying it closely,
+    with freshly plowed earth and trees nearby. The Page of Pentacles is about practical
+    beginnings: learning a new skill, starting a course, a new job, or the first steps
+    toward a financial goal. It's steady and focused rather than flashy. It may represent
+    a diligent, grounded person in your life. The card encourages you to commit to
+    learning and to take the slow, practical steps that turn dreams into reality.
+  reversed: >-
+    Reversed, the Page of Pentacles suggests a plan that isn't getting off the ground.
+    You might be procrastinating, unsure where to start, or dreaming about goals without
+    making a plan. It can also show a lack of follow-through, or learning that never
+    gets applied. The card asks you to make your goals concrete and manageable. What is
+    one small, practical step you can take today? Progress, even slow progress, builds
+    confidence, and confidence makes the next step easier.
+    Start where you are.
+
+in_context:
+  love: A slow, steady, sincere start. Show your feelings through reliable actions.
+  work: A new job, training or practical goal. Be diligent and keep learning.
+  advice: Learn something practical, and start small.
+
+symbolism:
+  - "Pentacle held up and studied: focus on a goal or opportunity."
+  - "Green field: fertile ground for growth."
+  - "Plowed earth: preparation and hard work ahead."
+  - "Slow, careful stance: a patient approach."
+
+reflection:
+  - What practical skill do I want to learn?
+  - What concrete step would move my goal forward?
+  - Where am I dreaming instead of doing?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth of Earth
+
+waite_1910:
+  upright: >-
+    Application, study, scholarship, reflection; another reading says news, messages and
+    the bringer thereof; also rule, management.
+  reversed: Prodigality, dissipation, liberality, luxury, unfavourable news.
