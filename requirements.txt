@@ -1,0 +1,4 @@
+python-telegram-bot==22.5
+PyYAML==6.0.3
+Pillow==12.3.0
+tzdata==2025.2

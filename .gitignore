@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 content/tarot/images/raw/
 .cache/
+data/
+.pytest_cache/
