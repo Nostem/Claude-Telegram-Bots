@@ -1,0 +1,60 @@
+id: cups-04
+name: Four of Cups
+arcana: minor
+suit: cups
+number: 4
+image: cups-04.jpg
+
+keywords:
+  upright: [apathy, contemplation, discontent, missed opportunity, withdrawal]
+  reversed: [renewed interest, acceptance, moving on, new motivation, seizing chances]
+
+short:
+  upright: You're turned inward and unimpressed. Look up; something good is being offered.
+  reversed: The fog is lifting. You're ready to re-engage and say yes to something new.
+
+meaning:
+  upright: >-
+    A young man sits under a tree with his arms crossed, staring at three cups in front of
+    him. He doesn't notice a hand reaching out of a cloud to offer a fourth. The Four of
+    Cups is about feeling flat, bored or dissatisfied, even when there's nothing obviously
+    wrong. Sometimes this inward time is useful: you're reflecting, reassessing what
+    really matters. But the card also warns that you might be so focused on what's
+    missing that you overlook an opportunity right in front of you. Look up and take
+    another look around.
+  reversed: >-
+    Reversed, the Four of Cups shows the moment you start paying attention again. A period
+    of apathy or withdrawal is ending, and you're ready to accept what's on offer, or to
+    go looking for something new. It can also mean finally letting go of something that
+    stopped fulfilling you a long time ago. Sometimes the reversal warns that a funk is
+    deepening. If so, small steps help: a walk, a call to a friend, one thing you used to
+    enjoy. Motivation often follows action, not the other way around.
+
+in_context:
+  love: Feeling bored or unsure about a relationship. Don't overlook the love already offered to you.
+  work: Lack of motivation, or overlooking a good opportunity. Reassess what you actually want.
+  advice: Look up. Notice what's being offered.
+
+symbolism:
+  - "Crossed arms: closing off and refusing what's offered."
+  - "Three cups on the ground: what he already has, and is tired of."
+  - "Hand offering a fourth cup: a new opportunity he doesn't see."
+  - "Sitting under a tree: retreat, contemplation and stillness."
+
+reflection:
+  - What am I taking for granted right now?
+  - Is there an opportunity I've been ignoring?
+  - Am I resting and reflecting, or just stuck?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Water
+  astrology: Moon in Cancer
+
+waite_1910:
+  upright: >-
+    Weariness, disgust, aversion, imaginary vexations, as if the wine of this world had
+    caused satiety only; another wine, as if a fairy gift, is now offered the wastrel, but
+    he sees no consolation therein. This is also a card of blended pleasure.
+  reversed: Novelty, presage, new instruction, new relations.

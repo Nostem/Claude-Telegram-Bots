@@ -1,0 +1,61 @@
+id: cups-03
+name: Three of Cups
+arcana: minor
+suit: cups
+number: 3
+image: cups-03.jpg
+
+keywords:
+  upright: [friendship, celebration, community, joy, reunion]
+  reversed: [overindulgence, gossip, isolation, third-party trouble, cancelled plans]
+
+short:
+  upright: Celebrate with the people who lift you up. Friendship, community and good times.
+  reversed: The party has tipped into excess, drama or isolation. Check in with your circle.
+
+meaning:
+  upright: >-
+    Three women dance in a circle, raising their cups toward each other, with ripe fruit
+    and flowers at their feet. The Three of Cups is a card of friendship and celebration.
+    It can point to a party, a wedding, a reunion or simply a joyful time with people who
+    get you. It's also about community: the support of a group that celebrates your wins
+    and holds you through the hard times. This card reminds you that joy grows when it's
+    shared. Make time for your people, and let yourself enjoy it.
+  reversed: >-
+    Reversed, the celebration loses its balance. You might be overindulging, whether in
+    drinking, partying or keeping busy to avoid something. It can point to gossip, a
+    falling-out within a friend group, or a third person complicating a relationship.
+    Sometimes it shows the opposite: feeling left out, isolated or disconnected from
+    your community. Ask what's really going on in your circle, and whether you're showing
+    up as the friend you'd want to have. Healthy friendships should leave you feeling
+    lighter, not drained.
+
+in_context:
+  love: Fun, flirtation and celebrating together. Watch out for a third party complicating things.
+  work: Teamwork, shared wins and good collaboration. Celebrate progress together.
+  advice: Gather your people and celebrate something.
+
+symbolism:
+  - "Three women dancing in a circle: friendship and mutual support."
+  - "Raised cups: a toast to shared joy."
+  - "Fruit and flowers at their feet: abundance and harvest."
+  - "Flower crowns: celebration and festivity."
+
+reflection:
+  - Who are the people who lift me up?
+  - What deserves celebrating in my life right now?
+  - Is there a friendship that needs attention or honesty?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water
+  astrology: Mercury in Cancer
+
+waite_1910:
+  upright: >-
+    The conclusion of any matter in plenty, perfection and merriment; happy issue,
+    victory, fulfilment, solace, healing.
+  reversed: >-
+    Expedition, dispatch, achievement, end. It signifies also the side of excess in
+    physical enjoyment, and the pleasures of the senses.

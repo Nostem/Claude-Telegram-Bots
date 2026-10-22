@@ -1,0 +1,60 @@
+id: cups-06
+name: Six of Cups
+arcana: minor
+suit: cups
+number: 6
+image: cups-06.jpg
+
+keywords:
+  upright: [nostalgia, childhood memories, innocence, kindness, reunion with the past]
+  reversed: [stuck in the past, idealizing memories, moving forward, outgrowing, leaving home]
+
+short:
+  upright: Sweet memories and simple kindness. The past offers comfort, or someone from it returns.
+  reversed: Looking back too much keeps you from moving forward. Honor the past, then let it go.
+
+meaning:
+  upright: >-
+    In an old village courtyard, a child offers another child a cup filled with white
+    flowers. The Six of Cups is a card of nostalgia, memories and innocence. It may point
+    to happy childhood memories, a visit to an old place, or someone from your past
+    coming back into your life. It's also about simple kindness and generosity, giving
+    without expecting anything back. This card invites you to reconnect with the playful,
+    open-hearted part of yourself. What did you love before life got complicated?
+  reversed: >-
+    Reversed, the Six of Cups suggests you may be holding on to the past too tightly.
+    You might be idealizing how things used to be, or comparing the present to memories
+    that look rosier than they really were. It can also show you outgrowing old patterns,
+    places or relationships, and that's a healthy thing. The card asks you to keep the
+    lessons and warmth of the past, but live in the present. Nostalgia is a lovely place
+    to visit, but not a place to stay.
+
+in_context:
+  love: An old flame, sweet affection or a gentle, innocent connection. Enjoy simple tenderness.
+  work: Returning to an old skill or passion, or a kind, supportive work environment.
+  advice: Reconnect with what you loved as a child.
+
+symbolism:
+  - "Child offering a cup of flowers: innocent kindness and giving freely."
+  - "White flowers: purity and good intentions."
+  - "Old village courtyard: the past, home and familiar places."
+  - "Figure walking away in the background: time passing."
+
+reflection:
+  - What did I love doing as a child?
+  - Is there someone from my past I've been thinking about?
+  - Am I learning from the past, or living in it?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water
+  astrology: Sun in Scorpio
+
+waite_1910:
+  upright: >-
+    A card of the past and of memories, looking back, as—for example—on childhood;
+    happiness, enjoyment, but coming rather from the past; things that have vanished.
+    Another reading reverses this, giving new relations, new knowledge, new environment,
+    and then the children are disporting in an unfamiliar precinct.
+  reversed: The future, renewal, that which will come to pass presently.

@@ -1,0 +1,62 @@
+id: cups-09
+name: Nine of Cups
+arcana: minor
+suit: cups
+number: 9
+image: cups-09.jpg
+
+keywords:
+  upright: [contentment, wishes fulfilled, satisfaction, gratitude, pleasure]
+  reversed: [smugness, dissatisfaction, materialism, unmet wishes, indulgence]
+
+short:
+  upright: The wish card. Satisfaction and contentment are within reach, so enjoy them.
+  reversed: You have plenty, but it doesn't feel like enough. Look for what would truly satisfy you.
+
+meaning:
+  upright: >-
+    A well-fed man sits contentedly with his arms crossed, nine cups lined up on a
+    curved table behind him. Often called the "wish card," the Nine of Cups brings
+    satisfaction, comfort and the feeling that things have worked out. It can point to
+    a wish coming true, a goal reached, or simply a time of enjoying life's pleasures.
+    It's a good moment for gratitude: noticing what you have and letting yourself enjoy
+    it without guilt. Celebrate how far you've come, and share your good fortune if you
+    can.
+  reversed: >-
+    Reversed, the Nine of Cups suggests that contentment is missing or a little hollow.
+    You might have what you thought you wanted, yet still feel unsatisfied. It can point
+    to overindulgence, valuing appearances over real happiness, or becoming smug. It can
+    also show a wish that hasn't come true yet. The card invites you to ask what truly
+    satisfies you, beyond things and status. Sometimes the answer is connection, purpose
+    or simply rest, rather than more of anything. Enough can be a wonderful place to
+    stand.
+
+in_context:
+  love: Happiness and satisfaction in love. A wish for a relationship may come true.
+  work: Success and a sense of accomplishment. Enjoy the rewards of your work.
+  advice: Count your blessings and enjoy them.
+
+symbolism:
+  - "Man seated with arms crossed: contentment and pride in what he has."
+  - "Nine cups lined up: a complete and abundant collection."
+  - "Curved table with a blue cloth: a secure, comfortable life."
+  - "Satisfied smile: pleasure and fulfillment."
+
+reflection:
+  - What wish has already come true for me?
+  - What am I grateful for right now?
+  - What would truly satisfy me, beyond more things?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water
+  astrology: Jupiter in Pisces
+
+waite_1910:
+  upright: >-
+    Concord, contentment, physical bien-être; also victory, success, advantage;
+    satisfaction for the Querent or person for whom the consultation is made.
+  reversed: >-
+    Truth, loyalty, liberty; but the readings vary and include mistakes, imperfections,
+    etc.

@@ -1,0 +1,62 @@
+id: cups-07
+name: Seven of Cups
+arcana: minor
+suit: cups
+number: 7
+image: cups-07.jpg
+
+keywords:
+  upright: [choices, fantasy, wishful thinking, illusion, daydreaming]
+  reversed: [clarity, decisiveness, reality check, focus, sobering up]
+
+short:
+  upright: Too many options, and not all of them are real. Separate dreams from what's achievable.
+  reversed: The fog is clearing. You're ready to choose one path and commit to it.
+
+meaning:
+  upright: >-
+    A figure in silhouette stares at seven cups floating in the clouds, each holding
+    something different: a castle, jewels, a wreath, a dragon, a snake, a face and a
+    veiled glowing figure. The Seven of Cups is about choices and imagination. You may
+    have many options, or many daydreams, but some of them are illusions. It's easy to
+    get lost in "what if" and never decide. This card asks you to look closely at each
+    possibility. Which ones are real, and which are wishful thinking? Pick one and take a
+    concrete step toward it.
+  reversed: >-
+    Reversed, the Seven of Cups often shows clarity arriving. The fantasies are fading,
+    and you can see which options are real. You may be ready to make a decision, focus
+    your energy, or let go of a dream that was never really yours. Sometimes it's a
+    reality check: something that looked perfect turns out not to be. That can feel
+    disappointing, but it frees you to put your energy into something solid. Decide what
+    matters most, and go after that.
+
+in_context:
+  love: Many options, or idealizing someone. Look at the real person, not the fantasy.
+  work: Too many ideas and no clear direction. Prioritize and commit to one plan.
+  advice: Choose one dream and make it real.
+
+symbolism:
+  - "Seven cups in the clouds: many choices, floating in the realm of imagination."
+  - "Castle: security and ambition."
+  - "Jewels: wealth and material desires."
+  - "Laurel wreath: success and recognition."
+  - "Snake and dragon: temptation and fear hiding among the choices."
+  - "Glowing veiled figure: a spiritual path, or a mystery yet to be revealed."
+
+reflection:
+  - Which of my options are real, and which are fantasy?
+  - What would I choose if I could only pick one?
+  - Am I using daydreams to avoid deciding?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Water
+  astrology: Venus in Scorpio
+
+waite_1910:
+  upright: >-
+    Fairy favours, images of reflection, sentiment, imagination, things seen in the glass
+    of contemplation; some attainment in these degrees, but nothing permanent or
+    substantial is suggested.
+  reversed: Desire, will, determination, project.

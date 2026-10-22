@@ -1,0 +1,60 @@
+id: cups-01
+name: Ace of Cups
+arcana: minor
+suit: cups
+number: 1
+image: cups-01.jpg
+
+keywords:
+  upright: [new love, emotional renewal, compassion, open heart, overflowing feelings]
+  reversed: [blocked emotions, emptiness, self-love needed, repressed feelings, closed heart]
+
+short:
+  upright: A fresh start for the heart. Love, kindness or joy is overflowing; let it in.
+  reversed: Your feelings are bottled up or running low. Start by filling your own cup.
+
+meaning:
+  upright: >-
+    A hand reaches out of a cloud holding a cup that overflows into a pond of water
+    lilies, while a dove descends toward it. The Ace of Cups is the beginning of
+    something emotional: new love, a deepening friendship, a creative spark, or simply a
+    heart that feels open again. It can also point to compassion, forgiveness or a
+    spiritual experience that leaves you feeling full. Aces are offers, and this one is an
+    offer of feeling. Notice where love is reaching toward you, and let yourself receive
+    it.
+  reversed: >-
+    Reversed, the cup tips over and its contents are lost, or it stays sealed. You may be
+    holding feelings in, feeling emotionally drained, or struggling to let love in after
+    being hurt. Sometimes it points to giving so much to others that your own cup is
+    empty. The card invites you to begin with yourself: rest, honest feelings, small
+    acts of self-care. Love that starts within has somewhere to flow from. Let yourself
+    feel what you feel, without judging it.
+
+in_context:
+  love: A new relationship, or new tenderness in an existing one. Open your heart.
+  work: Creative inspiration, or work that feels meaningful. Lead with care.
+  advice: Let love in, starting with love for yourself.
+
+symbolism:
+  - "Hand from a cloud: a gift being offered."
+  - "Overflowing cup: emotions and love more than enough to share."
+  - "Dove with a wafer: peace and spiritual blessing."
+  - "Five streams of water: feeling flowing to all the senses."
+  - "Water lilies on the pond: emotional depth and beauty rising from it."
+
+reflection:
+  - Where is love or kindness being offered to me right now?
+  - What feelings have I been holding back?
+  - How can I fill my own cup today?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water
+  astrology: Root of the powers of Water
+
+waite_1910:
+  upright: >-
+    House of the true heart, joy, content, abode, nourishment, abundance, fertility; Holy
+    Table, felicity hereof.
+  reversed: House of the false heart, mutation, instability, revolution.

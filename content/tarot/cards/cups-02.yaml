@@ -1,0 +1,63 @@
+id: cups-02
+name: Two of Cups
+arcana: minor
+suit: cups
+number: 2
+image: cups-02.jpg
+
+keywords:
+  upright: [partnership, mutual attraction, unity, respect, harmony]
+  reversed: [one-sidedness, broken connection, mistrust, separation, misunderstanding]
+
+short:
+  upright: A meaningful bond between two people. Mutual respect, attraction and care.
+  reversed: A connection is out of balance or strained. Talk honestly to restore it.
+
+meaning:
+  upright: >-
+    Two people face each other and exchange cups, while above them a winged lion's head
+    rises from a staff entwined by two snakes. The Two of Cups is about connection between
+    equals: romance, a close friendship, a business partnership or a reconciliation. What
+    makes it special is the balance. Each person gives and receives, sees the other
+    clearly, and chooses them anyway. This card often marks the start of a meaningful
+    relationship, or a moment of real understanding with someone. Value it, and keep
+    showing up for it.
+  reversed: >-
+    Reversed, the exchange between the two cups is uneven. A relationship might feel
+    one-sided, tense, or quietly drifting apart. There may be a misunderstanding, broken
+    trust, or a mismatch in what each person wants. Sometimes the imbalance is internal:
+    you may be at odds with yourself, wanting closeness but not trusting it. The card
+    asks for honesty and curiosity rather than blame. What does each side need? A calm,
+    open conversation can often bring the cups level again, even if it starts with
+    one small admission.
+
+in_context:
+  love: Attraction, a new romance or a deepening bond. The feeling is mutual.
+  work: A strong partnership or collaboration. Find people who share your values.
+  advice: Meet others as equals and give as much as you receive.
+
+symbolism:
+  - "Two figures exchanging cups: a mutual promise and equal exchange."
+  - "Staff with two snakes: healing and balance between two people."
+  - "Winged lion's head: passion lifted into something higher."
+  - "Garlands on their heads: celebration of the bond."
+  - "House on the hill: a shared home or future together."
+
+reflection:
+  - Which relationship in my life feels truly mutual?
+  - Where am I giving much more, or much less, than I receive?
+  - What would help me connect more honestly with someone?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water
+  astrology: Venus in Cancer
+
+waite_1910:
+  upright: >-
+    Love, passion, friendship, affinity, union, concord, sympathy, the inter-relation of
+    the sexes, and—as a suggestion apart from all offices of divination—that desire which
+    is not in Nature, but by which Nature is sanctified.
+  # Waite gives no reversed meaning in his main list; this is from his "Additional Meanings".
+  reversed: Passion.

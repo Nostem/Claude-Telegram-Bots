@@ -1,0 +1,63 @@
+id: cups-08
+name: Eight of Cups
+arcana: minor
+suit: cups
+number: 8
+image: cups-08.jpg
+
+keywords:
+  upright: [walking away, seeking more, disappointment, letting go, searching]
+  reversed: [fear of leaving, staying too long, aimless drifting, avoidance, returning]
+
+short:
+  upright: It's time to walk away from what no longer fulfills you and seek something deeper.
+  reversed: You know something isn't right, but you're afraid to leave. Be honest about why.
+
+meaning:
+  upright: >-
+    Under a moon, a figure with a walking staff turns away from eight neatly stacked cups
+    and heads toward the mountains. The Eight of Cups is about leaving something behind,
+    not because it's terrible, but because it no longer fulfills you. It might be a job,
+    a relationship, a habit or a way of living. Notice the gap in the stacked cups:
+    something is missing, and the traveler has decided to go find it. This kind of
+    leaving takes courage. It's a search for meaning, and it's often the start of
+    something truer.
+  reversed: >-
+    Reversed, the Eight of Cups can show hesitation. You may know a situation isn't
+    working but feel too afraid, comfortable or guilty to leave. You might keep walking
+    away and coming back, unable to commit to either. Sometimes it shows aimless
+    drifting: leaving things without a clear sense of what you're looking for. The card
+    asks for honesty. What are you really searching for? If it can't be found here,
+    gather your courage. If it can, maybe it's time to recommit and stop looking
+    elsewhere.
+
+in_context:
+  love: Leaving a relationship that no longer fulfills you, or wanting more emotional depth.
+  work: Moving on from a job or path that feels empty, to look for real meaning.
+  advice: Walk away from what no longer fills you up.
+
+symbolism:
+  - "Figure walking away: choosing to leave the familiar behind."
+  - "Eight stacked cups with a gap: something important is missing."
+  - "Moon in eclipse: a turning point and a time of reflection."
+  - "Walking staff: a long journey and self-reliance."
+  - "Rocky mountains: a hard but meaningful road ahead."
+
+reflection:
+  - What in my life no longer fulfills me?
+  - What am I really searching for?
+  - What makes it hard for me to walk away?
+
+yes_no: "No"
+
+correspondences:
+  element: Water
+  astrology: Saturn in Pisces
+
+waite_1910:
+  upright: >-
+    The card speaks for itself on the surface, but other readings are entirely
+    antithetical—giving joy, mildness, timidity, honour, modesty. In practice, it is
+    usually found that the card shews the decline of a matter, or that a matter which has
+    been thought to be important is really of slight consequence—either for good or evil.
+  reversed: Great joy, happiness, feasting.

@@ -1,0 +1,61 @@
+id: cups-05
+name: Five of Cups
+arcana: minor
+suit: cups
+number: 5
+image: cups-05.jpg
+
+keywords:
+  upright: [loss, regret, disappointment, grieving, focusing on the negative]
+  reversed: [acceptance, healing, forgiveness, moving forward, finding what remains]
+
+short:
+  upright: Something has been lost and it hurts. Grieve it, then notice what's still standing.
+  reversed: You're beginning to heal and accept the loss. Turn around; there's still a way forward.
+
+meaning:
+  upright: >-
+    A figure in a black cloak stands with head bowed over three spilled cups. Behind them,
+    two cups still stand, and a bridge leads across the river to a house. The Five of
+    Cups is about loss, disappointment and regret: a plan that failed, a relationship that
+    ended, a mistake you keep replaying. The grief is real and deserves time. But the card
+    also gently points out that not everything is gone. When you're ready, turn around
+    and look at what remains. There is still something to carry forward.
+  reversed: >-
+    Reversed, the Five of Cups suggests you're starting to come to terms with a loss. You
+    might be forgiving yourself or someone else, accepting what happened, or noticing the
+    cups that are still standing. Healing is underway, even if it isn't finished. It can
+    also point to a reunion, or a return to something you thought was gone. If you're still
+    deep in regret, the card encourages you to talk about it and take one small step
+    toward the bridge.
+
+in_context:
+  love: Heartache, regret or disappointment. Grieve, but don't overlook the love that remains.
+  work: A setback or failed plan. Learn from it, then look at the options still open to you.
+  advice: Feel the loss, then turn toward what remains.
+
+symbolism:
+  - "Three spilled cups: what has been lost or wasted."
+  - "Two standing cups: what remains, unnoticed for now."
+  - "Black cloak and bowed head: mourning and sorrow."
+  - "River: the emotions that must be crossed."
+  - "Bridge leading to a house: the path to healing and home."
+
+reflection:
+  - What loss am I still grieving?
+  - What do I still have that I've been overlooking?
+  - What would help me take the first step toward healing?
+
+yes_no: "No"
+
+correspondences:
+  element: Water
+  astrology: Mars in Scorpio
+
+waite_1910:
+  upright: >-
+    It is a card of loss, but something remains over; three have been taken, but two are
+    left; it is a card of inheritance, patrimony, transmission, but not corresponding to
+    expectations; with some interpreters it is a card of marriage, but not without
+    bitterness or frustration.
+  reversed: News, alliances, affinity, consanguinity, ancestry, return, false projects.

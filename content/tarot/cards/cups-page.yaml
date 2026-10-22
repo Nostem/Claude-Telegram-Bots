@@ -1,0 +1,59 @@
+id: cups-page
+name: Page of Cups
+arcana: minor
+suit: cups
+court: page
+image: cups-page.jpg
+
+keywords:
+  upright: [curiosity, creative beginnings, sensitivity, intuitive messages, playfulness]
+  reversed: [emotional immaturity, creative block, insecurity, escapism, oversensitivity]
+
+short:
+  upright: A sweet surprise or creative idea. Stay curious and open to unexpected feelings.
+  reversed: Feelings are raw or immature. Be gentle with yourself and grounded in reality.
+
+meaning:
+  upright: >-
+    A young page in a flowered tunic stands by the sea, holding up a cup and looking at
+    a fish that has popped out of it. The Page of Cups is playful, imaginative and
+    emotionally open. It can point to a creative idea, a surprising message, a new
+    feeling, or an intuitive nudge that doesn't quite make sense yet. It may also
+    represent someone in your life who is gentle, dreamy or sensitive. The card
+    encourages you to approach your feelings and creativity with curiosity rather than
+    judgment. Let yourself be surprised.
+  reversed: >-
+    Reversed, the Page of Cups suggests emotions are getting the better of you. You may be
+    taking things too personally, sulking, or retreating into daydreams to avoid real
+    life. It can also show creative block, or insecurity about sharing your ideas or
+    feelings. The card asks you to be gentle with yourself without indulging every mood.
+    Notice what you're feeling, name it, and choose how to respond. Your sensitivity is a
+    gift when it's balanced with groundedness, and with a little patience for yourself.
+
+in_context:
+  love: A sweet message, a crush or a new romantic feeling. Be open and genuine.
+  work: Creative ideas and fresh inspiration. Try something imaginative.
+  advice: Follow your curiosity and your heart.
+
+symbolism:
+  - "Fish rising from the cup: an unexpected idea or message from the imagination."
+  - "Flowered tunic: creativity and a gentle nature."
+  - "Sea behind the page: deep emotions and the subconscious."
+  - "Playful pose: openness and curiosity."
+
+reflection:
+  - What creative idea or feeling is trying to get my attention?
+  - Where could I be more playful?
+  - Am I taking something too personally?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth of Water
+
+waite_1910:
+  upright: >-
+    Fair young man, one impelled to render service and with whom the Querent will be
+    connected; a studious youth; news, message; application, reflection, meditation; also
+    these things directed to business.
+  reversed: Taste, inclination, attachment, seduction, deception, artifice.

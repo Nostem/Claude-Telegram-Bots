@@ -1,0 +1,62 @@
+id: cups-10
+name: Ten of Cups
+arcana: minor
+suit: cups
+number: 10
+image: cups-10.jpg
+
+keywords:
+  upright: [happy family, emotional fulfillment, harmony, home, lasting love]
+  reversed: [family tension, broken harmony, unrealistic ideals, disconnection, misaligned values]
+
+short:
+  upright: Deep happiness, harmony at home and lasting love. A dream of belonging comes true.
+  reversed: Harmony at home is strained. Let go of the perfect picture and reconnect honestly.
+
+meaning:
+  upright: >-
+    A couple stands with their arms raised toward a rainbow of ten cups, while two
+    children dance happily beside them and a home sits in the distance. The Ten of Cups
+    is the card of emotional fulfillment: a loving family, a happy home, a sense of
+    belonging. "Family" can mean any group of people who love and support you. This card
+    often appears when relationships feel harmonious, or as a reminder of what truly
+    matters. Notice the love around you, and nurture it. This kind of happiness is built
+    and kept through care.
+  reversed: >-
+    Reversed, the Ten of Cups suggests tension at home or in close relationships. Family
+    members may be out of sync, communication may be breaking down, or values may no
+    longer line up. Sometimes the problem is an ideal of the perfect family or
+    relationship that real life can't match. The card invites you to drop the picture of
+    how things "should" look and reconnect with how things actually are. Real harmony
+    includes imperfection, honesty and a willingness to repair, again and again.
+
+in_context:
+  love: Long-term happiness, commitment or family life. A relationship that feels like home.
+  work: A happy, supportive team, or work that fits well with your home life.
+  advice: Invest in the people who feel like home.
+
+symbolism:
+  - "Rainbow of cups: blessings, and promises kept."
+  - "Couple with arms raised: shared gratitude and joy."
+  - "Dancing children: carefree happiness passed to the next generation."
+  - "House in the distance: home, security and belonging."
+  - "Flowing river: emotions moving freely and peacefully."
+
+reflection:
+  - Who feels like home to me?
+  - What makes my relationships feel harmonious?
+  - Am I holding on to a "perfect" picture that isn't real?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Water
+  astrology: Mars in Pisces
+
+waite_1910:
+  upright: >-
+    Contentment, repose of the entire heart; the perfection of that state; also perfection
+    of human love and friendship; if with several picture-cards, a person who is taking
+    charge of the Querent's interests; also the town, village or country inhabited by the
+    Querent.
+  reversed: Repose of the false heart, indignation, violence.

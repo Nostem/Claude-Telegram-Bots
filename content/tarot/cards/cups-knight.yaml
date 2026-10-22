@@ -1,0 +1,58 @@
+id: cups-knight
+name: Knight of Cups
+arcana: minor
+suit: cups
+court: knight
+image: cups-knight.jpg
+
+keywords:
+  upright: [romance, charm, invitations, following your heart, idealism]
+  reversed: [moodiness, unrealistic expectations, jealousy, empty promises, disappointment]
+
+short:
+  upright: An offer of love or inspiration arrives. Follow your heart, with grace.
+  reversed: Charm without substance, or moods driving decisions. Check if promises are real.
+
+meaning:
+  upright: >-
+    A knight in armor rides a white horse slowly forward, holding out a cup as if
+    offering it. Unlike other knights, he isn't charging into battle: he's calm, romantic
+    and guided by feeling. The Knight of Cups can point to an invitation, a proposal, a
+    romantic gesture or a creative opportunity coming your way. It may represent someone
+    charming and idealistic, or your own wish to follow your heart. This card encourages
+    you to act on your feelings and values, gracefully and sincerely.
+  reversed: >-
+    Reversed, the Knight of Cups can show feelings getting out of balance. You might meet
+    someone charming whose promises don't hold up, or you might be the one getting
+    carried away by moods and fantasies. It can also point to jealousy, sulking, or
+    disappointment when reality doesn't match the dream. The card asks you to look at
+    actions, not just words, in others and in yourself. Romance and idealism are
+    wonderful, but they need honesty and steady follow-through to last over time.
+
+in_context:
+  love: Romance, an invitation or a heartfelt gesture. Someone may be ready to show their feelings.
+  work: A creative offer or a role that matches your passions. Follow your inspiration.
+  advice: Follow your heart, and follow through.
+
+symbolism:
+  - "Cup held forward: an offer, an invitation or a message of love."
+  - "White horse walking slowly: gentle, purposeful action."
+  - "Winged helmet and heels: imagination and inspiration."
+  - "River and mountains: crossing emotions toward a goal."
+
+reflection:
+  - What does my heart want me to pursue?
+  - Am I acting on feelings, or just dreaming about them?
+  - Do the promises in my life match the actions?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire of Water
+  astrology: Late Aquarius to mid Pisces
+
+waite_1910:
+  upright: >-
+    Arrival, approach—sometimes that of a messenger; advances, proposition, demeanour,
+    invitation, incitement.
+  reversed: Trickery, artifice, subtlety, swindling, duplicity, fraud.
