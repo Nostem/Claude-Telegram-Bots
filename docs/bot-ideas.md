@@ -1,8 +1,8 @@
 # Bot Ideas
 
 A product line of paid Telegram bots on spiritual and metaphysical topics. They all share
-one core engine: payments (Telegram Stars), scheduling, journal, export and timezone
-handling. Each new bot is mostly new content on top of that engine.
+one core engine: payments (Telegram Stars), scheduling, journal, export, timezone
+handling and feedback. Each new bot is mostly new content on top of that engine.
 
 The tarot bot is the first product.
 
@@ -29,6 +29,9 @@ Sell each bot on its own, plus an **all-access bundle** at a discount.
   the journal, export, schedules and spreads.
 - **AI:** not included for now. It may come later as an optional paid add-on, priced
   separately so lifetime buyers don't create ongoing costs.
+- **Feedback:** built into every bot with `/feedback`. Anyone can report bugs; Lifetime
+  users can also send ideas and card feedback. Messages arrive in a private Telegram group,
+  and replies go back through the bot. Details in `docs/tarot-bot-spec.md`, section 14.
 - **Marketing:** start with Reddit and Twitter/X posts, then rely on word of mouth.
   Inline mode (`@bot card name` in any chat) helps spread the bot naturally.
 

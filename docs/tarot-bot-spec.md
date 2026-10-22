@@ -33,6 +33,8 @@ Status: draft for discussion. Items marked **[DECIDE]** need a decision.
 | Learn mode (flashcards and quizzes) | 5 questions a day | Unlimited |
 | Export | CSV, all data | CSV, Markdown, JSON, PDF |
 | Delete all data | ✅ | ✅ |
+| Report a bug (`/feedback`) | ✅ | ✅ |
+| Ideas, requests and card feedback (`/feedback`, **Report** button) | — | ✅ |
 
 \* A cap of about 10 schedules per user prevents abuse.
 
@@ -62,6 +64,7 @@ is never held back to make them pay.
 | `/delete_my_data` | Delete everything, after a confirmation |
 | `/help` | Help |
 | `/terms`, `/paysupport` | Terms and payment support. Telegram requires these for bots that take payments |
+| `/feedback` | Send feedback. Free users can report bugs; Lifetime users can also send ideas and card feedback |
 
 ## 4. Card content
 
@@ -80,6 +83,7 @@ in plain modern language.
 
 Display: the card message shows the image and the short meaning first. A **More** button
 expands to the full meaning, symbolism and reflection questions. This keeps chats tidy.
+The full view ends with a **Report** button for Lifetime users (see section 14).
 
 ## 5. Draws and spreads
 
@@ -175,13 +179,55 @@ The bot sends the file in chat. Filters: all data, or a date range.
   The bot refunds the Stars and removes the unlock.
 - Later: an all-access bundle that unlocks every bot in the product line.
 
-## 14. Privacy and data
+## 14. Feedback
 
-- Data stored: Telegram user ID, settings, journal and schedules. Nothing else.
+Part of the shared engine, so every bot in the product line gets it.
+
+**Who can send what**
+- **Everyone:** 🐞 *Something's broken* through `/feedback`, plus `/paysupport` for payment
+  problems. A bug that blocks a free user also stops them from upgrading.
+- **Lifetime:** also 💡 *Idea or request*, 🃏 *Card content* (a typo, or a meaning they
+  disagree with) and 💬 *Other*.
+
+**Sending**
+1. `/feedback`, or **💬 Feedback** in the menu.
+2. Choose a type (free users skip this step, since only bug reports are open to them).
+3. Write a message; a screenshot is optional.
+4. The bot confirms: "Thanks, we read every one of these."
+
+**Report button:** every card's full view ends with "Something wrong with this card?" for
+Lifetime users. It opens *Card content* feedback with the card already filled in.
+
+**Two-week check-in:** 14 days after buying Lifetime, the bot asks once: "How's it going?
+Anything you wish it did?" The answer goes in as feedback. It is never repeated.
+
+**Where it goes**
+- Each message is forwarded to a **private Telegram group for the owner**, with the
+  user's feedback type, bot settings, and how long they've had Lifetime. No names or
+  usernames.
+- **Replying:** the owner replies to the forwarded message in the group, and the bot sends
+  the reply to the user. The owner's personal account is never shown.
+- Everything is also saved in the database (type, card, text, status: new, planned, done
+  or won't do), so requests can be counted and tracked.
+
+**Closing the loop**
+- When feedback is marked *done*, the bot can tell the user who sent it: "You asked for X.
+  It's live now. Thank you!"
+- Each update comes with a short **What's new** message that mentions changes made from
+  feedback. Users can turn these messages off in `/settings`.
+
+**Safeguards**
+- Up to 5 feedback messages per user per day.
+- `/delete_my_data` deletes feedback too.
+- The privacy page says feedback is read by a person and used only to improve the bot.
+
+## 15. Privacy and data
+
+- Data stored: Telegram user ID, settings, journal, schedules and feedback. Nothing else.
 - `/delete_my_data` deletes everything permanently.
 - A short, plain-language privacy page linked from `/start` and `/terms`.
 
-## 15. Onboarding (`/start`)
+## 16. Onboarding (`/start`)
 
 1. Welcome, with a one-paragraph explanation of what the bot does.
 2. Timezone: type a city or the current time. Telegram doesn't give bots the user's
@@ -190,12 +236,12 @@ The bot sends the file in chat. Filters: all data, or a date range.
 4. "Want a card every morning? Pick a time." The free schedule starts here.
 5. Draw the first card right away.
 
-## 16. Out of scope for v1
+## 17. Out of scope for v1
 
 AI readings, other decks or deck uploads, group readings, a web dashboard, reading for
 other people, and other languages.
 
-## 17. Technical notes (to discuss)
+## 18. Technical notes (to discuss)
 
 - Python with `python-telegram-bot` or `aiogram`.
 - SQLite to start, with a path to move to Postgres.
