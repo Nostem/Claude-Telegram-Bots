@@ -29,7 +29,8 @@ EDGE_SKIP = 3  # ignore the outermost pixels
 PAPER_WARMTH = 40  # card paper is warm cream (red minus blue); the scanner bed is neutral
 JPEG_QUALITY = 90
 FRAME_TARGET = 1.735  # usual height / width of the printed frame
-BOTTOM_LINE_MIN = 0.6  # the line under the title can be faint
+FAINT_LINE_MIN = 0.6  # frame lines are faded on some scans, especially under the title
+EDGE_ZONE = 10  # pixels from the scan edge where a line can be the frame cropped tight
 FRAME_RATIO = (1.68, 1.80)  # height / width of the printed frame on real cards
 MAX_TRIM = 0.08  # more than this cut from one edge suggests a wrong frame line
 WHITE = 248  # target for the lightest paper in the artwork
@@ -77,15 +78,25 @@ def frame_box(img):
     rows = d[:, int(w * 0.1) : int(w * 0.9)].mean(1)
 
     def first(profile, indices, outside):
+        """Outermost frame line, trying the most reliable kind of line first."""
         indices = list(indices)
-        for i in indices:
+
+        def paper_outside(i):
             paper = warmth[outside(i)]
-            if profile[i] >= LINE_MIN and paper.size and paper.mean() > PAPER_WARMTH:
+            return paper.size and paper.mean() > PAPER_WARMTH
+
+        # 1. A strong line with card paper outside it.
+        for i in indices:
+            if profile[i] >= LINE_MIN and paper_outside(i):
                 return i
-        # Some scans are cropped right at the frame line, with no paper outside it.
-        edge = indices[0]
-        if profile[edge] >= LINE_MIN:
-            return edge
+        # 2. A strong line at the very edge: the scan was cropped right at the frame.
+        for i in indices[:EDGE_ZONE]:
+            if profile[i] >= LINE_MIN:
+                return i
+        # 3. A faded line with card paper outside it.
+        for i in indices:
+            if profile[i] >= FAINT_LINE_MIN and paper_outside(i):
+                return i
         raise ValueError("frame line not found")
 
     ys, xs = slice(int(h * 0.1), int(h * 0.9)), slice(int(w * 0.1), int(w * 0.9))
@@ -106,7 +117,7 @@ def closest_bottom(rows, warmth, xs, left, top, right, h):
     candidates = []
     for i in range(h - 1 - EDGE_SKIP, int(h * 0.75), -1):
         paper = warmth[slice(i + 4, i + 11), xs]
-        if rows[i] >= BOTTOM_LINE_MIN and paper.size and paper.mean() > PAPER_WARMTH:
+        if rows[i] >= FAINT_LINE_MIN and paper.size and paper.mean() > PAPER_WARMTH:
             candidates.append(i)
     if not candidates:
         raise ValueError("frame line not found")
@@ -159,9 +170,17 @@ def main():
     raw = Path(sys.argv[1]) if len(sys.argv) > 1 else RAW_DIR
     out = Path(sys.argv[2]) if len(sys.argv) > 2 else OUT_DIR
     out.mkdir(parents=True, exist_ok=True)
+    failed = []
     for path in sorted(raw.glob("*.jpg")):
-        clean(path).save(out / path.name, quality=JPEG_QUALITY, optimize=True)
+        try:
+            clean(path).save(out / path.name, quality=JPEG_QUALITY, optimize=True)
+        except ValueError as e:
+            print(f"  FAILED {path.name}: {e}")
+            failed.append(path.name)
+            continue
         print(f"{path.name} -> {out / path.name}")
+    if failed:
+        sys.exit(f"{len(failed)} card(s) failed: {', '.join(failed)}")
 
 
 if __name__ == "__main__":
