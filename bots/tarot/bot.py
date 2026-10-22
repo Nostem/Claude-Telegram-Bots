@@ -63,7 +63,9 @@ def card_image(card, reversed_):
 async def send_card(bot, db, chat_id, card, reversed_, heading=None):
     """Send a card image with its caption. Each image is uploaded to Telegram once; after
     that its file_id is reused, which is much faster."""
-    key = f"{card.data['image']}:{'reversed' if reversed_ else 'upright'}"
+    # The file size is part of the key, so a replaced image is uploaded again.
+    key = (f"{card.data['image']}:{card.image_path.stat().st_size}:"
+           f"{'reversed' if reversed_ else 'upright'}")
     file_id = db.get_file_id(key)
     msg = await bot.send_photo(chat_id, file_id or card_image(card, reversed_),
                                caption=render.caption(card, reversed_, heading),
