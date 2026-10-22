@@ -30,6 +30,7 @@ PAPER_WARMTH = 40  # card paper is warm cream (red minus blue); the scanner bed 
 JPEG_QUALITY = 90
 FRAME_TARGET = 1.735  # usual height / width of the printed frame
 FAINT_LINE_MIN = 0.6  # frame lines are faded on some scans, especially under the title
+FAINT_PAPER_WARMTH = 30  # paper beside a faded line can be paler too
 EDGE_ZONE = 10  # pixels from the scan edge where a line can be the frame cropped tight
 FRAME_RATIO = (1.68, 1.80)  # height / width of the printed frame on real cards
 MAX_TRIM = 0.08  # more than this cut from one edge suggests a wrong frame line
@@ -81,9 +82,9 @@ def frame_box(img):
         """Outermost frame line, trying the most reliable kind of line first."""
         indices = list(indices)
 
-        def paper_outside(i):
+        def paper_outside(i, threshold=PAPER_WARMTH):
             paper = warmth[outside(i)]
-            return paper.size and paper.mean() > PAPER_WARMTH
+            return paper.size and paper.mean() > threshold
 
         # 1. A strong line with card paper outside it.
         for i in indices:
@@ -95,7 +96,7 @@ def frame_box(img):
                 return i
         # 3. A faded line with card paper outside it.
         for i in indices:
-            if profile[i] >= FAINT_LINE_MIN and paper_outside(i):
+            if profile[i] >= FAINT_LINE_MIN and paper_outside(i, FAINT_PAPER_WARMTH):
                 return i
         raise ValueError("frame line not found")
 

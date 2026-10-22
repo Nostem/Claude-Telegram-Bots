@@ -73,7 +73,7 @@ line on the card edge and must not be used.
 | Page of Pentacles | `pentacles-page.jpg` | [RWS1909 - Pentacles 11.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_11.jpeg) | 1909 | Public domain | commons |
 | Knight of Pentacles | `pentacles-knight.jpg` | [RWS1909 - Pentacles 12.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_12.jpeg) | 1909 | Public domain | commons |
 | Queen of Pentacles | `pentacles-queen.jpg` | [RWS1909 - Pentacles 13.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_13.jpeg) | 1909 | Public domain | commons |
-| King of Pentacles | `pentacles-king.jpg` | [RWS1909 - Pentacles 14.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_14.jpeg) | 1909 | Public domain | fallback |
+| King of Pentacles | `pentacles-king.jpg` | [RWS1909 - Pentacles 14.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Pentacles_14.jpeg) | 1909 | Public domain | commons |
 | Ace of Swords | `swords-01.jpg` | [RWS1909 - Swords 01.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Swords_01.jpeg) | 1909 | Public domain | fallback |
 | Two of Swords | `swords-02.jpg` | [RWS1909 - Swords 02.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Swords_02.jpeg) | 1909 | Public domain | fallback |
 | Three of Swords | `swords-03.jpg` | [RWS1909 - Swords 03.jpeg](https://commons.wikimedia.org/wiki/File:RWS1909_-_Swords_03.jpeg) | 1909 | Public domain | fallback |
