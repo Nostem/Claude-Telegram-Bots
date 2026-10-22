@@ -28,6 +28,10 @@ LINE_MIN = 0.8  # share of a row/column that must be ink to count as the frame l
 EDGE_SKIP = 3  # ignore the outermost pixels
 PAPER_WARMTH = 40  # card paper is warm cream (red minus blue); the scanner bed is neutral
 JPEG_QUALITY = 90
+FRAME_TARGET = 1.735  # usual height / width of the printed frame
+BOTTOM_LINE_MIN = 0.6  # the line under the title can be faint
+FRAME_RATIO = (1.68, 1.80)  # height / width of the printed frame on real cards
+MAX_TRIM = 0.08  # more than this cut from one edge suggests a wrong frame line
 WHITE = 248  # target for the lightest paper in the artwork
 CONTRAST = 1.08
 
@@ -89,8 +93,28 @@ def frame_box(img):
     left = first(cols, range(e, int(w * 0.15)), lambda i: (ys, slice(max(i - 10, 0), i - 3)))
     right = first(cols, range(w - 1 - e, int(w * 0.85), -1), lambda i: (ys, slice(i + 4, i + 11)))
     top = first(rows, range(e, int(h * 0.15)), lambda i: (slice(max(i - 10, 0), i - 3), xs))
-    bottom = first(rows, range(h - 1 - e, int(h * 0.85), -1), lambda i: (slice(i + 4, i + 11), xs))
+    bottom = closest_bottom(rows, warmth, xs, left, top, right, h)
     return left, top, right + 1, bottom + 1
+
+
+def closest_bottom(rows, warmth, xs, left, top, right, h):
+    """Bottom frame line: of the dark lines with card paper below them, the one that gives
+    the frame its usual proportions. On some cards (Strength, Wheel of Fortune) the line
+    under the title is faded, and the strongest line is the one above the title instead.
+    """
+    target = top + FRAME_TARGET * (right - left)
+    candidates = []
+    for i in range(h - 1 - EDGE_SKIP, int(h * 0.75), -1):
+        paper = warmth[slice(i + 4, i + 11), xs]
+        if rows[i] >= BOTTOM_LINE_MIN and paper.size and paper.mean() > PAPER_WARMTH:
+            candidates.append(i)
+    if not candidates:
+        raise ValueError("frame line not found")
+    # Use the outer edge of the chosen line: the lowest row of its run.
+    best = min(candidates, key=lambda i: abs(i - target))
+    while best + 1 in candidates:
+        best += 1
+    return best
 
 
 def tone(img):
@@ -104,10 +128,28 @@ def tone(img):
     return img.filter(ImageFilter.UnsharpMask(radius=1.2, percent=70, threshold=2))
 
 
+def crop_warnings(size, box):
+    """Signs that the frame was found in the wrong place."""
+    w, h = size
+    left, top, right, bottom = box
+    warnings = []
+    ratio = (bottom - top) / (right - left)
+    if not FRAME_RATIO[0] <= ratio <= FRAME_RATIO[1]:
+        warnings.append(f"frame proportions {ratio:.3f} (expected {FRAME_RATIO[0]}-{FRAME_RATIO[1]})")
+    for side, cut, total in (("left", left, w), ("top", top, h), ("right", w - right, w),
+                             ("bottom", h - bottom, h)):
+        if cut / total > MAX_TRIM:
+            warnings.append(f"{side} edge trimmed {cut / total:.0%}")
+    return warnings
+
+
 def clean(path):
     img = ImageOps.exif_transpose(Image.open(path)).convert("RGB")
     img = straighten(img)
-    img = img.crop(frame_box(img))
+    box = frame_box(img)
+    for warning in crop_warnings(img.size, box):
+        print(f"  CHECK {path.name}: {warning}")
+    img = img.crop(box)
     img = img.resize(INNER_SIZE, Image.LANCZOS)
     img = tone(img)
     return ImageOps.expand(img, border=BORDER, fill=BORDER_COLOR)
