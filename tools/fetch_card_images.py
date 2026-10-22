@@ -10,11 +10,16 @@ Wikimedia refuses bulk downloads of original files from shared servers and asks 
 standard thumbnail sizes instead, so this downloads the 960px thumbnail of each scan
 (rendered from the roughly 825px original), with a pause between requests.
 
-Usage: python3 tools/fetch_card_images.py
+Usage:
+  python3 tools/fetch_card_images.py                   check sources, download missing scans
+  python3 tools/fetch_card_images.py --no-download     check sources and update the records only
+  python3 tools/fetch_card_images.py --fallback DIR    first fill missing scans from DIR, the
+                                                       mariano-fu/arcana copies (see below)
 """
 import io
 import json
 import re
+import sys
 import time
 import urllib.error
 import urllib.parse
@@ -27,7 +32,9 @@ API = "https://commons.wikimedia.org/w/api.php"
 USER_AGENT = "TarotBotContent/0.1 (https://github.com/Nostem/Claude-Telegram-Bots)"
 RAW_DIR = Path("content/tarot/images/raw")
 THUMB_WIDTH = 960  # one of Wikimedia's standard thumbnail sizes
-PAUSE = 15  # seconds between downloads, to stay under Wikimedia's rate limit
+FALLBACK_WIDTH = 600
+FALLBACK_REPO = "https://github.com/mariano-fu/arcana"
+PAUSE = 60  # seconds between downloads, to stay under Wikimedia's rate limit
 SOURCES = Path("content/tarot/images/sources.json")
 CREDITS = Path("content/tarot/images/CREDITS.md")
 
@@ -128,6 +135,14 @@ def verify(title, info):
         raise RuntimeError(f"{title}: " + "; ".join(problems))
 
 
+def local_copy(card_id):
+    """Which copy of the scan is in raw/: Wikimedia's full thumbnail, or the fallback."""
+    path = RAW_DIR / f"{card_id}.jpg"
+    if not path.exists():
+        return "missing"
+    return "commons" if Image.open(path).width == THUMB_WIDTH else "fallback"
+
+
 def write_credits(entries):
     lines = [
         "# Card image credits",
@@ -139,26 +154,55 @@ def write_credits(entries):
         "in 1951 (life + 70 years).",
         "",
         "**Scans:** the \"RWS1909\" set on Wikimedia Commons, scans of an original 1909 \"Roses &",
-        "Lilies\" printing. Each file was downloaded only after its Commons page was checked for",
-        "a 1909 date and a public-domain license; see `sources.json` for the details recorded.",
-        f"Downloads are Wikimedia's {THUMB_WIDTH}px thumbnails of each scan.",
+        "Lilies\" printing. Every card's Commons page was checked for a 1909 date and a",
+        "public-domain license before its image was used; see `sources.json` for the details.",
         "These are **not** the US Games 1971 recoloring, which carries a \"© 1971 U.S. Games\"",
         "line on the card edge and must not be used.",
         "",
-        "- `raw/`: the original scans as downloaded (not stored in git; run",
-        "  `python3 tools/fetch_card_images.py` to download them again).",
+        "**Copies used** (the *Copy* column below):",
+        f"- *commons*: Wikimedia's {THUMB_WIDTH}px thumbnail of the scan.",
+        f"- *fallback*: a {FALLBACK_WIDTH}px copy of the same Commons file, from the",
+        f"  [mariano-fu/arcana]({FALLBACK_REPO}) project, used while Wikimedia rate-limits",
+        "  downloads. Running `python3 tools/fetch_card_images.py` again replaces these with",
+        "  the full Commons thumbnails.",
+        "",
+        "- `raw/`: the downloaded scans (not stored in git).",
         "- `cards/`: the cleaned-up images the bot uses, made by `tools/clean_card_images.py`.",
         "",
-        "| Card | File | Commons source | Date | License |",
-        "|---|---|---|---|---|",
+        "| Card | File | Commons source | Date | License | Copy |",
+        "|---|---|---|---|---|---|",
     ]
     for e in entries:
         lines.append(f"| {e['name']} | `{e['id']}.jpg` | [{e['commons']}]({e['page']}) "
-                     f"| {e['date']} | {e['license']} |")
+                     f"| {e['date']} | {e['license']} | {local_copy(e['id'])} |")
     CREDITS.write_text("\n".join(lines) + "\n")
 
 
+def write_records(entries):
+    for e in entries:
+        e["copy"] = local_copy(e["id"])
+    SOURCES.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")
+    write_credits(entries)
+
+
+def fill_from_fallback(all_cards, folder):
+    """Fill missing raw scans from mariano-fu/arcana's resized copies of the same files
+    (web/src/seed/images/cards/full/), named like major-00.webp and cups-13.webp."""
+    for n, (card_id, _, title) in enumerate(all_cards):
+        path = RAW_DIR / f"{card_id}.jpg"
+        if path.exists():
+            continue
+        if n < 22:
+            key = f"major-{n:02d}"
+        else:
+            suit = title.split(" - ")[1].split(" ")[0].lower()
+            key = f"{suit}-{title.split(' ')[-1].split('.')[0]}"
+        Image.open(Path(folder) / f"{key}.webp").convert("RGB").save(path, quality=92)
+        print(f"{card_id}: filled from fallback {key}.webp")
+
+
 def main():
+    args = sys.argv[1:]
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     all_cards = cards()
     info = {}
@@ -166,23 +210,31 @@ def main():
         info.update(file_info([c[2] for c in all_cards[i:i + 40]]))
         time.sleep(2)
 
+    # Check every card's source details before using any image.
     entries = []
     for card_id, name, title in all_cards:
         meta = info[title]
         verify(title, meta)
-        path = RAW_DIR / f"{card_id}.jpg"
         meta["downloaded"] = thumb_url(meta["url"])
-        if not (path.exists() and Image.open(path).width == THUMB_WIDTH):
-            data = get(meta["downloaded"], binary=True)
-            check_image(title, data, meta)
-            path.write_bytes(data)
-            print(f"{card_id}: downloaded", flush=True)
-            time.sleep(PAUSE)
         entries.append({"id": card_id, "name": name, "commons": title.removeprefix("File:"), **meta})
+    print(f"{len(entries)} cards verified on Commons")
 
-    SOURCES.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")
-    write_credits(entries)
-    print(f"{len(entries)} cards verified; wrote {SOURCES} and {CREDITS}")
+    if "--fallback" in args:
+        fill_from_fallback(all_cards, args[args.index("--fallback") + 1])
+    if "--no-download" not in args:
+        for e in entries:
+            if local_copy(e["id"]) == "commons":
+                continue
+            data = get(e["downloaded"], binary=True)
+            check_image(e["commons"], data, e)
+            (RAW_DIR / f"{e['id']}.jpg").write_bytes(data)
+            print(f"{e['id']}: downloaded", flush=True)
+            write_records(entries)
+            time.sleep(PAUSE)
+
+    write_records(entries)
+    counts = {k: sum(local_copy(e["id"]) == k for e in entries) for k in ("commons", "fallback", "missing")}
+    print(f"wrote {SOURCES} and {CREDITS}: {counts}")
 
 
 if __name__ == "__main__":
