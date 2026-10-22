@@ -27,7 +27,7 @@ API = "https://commons.wikimedia.org/w/api.php"
 USER_AGENT = "TarotBotContent/0.1 (https://github.com/Nostem/Claude-Telegram-Bots)"
 RAW_DIR = Path("content/tarot/images/raw")
 THUMB_WIDTH = 960  # one of Wikimedia's standard thumbnail sizes
-PAUSE = 10  # seconds between downloads, to stay under Wikimedia's rate limit
+PAUSE = 15  # seconds between downloads, to stay under Wikimedia's rate limit
 SOURCES = Path("content/tarot/images/sources.json")
 CREDITS = Path("content/tarot/images/CREDITS.md")
 
@@ -61,7 +61,7 @@ def cards():
 
 def get(url, binary=False):
     """GET with Wikimedia's required User-Agent, backing off when rate-limited."""
-    for attempt in range(8):
+    for attempt in range(10):
         req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
         try:
             with urllib.request.urlopen(req, timeout=60) as resp:
@@ -70,7 +70,9 @@ def get(url, binary=False):
         except urllib.error.HTTPError as e:
             if e.code != 429 and e.code < 500:
                 raise
-            wait = int(e.headers.get("Retry-After") or 0) or 5 * 2 ** attempt
+            # Wikimedia's Retry-After is often too short for a shared server, so grow the
+            # wait on each attempt (up to 10 minutes).
+            wait = max(int(e.headers.get("Retry-After") or 0), min(15 * 2 ** attempt, 600))
             print(f"  HTTP {e.code}, waiting {wait}s")
             time.sleep(wait)
     raise RuntimeError(f"gave up on {url}")
