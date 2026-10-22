@@ -36,11 +36,9 @@ Status: draft for discussion. Items marked **[DECIDE]** need a decision.
 
 \* A cap of about 10 schedules per user prevents abuse.
 
-Recommendation: always save free users' draws, so upgrading unlocks their full history
-right away ("you have 43 draws waiting"). Basic export stays free, so people's data is
-never held back to make them pay.
-
-**[DECIDE]** Agree with saving free users' draws, and with keeping basic export free?
+**Decided:** free users' draws are always saved, so upgrading unlocks their full history
+right away ("you have 43 draws waiting"). Basic CSV export stays free, so people's data
+is never held back to make them pay.
 
 ## 3. Commands
 
@@ -139,9 +137,8 @@ meanings of the cards you logged.
 - Each card gets a prompt: "Write one line about what this card means to you today."
 - When you finish, you get a summary of the whole deck, and the challenge can restart with
   a new shuffle.
-- **[DECIDE]** Missed days: (a) the card is still sent and the day counts, (b) the
-  challenge waits until you open the last card, or (c) the user chooses.
-  Recommendation: (b). Then the challenge is about engaging with each card, not a timer.
+- **Decided:** missed days don't skip cards. The challenge waits until you open the last
+  card before sending the next one, so it's about engaging with each card, not a timer.
 
 ## 10. Moon-timed draws (Lifetime)
 
@@ -174,8 +171,8 @@ The bot sends the file in chat. Filters: all data, or a date range.
 - Unlocks are tied to the Telegram user ID.
 - **[DECIDE]** Price in Stars, aiming for roughly $10–20. Check how many Stars users pay
   per dollar in each app store.
-- **[DECIDE]** Refund policy, for example a full refund within 14 days on request.
-  Telegram lets the bot refund Stars.
+- **Decided:** full refund within 7 days of purchase, on request through `/paysupport`.
+  The bot refunds the Stars and removes the unlock.
 - Later: an all-access bundle that unlocks every bot in the product line.
 
 ## 14. Privacy and data
