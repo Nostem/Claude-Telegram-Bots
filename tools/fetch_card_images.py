@@ -6,9 +6,13 @@ Lilies)): scans of an original 1909 printing. A file is only saved if its Common
 dates it to 1909 and marks it public domain. The results are recorded in
 content/tarot/images/sources.json and content/tarot/images/CREDITS.md.
 
+Wikimedia refuses bulk downloads of original files from shared servers and asks for
+standard thumbnail sizes instead, so this downloads the 960px thumbnail of each scan
+(rendered from the roughly 825px original), with a pause between requests.
+
 Usage: python3 tools/fetch_card_images.py
 """
-import hashlib
+import io
 import json
 import re
 import time
@@ -17,9 +21,13 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from PIL import Image
+
 API = "https://commons.wikimedia.org/w/api.php"
 USER_AGENT = "TarotBotContent/0.1 (https://github.com/Nostem/Claude-Telegram-Bots)"
 RAW_DIR = Path("content/tarot/images/raw")
+THUMB_WIDTH = 960  # one of Wikimedia's standard thumbnail sizes
+PAUSE = 10  # seconds between downloads, to stay under Wikimedia's rate limit
 SOURCES = Path("content/tarot/images/sources.json")
 CREDITS = Path("content/tarot/images/CREDITS.md")
 
@@ -92,6 +100,20 @@ def file_info(titles):
     return info
 
 
+def thumb_url(original):
+    """URL of the standard-size thumbnail for an original upload.wikimedia.org file."""
+    base, name = original.split("?")[0].rsplit("/", 1)
+    return f"{base.replace('/commons/', '/commons/thumb/', 1)}/{name}/{THUMB_WIDTH}px-{name}"
+
+
+def check_image(title, data, info):
+    """The download must be a JPEG with the same proportions as the Commons original."""
+    img = Image.open(io.BytesIO(data))
+    expected = info["height"] / info["width"]
+    if img.format != "JPEG" or abs(img.height / img.width - expected) > 0.01:
+        raise RuntimeError(f"{title}: unexpected download ({img.format}, {img.size})")
+
+
 def verify(title, info):
     problems = []
     if "1909" not in info["date"]:
@@ -117,6 +139,7 @@ def write_credits(entries):
         "**Scans:** the \"RWS1909\" set on Wikimedia Commons, scans of an original 1909 \"Roses &",
         "Lilies\" printing. Each file was downloaded only after its Commons page was checked for",
         "a 1909 date and a public-domain license; see `sources.json` for the details recorded.",
+        f"Downloads are Wikimedia's {THUMB_WIDTH}px thumbnails of each scan.",
         "These are **not** the US Games 1971 recoloring, which carries a \"© 1971 U.S. Games\"",
         "line on the card edge and must not be used.",
         "",
@@ -146,13 +169,13 @@ def main():
         meta = info[title]
         verify(title, meta)
         path = RAW_DIR / f"{card_id}.jpg"
-        if not (path.exists() and hashlib.sha1(path.read_bytes()).hexdigest() == meta["sha1"]):
-            data = get(meta["url"], binary=True)
-            if hashlib.sha1(data).hexdigest() != meta["sha1"]:
-                raise RuntimeError(f"{title}: download doesn't match Commons checksum")
+        meta["downloaded"] = thumb_url(meta["url"])
+        if not (path.exists() and Image.open(path).width == THUMB_WIDTH):
+            data = get(meta["downloaded"], binary=True)
+            check_image(title, data, meta)
             path.write_bytes(data)
-            print(f"{card_id}: downloaded {meta['width']}x{meta['height']}")
-            time.sleep(1)
+            print(f"{card_id}: downloaded", flush=True)
+            time.sleep(PAUSE)
         entries.append({"id": card_id, "name": name, "commons": title.removeprefix("File:"), **meta})
 
     SOURCES.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")
