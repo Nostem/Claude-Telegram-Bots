@@ -1,0 +1,60 @@
+id: swords-04
+name: Four of Swords
+arcana: minor
+suit: swords
+number: 4
+image: swords-04.jpg
+
+keywords:
+  upright: [rest, recovery, retreat, contemplation, recharging]
+  reversed: [burnout, restlessness, forced rest, returning to action, inertia]
+
+short:
+  upright: Time to rest and recover. Step back and recharge before the next challenge.
+  reversed: You're running on empty, or ready to get back up. Listen to what your body needs.
+
+meaning:
+  upright: >-
+    A knight lies still on a tomb, hands together in prayer, with three swords hanging on
+    the wall above and one lying beside him. A stained-glass window glows behind. Despite
+    the somber setting, the Four of Swords is about rest, not death. After stress or
+    conflict, you need time to recover: sleep, quiet, a break from problem-solving. This
+    card gives you permission to step back. Rest isn't laziness. It's what lets your
+    mind heal and gather strength for what comes next.
+  reversed: >-
+    Reversed, the Four of Swords suggests rest is out of balance. You might be pushing
+    through exhaustion and heading toward burnout, or feeling too restless to switch off.
+    Sometimes it shows rest being forced on you, through illness or circumstances, because
+    you wouldn't take it voluntarily. It can also mean a period of retreat is ending and
+    you're ready to return to the world. Ask honestly what you need right now. If it's
+    rest, take it before your body decides for you.
+
+in_context:
+  love: Taking space to recover, or a quiet, restful phase in a relationship.
+  work: Time for a break, a vacation or a slower pace. Recharge before the next push.
+  advice: Rest. You've earned it, and you need it.
+
+symbolism:
+  - "Knight lying on a tomb: deep rest and stillness, not death."
+  - "Hands in prayer: peace, reflection and spiritual renewal."
+  - "Three swords on the wall: problems set aside for now."
+  - "One sword beside him: the one issue still close at hand."
+  - "Stained-glass window: sanctuary and calm."
+
+reflection:
+  - When did I last truly rest?
+  - What could I set aside, just for now?
+  - What is my body or mind asking me for?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Air
+  astrology: Jupiter in Libra
+
+waite_1910:
+  upright: >-
+    Vigilance, retreat, solitude, hermit's repose, exile, tomb and coffin. It is these
+    last that have suggested the design.
+  reversed: >-
+    Wise administration, circumspection, economy, avarice, precaution, testament.

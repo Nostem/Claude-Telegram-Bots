@@ -1,0 +1,60 @@
+id: swords-02
+name: Two of Swords
+arcana: minor
+suit: swords
+number: 2
+image: swords-02.jpg
+
+keywords:
+  upright: [indecision, stalemate, difficult choice, denial, guarded heart]
+  reversed: [information revealed, decision made, overwhelm, lesser of two evils, relief]
+
+short:
+  upright: You're stuck between two options and avoiding the choice. Take the blindfold off.
+  reversed: The stalemate is breaking. New information helps you finally choose.
+
+meaning:
+  upright: >-
+    A blindfolded woman sits by the sea at night, arms crossed over her chest, balancing
+    a sword on each shoulder. The Two of Swords is about a choice you're avoiding. You
+    may be torn between two options, stuck in a stalemate, or keeping your heart guarded
+    so you don't have to feel anything. The calm pose hides tension: staying balanced
+    like this takes a lot of energy. The card asks you to remove the blindfold. Gather
+    information, listen to your feelings, and accept that not choosing is also a choice.
+  reversed: >-
+    Reversed, the Two of Swords suggests the stalemate is ending. New information might
+    make the choice obvious, or you may simply be too tired to keep avoiding it. It can
+    also show overwhelm: so many conflicting opinions that you can't think straight.
+    Sometimes it points to choosing the lesser of two evils. Whatever's happening, the
+    card encourages you to trust yourself, make the decision you can live with, and put
+    the swords down. Relief usually follows once the choice is made.
+
+in_context:
+  love: Indecision or emotional walls. Lower your guard and be honest about how you feel.
+  work: A tough decision or a deadlock. Get the facts you need, then decide.
+  advice: Take off the blindfold and make the choice.
+
+symbolism:
+  - "Blindfold: refusing to see, or deciding without all the facts."
+  - "Crossed arms and swords: a guarded heart and a defensive stance."
+  - "Sea and rocks behind her: emotions and obstacles she can't see."
+  - "Crescent moon: intuition, available if she listens."
+
+reflection:
+  - What choice am I avoiding?
+  - What would I see if I took the blindfold off?
+  - What is keeping my heart guarded?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Air
+  astrology: Moon in Libra
+
+waite_1910:
+  upright: >-
+    Conformity and the equipoise which it suggests, courage, friendship, concord in a
+    state of arms; another reading gives tenderness, affection, intimacy. The suggestion
+    of harmony and other favourable readings must be considered in a qualified manner, as
+    Swords generally are not symbolical of beneficent forces in human affairs.
+  reversed: Imposture, falsehood, duplicity, disloyalty.

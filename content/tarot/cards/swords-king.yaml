@@ -1,0 +1,61 @@
+id: swords-king
+name: King of Swords
+arcana: minor
+suit: swords
+court: king
+image: swords-king.jpg
+
+keywords:
+  upright: [intellect, authority, fairness, logic, principled leadership]
+  reversed: [manipulation, abuse of power, cold logic, rigid thinking, unfairness]
+
+short:
+  upright: Lead with reason and fairness. Make clear decisions based on truth.
+  reversed: Power or logic used coldly or unfairly. Check whether your mind is serving your heart.
+
+meaning:
+  upright: >-
+    A king sits squarely on his throne, facing forward, holding his sword slightly tilted
+    and looking straight at you. Butterflies and crescent moons decorate the throne. The
+    King of Swords stands for clear thinking, fairness and principled leadership. He makes
+    decisions based on facts and ethics, not moods. This card may point to an expert,
+    advisor or fair-minded authority, or ask you to take that role yourself. When a
+    situation needs a cool head and a clear decision, trust your reasoning and stand by
+    your principles.
+  reversed: >-
+    Reversed, the King of Swords' intellect can become cold or controlling. It can point
+    to someone using logic or authority to manipulate, dismiss feelings, or win at any
+    cost. It may also show your own thinking becoming rigid, or decisions made without
+    considering how they affect people. The card asks you to bring fairness and humanity
+    back into the picture. Ask who is affected by a decision, and whether you'd accept it
+    if you were in their place. Clear thinking is powerful, but it works best alongside
+    empathy and humility.
+
+in_context:
+  love: A mature, honest connection, or a need for clear conversation about the relationship.
+  work: Leadership, expertise and fair decisions. Rely on facts and principles.
+  advice: Think clearly and act fairly.
+
+symbolism:
+  - "Forward-facing king: directness and honesty."
+  - "Upright sword: authority, judgment and truth."
+  - "Butterflies on the throne: the transformation of thought into wisdom."
+  - "Crescent moons: intuition balancing reason."
+  - "Trees and clouds: steadiness above a changing landscape."
+
+reflection:
+  - What decision needs a clear, fair mind?
+  - Am I balancing logic with compassion?
+  - Where can I lead by example?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air of Air
+  astrology: Late Capricorn to mid Aquarius
+
+waite_1910:
+  upright: >-
+    Whatsoever arises out of the idea of judgment and all its connections—power, command,
+    authority, militant intelligence, law, offices of the crown, and so forth.
+  reversed: Cruelty, perversity, barbarity, perfidy, evil intention.

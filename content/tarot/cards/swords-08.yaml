@@ -1,0 +1,61 @@
+id: swords-08
+name: Eight of Swords
+arcana: minor
+suit: swords
+number: 8
+image: swords-08.jpg
+
+keywords:
+  upright: [feeling trapped, self-limiting beliefs, helplessness, restriction, victim mindset]
+  reversed: [self-acceptance, new perspective, freedom, releasing fear, taking back control]
+
+short:
+  upright: You feel trapped, but the bonds are looser than they seem. Your thoughts are the cage.
+  reversed: You're starting to see a way out. Take off the blindfold and step free.
+
+meaning:
+  upright: >-
+    A woman stands blindfolded and loosely bound, surrounded by eight swords stuck in
+    the ground. A castle sits on the hill behind her. At first glance she looks trapped,
+    but look again: the swords don't fully surround her and her legs are free. The Eight
+    of Swords is about feeling stuck, often because of fear, worry or beliefs about what
+    you can't do. The situation may be hard, but your thinking may be making it feel
+    hopeless. The card asks you to question the story. What would happen if you took one
+    step?
+  reversed: >-
+    Reversed, the Eight of Swords shows the bonds starting to loosen. You might be seeing
+    your situation more clearly, letting go of a limiting belief, or finding the courage
+    to ask for help. It can mark the moment you stop waiting to be rescued and start
+    walking. Sometimes the reversal warns that fear is tightening its grip instead. If
+    that feels true, talk to someone you trust, or a professional. A fresh perspective
+    can show you exits you couldn't see alone.
+
+in_context:
+  love: Feeling stuck or powerless in a relationship. You have more choices than you think.
+  work: Feeling trapped in a job or situation. Question the limits you've accepted.
+  advice: Question the story that's keeping you stuck.
+
+symbolism:
+  - "Blindfold: not seeing the situation clearly."
+  - "Loose bindings: restrictions that can be slipped."
+  - "Eight swords around her: fears and thoughts that feel like walls, with gaps."
+  - "Castle on the hill: the safety and authority she believes is out of reach."
+  - "Puddles at her feet: emotions keeping her rooted to the spot."
+
+reflection:
+  - What belief is making me feel trapped?
+  - What is one small step I could take toward freedom?
+  - Who could help me see my situation differently?
+
+yes_no: "No"
+
+correspondences:
+  element: Air
+  astrology: Jupiter in Gemini
+
+waite_1910:
+  upright: >-
+    Bad news, violent chagrin, crisis, censure, power in trammels, conflict, calumny; also
+    sickness.
+  reversed: >-
+    Disquiet, difficulty, opposition, accident, treachery; what is unforeseen; fatality.

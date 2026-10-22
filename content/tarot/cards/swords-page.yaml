@@ -1,0 +1,61 @@
+id: swords-page
+name: Page of Swords
+arcana: minor
+suit: swords
+court: page
+image: swords-page.jpg
+
+keywords:
+  upright: [curiosity, new ideas, alertness, eagerness to learn, honest communication]
+  reversed: [gossip, all talk, hasty words, scattered thinking, defensiveness]
+
+short:
+  upright: A curious, sharp mind. Ask questions, learn fast and speak the truth.
+  reversed: Words are running ahead of thought. Watch for gossip, haste and empty talk.
+
+meaning:
+  upright: >-
+    A young figure stands on a windy hill holding a sword up with both hands, glancing
+    over their shoulder, as clouds rush past and birds fly overhead. The Page of Swords is
+    full of mental energy: curious, alert and eager to learn. It can point to a new idea,
+    a new subject to study, or news arriving. It may also represent someone young at
+    heart who asks a lot of questions and speaks their mind. The card encourages you to
+    stay curious, think for yourself and communicate honestly.
+  reversed: >-
+    Reversed, the Page of Swords can show mental energy going astray. You might be talking
+    a lot but not following through, spreading or hearing gossip, or saying something
+    hurtful without thinking. It can also show scattered thinking, defensiveness, or
+    jumping to conclusions. The card asks you to slow down: listen before you speak,
+    check your facts, and think about the effect of your words before you send them. A
+    sharp mind is a gift when it's paired with patience, care and a willingness to be
+    wrong.
+
+in_context:
+  love: Honest talks, curiosity about someone, or a lively exchange. Be truthful but kind.
+  work: Learning, research or new ideas. Stay alert and ask good questions.
+  advice: Stay curious and speak honestly.
+
+symbolism:
+  - "Sword held high: a sharp, active mind ready for action."
+  - "Glance over the shoulder: alertness and watchfulness."
+  - "Wind-blown clouds: fast-moving thoughts and changing circumstances."
+  - "Birds in the sky: ideas and freedom of thought."
+  - "High ground: a wide view of the situation."
+
+reflection:
+  - What am I curious to learn right now?
+  - Am I listening as much as I'm speaking?
+  - Is there something I need to say honestly?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Earth of Air
+
+waite_1910:
+  upright: >-
+    Authority, overseeing, secret service, vigilance, spying, examination, and the
+    qualities thereto belonging.
+  reversed: >-
+    More evil side of these qualities; what is unforeseen, unprepared state; sickness is
+    also intimated.

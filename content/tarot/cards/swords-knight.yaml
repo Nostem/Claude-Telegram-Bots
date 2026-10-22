@@ -1,0 +1,59 @@
+id: swords-knight
+name: Knight of Swords
+arcana: minor
+suit: swords
+court: knight
+image: swords-knight.jpg
+
+keywords:
+  upright: [ambition, fast action, drive, assertiveness, determination]
+  reversed: [recklessness, impatience, aggression, burnout, rushing in]
+
+short:
+  upright: Charge ahead with focus and courage. Act fast on what you believe in.
+  reversed: Speed without direction. Slow down before haste turns into harm.
+
+meaning:
+  upright: >-
+    A knight charges forward on a galloping white horse, sword raised, while the wind
+    whips the trees and clouds around him. The Knight of Swords is pure momentum: ambitious,
+    determined and quick to act. It can point to a time to move fast, speak up, or fight
+    for what you believe in. It may also represent someone bold, direct and driven. The
+    card supports decisive action, especially when you've thought things through. Just
+    make sure your speed is pointed in the right direction.
+  reversed: >-
+    Reversed, the Knight of Swords suggests that speed has become a problem. You or
+    someone around you may be rushing in without a plan, saying things too bluntly, or
+    steamrolling others to get results. It can also show burnout from pushing too hard
+    for too long. The card asks you to slow down and think before you act. Consider who
+    might get hurt by your haste, and whether a little patience would actually get you
+    there faster. Momentum is only useful when it's carrying you somewhere you want to go.
+
+in_context:
+  love: Fast-moving romance or blunt honesty. Don't rush, and choose your words carefully.
+  work: Ambition and fast progress. Push forward, but don't trample your team.
+  advice: Act boldly, but look where you're going.
+
+symbolism:
+  - "Galloping horse: speed, urgency and forward motion."
+  - "Raised sword: determination to cut through obstacles."
+  - "Wind-blown trees and clouds: the force and chaos of fast action."
+  - "Birds scattering: disruption in his wake."
+
+reflection:
+  - What goal deserves my full speed right now?
+  - Am I rushing into something without a plan?
+  - Who could get hurt if I move too fast?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Fire of Air
+  astrology: Late Taurus to mid Gemini
+
+waite_1910:
+  upright: >-
+    Skill, bravery, capacity, defence, address, enmity, wrath, war, destruction,
+    opposition, resistance, ruin. There is therefore a sense in which the card signifies
+    death, but it carries this meaning only in its proximity to other cards of fatality.
+  reversed: Imprudence, incapacity, extravagance.

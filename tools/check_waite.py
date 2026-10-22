@@ -3,7 +3,7 @@
 Project Gutenberg doesn't have Waite's own edition, so this uses #43548: L. W. De
 Laurence's 1918 "Illustrated Key to the Tarot", which reprints Waite's meanings word for
 word but with American spelling. The comparison ignores punctuation and spelling
-differences such as honour/honor and shews/shows.
+differences such as honour/honor, shews/shows and defence/defense.
 
 Usage: python3 tools/check_waite.py
 """
@@ -20,7 +20,8 @@ BOOK_CACHE = Path(".cache/pg43548.txt")
 
 
 def normalize(text):
-    text = text.lower().replace("our", "or").replace("shews", "shows").replace("-", "")
+    text = text.lower().replace("our", "or").replace("shews", "shows").replace("defence", "defense")
+    text = text.replace("-", "")
     return re.sub(r"[^a-z]", "", text)
 
 

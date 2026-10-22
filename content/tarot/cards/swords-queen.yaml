@@ -1,0 +1,60 @@
+id: swords-queen
+name: Queen of Swords
+arcana: minor
+suit: swords
+court: queen
+image: swords-queen.jpg
+
+keywords:
+  upright: [independence, clear judgment, directness, honesty, wisdom from experience]
+  reversed: [coldness, bitterness, harshness, cruel words, closed off]
+
+short:
+  upright: Clear-eyed and honest. See the truth, set boundaries and speak plainly.
+  reversed: Clarity has turned cold or bitter. Soften your words without losing your truth.
+
+meaning:
+  upright: >-
+    A queen sits on a throne carved with butterflies, facing the clouds, her sword held
+    upright in one hand and the other hand raised as if welcoming or warning. The Queen of
+    Swords sees clearly and speaks honestly. Her wisdom often comes from experience,
+    including pain she has moved through. She may represent an independent, perceptive
+    person in your life, or your own ability to cut through confusion and set firm
+    boundaries. This card asks you to trust your judgment, say what you mean, and not be
+    swayed by flattery or drama.
+  reversed: >-
+    Reversed, the Queen of Swords' sharpness can turn harsh. You might be shutting people
+    out, using words as weapons, or letting past hurts make you cold and suspicious. It
+    can also point to someone around you who is critical or cruel. Sometimes it shows the
+    opposite: clouded judgment, where emotions are blocking clear thinking. The card asks
+    you to keep your honesty but bring back your compassion. Old hurts deserve healing,
+    not a fortress. Boundaries protect you; walls keep everyone out.
+
+in_context:
+  love: Honest communication and healthy boundaries. Say what you need, clearly and kindly.
+  work: Clear judgment and independence. Make decisions based on facts, not drama.
+  advice: Be honest, clear and fair.
+
+symbolism:
+  - "Upright sword: truth and clear judgment."
+  - "Raised open hand: openness, with a boundary."
+  - "Butterflies on the throne: transformation and the power of the mind."
+  - "Clouds below: seeing above confusion."
+  - "Single bird overhead: independence and clear vision."
+
+reflection:
+  - What do I know to be true, even if it's hard?
+  - Where do I need a clearer boundary?
+  - Am I protecting myself, or shutting people out?
+
+yes_no: "Maybe"
+
+correspondences:
+  element: Water of Air
+  astrology: Late Virgo to mid Libra
+
+waite_1910:
+  upright: >-
+    Widowhood, female sadness and embarrassment, absence, sterility, mourning, privation,
+    separation.
+  reversed: Malice, bigotry, artifice, prudery, bale, deceit.

@@ -1,0 +1,62 @@
+id: swords-01
+name: Ace of Swords
+arcana: minor
+suit: swords
+number: 1
+image: swords-01.jpg
+
+keywords:
+  upright: [clarity, breakthrough, truth, new idea, sharp focus]
+  reversed: [confusion, mental fog, misused words, harsh truth, false starts]
+
+short:
+  upright: A breakthrough moment. Clear thinking cuts through confusion and the truth comes out.
+  reversed: Thoughts are cloudy or words are cutting the wrong way. Pause before you speak or decide.
+
+meaning:
+  upright: >-
+    A hand emerges from a cloud gripping an upright sword, its tip crowned and hung with
+    an olive branch and a palm. The Ace of Swords is the start of mental clarity: a
+    breakthrough idea, a moment when the truth becomes obvious, or the courage to say
+    what needs to be said. Swords cut, and this one cuts through confusion and excuses.
+    It's a good time for honest conversations, decisions, study and planning. Trust what
+    you now see clearly, and use your words with both honesty and care.
+  reversed: >-
+    Reversed, the Ace of Swords suggests that clarity hasn't arrived yet, or that it's
+    being misused. You might feel mentally foggy, overwhelmed by information, or unable
+    to decide. It can also show harsh words, a truth delivered without kindness, or an
+    idea launched before it was thought through. The card asks you to slow down. Gather
+    the facts, separate what you know from what you fear, and wait until your mind is
+    clear before acting. Clarity will come if you give it room.
+
+in_context:
+  love: An honest conversation clears the air. Say what you mean, kindly.
+  work: A breakthrough idea or a clear decision. Great for planning, study and pitching.
+  advice: Seek the truth and say it clearly.
+
+symbolism:
+  - "Hand from a cloud: a gift of insight."
+  - "Upright sword: truth, clarity and a decisive mind."
+  - "Crown on the tip: victory through clear thinking."
+  - "Olive branch and palm: peace and success that come from the truth."
+  - "Rugged mountains below: challenges seen clearly from above."
+
+reflection:
+  - What truth have I been avoiding?
+  - What decision would become easier with a clear head?
+  - How can I say something honest with kindness?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air
+  astrology: Root of the powers of Air
+
+waite_1910:
+  upright: >-
+    Triumph, the excessive degree in everything, conquest, triumph of force. It is a card
+    of great force, in love as well as in hatred. The crown may carry a much higher
+    significance than comes usually within the sphere of fortune-telling.
+  reversed: >-
+    The same, but the results are disastrous; another account says—conception—childbirth,
+    augmentation, multiplicity.

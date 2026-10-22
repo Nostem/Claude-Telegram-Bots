@@ -1,0 +1,61 @@
+id: swords-07
+name: Seven of Swords
+arcana: minor
+suit: swords
+number: 7
+image: swords-07.jpg
+
+keywords:
+  upright: [deception, strategy, secrecy, getting away with something, going it alone]
+  reversed: [coming clean, getting caught, conscience, self-deception, rethinking a plan]
+
+short:
+  upright: Someone is being sneaky, maybe you. Look closely at strategy, honesty and motives.
+  reversed: Secrets are coming out, or a conscience is speaking up. Honesty is the way forward.
+
+meaning:
+  upright: >-
+    A man tiptoes away from a camp, carrying five swords and glancing back over his
+    shoulder. Two swords stay stuck in the ground behind him. The Seven of Swords is about
+    secrecy and strategy. Sometimes it points to deception: someone isn't being honest,
+    or you're tempted to cut corners. Other times it's about acting cleverly and
+    independently, finding a way around a problem instead of confronting it head-on. The
+    card asks you to look at motives. Are you being smart, or are you avoiding something
+    you should face openly?
+  reversed: >-
+    Reversed, the Seven of Swords suggests secrets are surfacing. Someone may be caught
+    out, or you may feel the pull to come clean about something yourself. It can also
+    point to self-deception, telling yourself a story that lets you avoid the truth.
+    Sometimes it shows a plan that isn't working and needs rethinking. The card
+    encourages honesty, even when it's uncomfortable. Owning a mistake now is usually
+    easier than having it discovered later, and it lets you move on with a clear
+    conscience.
+
+in_context:
+  love: Secrets, mixed signals or someone not being fully honest. Trust, but verify.
+  work: Strategy and working around obstacles. Protect your ideas, and play fair.
+  advice: Be clever, but be honest.
+
+symbolism:
+  - "Man sneaking away with swords: taking what isn't freely given, or acting in secret."
+  - "Glance over his shoulder: fear of being caught."
+  - "Two swords left behind: plans that are incomplete or a job only half done."
+  - "Camp in the distance: the group or authority being avoided."
+
+reflection:
+  - Is there something I'm not being honest about?
+  - Am I avoiding a problem instead of facing it?
+  - Do I trust the people around me, and do they have reason to trust me?
+
+yes_no: "No"
+
+correspondences:
+  element: Air
+  astrology: Moon in Aquarius
+
+waite_1910:
+  upright: >-
+    Design, attempt, wish, hope, confidence; also quarrelling, a plan that may fail,
+    annoyance. The design is uncertain in its import, because the significations are
+    widely at variance with each other.
+  reversed: Good advice, counsel, instruction, slander, babbling.

@@ -1,0 +1,59 @@
+id: swords-05
+name: Five of Swords
+arcana: minor
+suit: swords
+number: 5
+image: swords-05.jpg
+
+keywords:
+  upright: [conflict, hollow victory, winning at all costs, tension, defeat]
+  reversed: [reconciliation, moving past conflict, regret, making amends, walking away]
+
+short:
+  upright: A conflict where winning costs too much. Ask whether this fight is worth it.
+  reversed: The conflict is cooling. Time to make peace, or walk away with your dignity.
+
+meaning:
+  upright: >-
+    A man smirks as he gathers swords from the ground, while two defeated figures walk
+    away toward the water. Jagged clouds race across the sky. The Five of Swords is about
+    conflict, and especially about victories that leave everyone worse off. You might be
+    in an argument where being right matters more than the relationship, or facing
+    someone who plays dirty. The card asks you to consider the cost. Sometimes the wisest
+    move is to drop the fight, choose your battles, or accept that you can't win this one.
+  reversed: >-
+    Reversed, the Five of Swords suggests tension is starting to ease. You might be ready
+    to apologize, make amends or simply let go of a grudge. It can also show regret over
+    something said or done in the heat of the moment. Sometimes it means walking away
+    from a conflict you can't resolve, which can be a strong choice rather than a
+    defeat. The card encourages honest repair where it's possible, and peaceful distance
+    where it's not. Pride is a heavy thing to carry.
+
+in_context:
+  love: Arguments, power struggles or hurtful words. Ask whether winning matters more than connecting.
+  work: Office politics, competition or conflict. Choose your battles carefully.
+  advice: Don't win the fight and lose what matters.
+
+symbolism:
+  - "Smirking figure gathering swords: victory gained at someone else's expense."
+  - "Two figures walking away: defeat, hurt and disconnection."
+  - "Swords on the ground: weapons dropped and battles lost."
+  - "Jagged clouds: tension and unsettled feelings."
+  - "Water in the distance: emotions and the need to move on."
+
+reflection:
+  - Is this conflict worth what it's costing me?
+  - Do I need to apologize to someone?
+  - When is walking away the stronger choice?
+
+yes_no: "No"
+
+correspondences:
+  element: Air
+  astrology: Venus in Aquarius
+
+waite_1910:
+  upright: >-
+    Degradation, destruction, revocation, infamy, dishonour, loss, with the variants and
+    analogues of these.
+  reversed: The same; burial and obsequies.

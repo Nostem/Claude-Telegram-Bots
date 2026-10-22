@@ -843,7 +843,7 @@ Reversed, the Moon often shows the fog beginning to clear. A confusing situation
 
 <img src="../../content/tarot/images/cards/major-19-the-sun.jpg" width="220" align="right">
 
-**Upright:** *joy, success, vitality, positivity, clarity*  
+**Upright:** *joy, success, vitality, positivity, warmth*  
 Joy, warmth and success. Things are bright, so enjoy it and let yourself shine.
 
 **Reversed:** *dimmed joy, temporary setback, overconfidence, burnout, inner child neglected*  

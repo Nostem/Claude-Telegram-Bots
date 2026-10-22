@@ -1,0 +1,58 @@
+id: swords-06
+name: Six of Swords
+arcana: minor
+suit: swords
+number: 6
+image: swords-06.jpg
+
+keywords:
+  upright: [transition, moving on, calmer waters, travel, leaving difficulty behind]
+  reversed: [unfinished business, resistance to change, stuck, carrying baggage, rough passage]
+
+short:
+  upright: You're moving toward calmer waters. The hardest part is behind you.
+  reversed: Something is holding you back from moving on. Look at what you're still carrying.
+
+meaning:
+  upright: >-
+    A ferryman guides a small boat across the water, carrying a woman wrapped in a cloak
+    and a child, with six swords standing upright in the boat. The water near them is
+    rough, but the water ahead is calm. The Six of Swords is about transition: leaving
+    something difficult behind and moving toward a better place. It can point to a move,
+    a journey, or an emotional shift after a painful period. You may still carry some
+    sorrow with you, but you're on your way. Keep going.
+  reversed: >-
+    Reversed, the Six of Swords suggests the crossing is harder than expected. You might
+    want to move on but feel stuck, or keep turning back toward the shore you left.
+    Sometimes it shows unresolved issues coming along with you, the swords in the boat
+    that you never dealt with. It can also point to a delayed or difficult journey. The
+    card asks what's holding you back. You may need to face an old hurt before you can
+    truly leave it behind, and that's okay. Calm water is still ahead.
+
+in_context:
+  love: Moving past a hard time together, or leaving a painful relationship behind.
+  work: A transition to a better role or situation. Things are improving.
+  advice: Keep moving toward calmer waters.
+
+symbolism:
+  - "Boat crossing the water: a transition from one place or state to another."
+  - "Ferryman: help and guidance through a hard passage."
+  - "Cloaked woman and child: vulnerability and what we protect."
+  - "Six swords in the boat: troubles that come along on the journey."
+  - "Rough water near, calm water ahead: things are getting better."
+
+reflection:
+  - What am I moving away from, and what am I moving toward?
+  - What am I carrying with me that I could set down?
+  - Who is helping me through this transition?
+
+yes_no: "Yes"
+
+correspondences:
+  element: Air
+  astrology: Mercury in Aquarius
+
+waite_1910:
+  upright: Journey by water, route, way, envoy, commissionary, expedient.
+  reversed: >-
+    Declaration, confession, publicity; one account says that it is a proposal of love.
