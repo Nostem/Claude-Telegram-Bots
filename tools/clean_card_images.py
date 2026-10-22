@@ -19,8 +19,8 @@ from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 RAW_DIR = Path("content/tarot/images/raw")
 OUT_DIR = Path("content/tarot/images/cards")
 
-INNER_SIZE = (600, 1040)  # framed artwork, width x height
-BORDER = 24  # cream border width in pixels
+INNER_SIZE = (780, 1352)  # framed artwork, width x height
+BORDER = 32  # cream border width in pixels
 BORDER_COLOR = (238, 228, 204)
 DARK = 110  # luminance below this counts as ink
 FRAME_DARK = 160  # looser ink threshold for the frame line, which is faded on some scans
