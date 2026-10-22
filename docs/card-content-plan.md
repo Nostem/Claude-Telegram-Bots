@@ -79,7 +79,10 @@ shows why we write our own.
   in `content/tarot/images/CREDITS.md`.
 - Quick check for the wrong version: US Games cards have "© 1971 U.S. Games" printed
   along the right edge, and brighter, flatter colors.
-- Clean the scans up the same way for all cards: crop, straighten, about 600px wide, JPEG.
+- Keep the **vintage look**, but polished. `tools/clean_card_images.py` turns `raw/` scans
+  into `cards/` images the same way for every card: straighten, crop the worn edges,
+  brighten the paper without changing the colors, sharpen slightly, and add an even
+  cream border. Run `python3 tools/clean_card_images.py` after adding raw scans.
 - File names match the card IDs, for example `major-00-the-fool.jpg`.
 - Reversed cards are shown by rotating the image 180° in code, so we only store 78 files.
 - After the first upload, keep Telegram's `file_id` for each image, so later sends are
