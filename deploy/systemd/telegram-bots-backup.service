@@ -1,0 +1,6 @@
+[Unit]
+Description=Back up the Telegram bot databases
+
+[Service]
+Type=oneshot
+ExecStart=/opt/telegram-bots/deploy/backup.sh

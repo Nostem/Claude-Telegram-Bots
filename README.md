@@ -17,6 +17,7 @@ Lifetime unlock in Telegram Stars. The first bot is **Tarot Companion**.
 | `content/tarot/` | The 78 card files and the cleaned 1909 card images |
 | `tools/` | Content tools: image download and cleanup, card and Waite-quote checks, review pages |
 | `tests/` | Unit tests and whole-conversation tests against a fake Telegram API |
+| `deploy/` | Running the bots on a server: [`deploy/README.md`](deploy/README.md) |
 
 ## Running the tarot bot
 
@@ -29,6 +30,8 @@ Lifetime unlock in Telegram Stars. The first bot is **Tarot Companion**.
    export TAROT_BOT_TOKEN=123456:ABC...
    ```
 4. **Run:** `python -m bots.tarot`. Then open your bot in Telegram and send `/start`.
+
+To keep it running for everyone, put it on a server: see [`deploy/README.md`](deploy/README.md).
 
 ### Owner settings (optional, needed for feedback and refunds)
 
