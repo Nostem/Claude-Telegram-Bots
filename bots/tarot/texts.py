@@ -78,3 +78,22 @@ LIFETIME_THANKS = (
 
 BRAND = Brand(name=NAME, lifetime_title=f"{NAME} Lifetime", lifetime_pitch=LIFETIME_PITCH,
               lifetime_thanks=LIFETIME_THANKS, terms=TERMS)
+
+# Bot profile, applied with: python -m bots.tarot.profile
+PROFILE_NAME = NAME  # up to 64 characters
+
+# Profile page and link previews, up to 120 characters.
+SHORT_DESCRIPTION = ("Look up all 78 tarot cards, get a card each day and keep a private journal. "
+                     "Original 1909 art.")
+
+# Shown in an empty chat under "What can this bot do?", up to 512 characters.
+DESCRIPTION = (
+    "🌙 Your pocket tarot companion.\n\n"
+    "🃏 Look up any of the 78 cards: meanings, reversals, symbolism\n"
+    "☀️ A card each day, at the time you choose\n"
+    "📓 A private journal of your draws\n"
+    "🎨 Original 1909 Smith-Waite art, restored\n\n"
+    "Free to use. Unlock Lifetime once for spreads, your full journal, challenges and more.\n\n"
+    "No subscriptions. No ads. Never used for AI.\n\n"
+    "Tap Start to begin."
+)

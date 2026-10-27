@@ -16,6 +16,7 @@ Lifetime unlock in Telegram Stars. The first bot is **Tarot Companion**.
 | `bots/engine/` | Shared by every bot: database, schedules, timezones, feedback, payments, common handlers |
 | `bots/tarot/` | The tarot bot: card search, daily card, journal, onboarding and settings |
 | `content/tarot/` | The 78 card files and the cleaned 1909 card images |
+| `content/brand/` | Profile photo, description picture and font (Cormorant Garamond, SIL Open Font License); made by `tools/make_brand_images.py` |
 | `tools/` | Content tools: image download and cleanup, card and Waite-quote checks, review pages |
 | `tests/` | Unit tests and whole-conversation tests against a fake Telegram API |
 
@@ -29,7 +30,11 @@ Lifetime unlock in Telegram Stars. The first bot is **Tarot Companion**.
    ```
    export TAROT_BOT_TOKEN=123456:ABC...
    ```
-4. **Run:** `python -m bots.tarot`. Then open your bot in Telegram and send `/start`.
+4. **Set up the bot's profile** (name, descriptions, command menu, profile photo):
+   `python -m bots.tarot.profile`. Then upload `content/brand/description.jpg` in
+   @BotFather: `/mybots` → your bot → **Edit Bot** → **Edit Description Picture**. The
+   Bot API can't set that picture.
+5. **Run:** `python -m bots.tarot`. Then open your bot in Telegram and send `/start`.
 
 ### Owner settings (optional, needed for feedback and refunds)
 
