@@ -216,7 +216,7 @@ async def show_settings(update, context):
             f"🔄 Reversed cards: {'on' if user['reversals'] else 'off'}\n"
             f"☀️ Daily card: {daily_text}\n"
             f"📣 What's new messages: {'on' if user['whats_new'] else 'off'}\n"
-            f"✨ Plan: {'Lifetime' if user['lifetime_at'] else 'Free'}")
+            f"✨ Plan: {plan_name(s, user)}")
     rev_next = 0 if user["reversals"] else 1
     await reply(update, text, reply_markup=keyboard(
         [btn("Change timezone", "set:tz")],
@@ -224,6 +224,12 @@ async def show_settings(update, context):
         [btn("Daily card time", "set:daily")],
         [btn(f"Turn what's new {'off' if user['whats_new'] else 'on'}", "set:news")],
     ))
+
+
+def plan_name(s, user):
+    if not user["lifetime_at"]:
+        return "Free"
+    return "Lifetime 🌟 Founder" if s["payments"].is_founder(user["id"]) else "Lifetime"
 
 
 async def settings_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):

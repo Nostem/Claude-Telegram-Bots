@@ -179,6 +179,10 @@ The bot sends the file in chat. Filters: all data, or a date range.
   ($0.013 per Star) and up to 5% in withdrawal and conversion fees. Buyers pay about
   $23–33 depending on how they buy Stars. Set with `TAROT_LIFETIME_STARS`; see
   `docs/business-model.md`.
+- **Decided: founder price.** **990 Stars for the first 100 buyers**, then the regular
+  price. `/upgrade` shows how many founder spots are left, and refunded founder
+  purchases free their spot. Founders see "Lifetime 🌟 Founder" in `/settings`. Set with
+  `TAROT_FOUNDER_STARS` and `TAROT_FOUNDER_LIMIT`.
 - **Decided:** full refund within 7 days of purchase, on request through `/paysupport`.
   The bot refunds the Stars and removes the unlock.
 - Later: an all-access bundle that unlocks every bot in the product line.

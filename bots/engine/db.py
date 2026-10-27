@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS payments (
     charge_id TEXT PRIMARY KEY,         -- telegram_payment_charge_id
     user_id INTEGER NOT NULL,
     stars INTEGER NOT NULL,
+    founder INTEGER NOT NULL DEFAULT 0,  -- bought at the founder price
     created_at TEXT NOT NULL,
     refunded_at TEXT
 );

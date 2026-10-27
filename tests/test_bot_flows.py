@@ -17,7 +17,8 @@ async def bot():
     fake = FakeTelegram()
     db = Database(":memory:")
     settings = Settings(token="123:abc", db_path=":memory:", admin_chat_id=ADMIN_CHAT,
-                        admin_user_ids={ADMIN_USER}, lifetime_stars=750)
+                        admin_user_ids={ADMIN_USER}, lifetime_stars=1650,
+                        founder_stars=990, founder_limit=2)
     app = build_application(settings, db=db, request=fake)
     await app.initialize()
     updates = Updates(app.bot)
@@ -208,7 +209,8 @@ async def test_purchase_unlocks_lifetime_and_report_button(bot):
     app, fake, updates, send, db = bot
     await send(updates.message("/upgrade"))
     invoice = fake.last("sendInvoice")
-    assert invoice["currency"] == "XTR" and invoice["prices"][0]["amount"] == 750
+    assert invoice["currency"] == "XTR" and invoice["prices"][0]["amount"] == 990
+    assert "Founder price: 990 Stars" in fake.texts()[-1] and "2 founder spots left" in fake.texts()[-1]
     await send(updates.pre_checkout())
     assert fake.last("answerPreCheckoutQuery")["ok"] is True
     await send(updates.payment())
@@ -266,3 +268,40 @@ async def test_myid_shows_ids_for_setup(bot):
     await send(updates.message("/myid", user_id=ADMIN_USER, chat_id=ADMIN_CHAT))
     text = fake.last("sendMessage")["text"]
     assert str(ADMIN_USER) in text and str(ADMIN_CHAT) in text
+
+
+async def test_founder_price_ends_after_the_limit(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.payment(user_id=1, charge="a"))
+    await send(updates.payment(user_id=2, charge="b"))
+    await send(updates.message("/upgrade"))
+    assert fake.last("sendInvoice")["prices"][0]["amount"] == 1650
+    assert fake.last("sendInvoice")["payload"] == "lifetime"
+    assert "Founder price" not in fake.texts()[-1]
+
+
+async def test_refunded_founder_spot_opens_again(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.payment(user_id=1, charge="a"))
+    await send(updates.payment(user_id=2, charge="b"))
+    await send(updates.message("/refund 2", user_id=ADMIN_USER, chat_id=ADMIN_USER))
+    await send(updates.message("/upgrade"))
+    assert fake.last("sendInvoice")["prices"][0]["amount"] == 990
+
+
+async def test_checkout_rejects_wrong_amount(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.pre_checkout(payload="lifetime", amount=990))
+    assert fake.last("answerPreCheckoutQuery")["ok"] is False
+    await send(updates.pre_checkout(payload="lifetime", amount=1650))
+    assert fake.last("answerPreCheckoutQuery")["ok"] is True
+
+
+async def test_founders_get_a_badge(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.payment())
+    assert "one of our founders" in fake.last("sendMessage")["text"]
+    await send(updates.message("/settings"))
+    assert "Lifetime 🌟 Founder" in fake.last("sendMessage")["text"]
+    await send(updates.payment(user_id=5, charge="z", amount=1650, payload="lifetime"))
+    assert "one of our founders" not in fake.last("sendMessage")["text"]

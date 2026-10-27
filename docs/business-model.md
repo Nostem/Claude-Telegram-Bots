@@ -36,7 +36,8 @@ tens of thousands of users.
 |---|---|---|---|
 | 750 Stars | $11–15 | $9.75 | $9.26–9.65 |
 | 1,000 Stars | $14–20 | $13.00 | $12.35–12.87 |
-| **1,650 Stars (chosen)** | **$23–33** | **$21.45** | **$20.38–21.24** |
+| 990 Stars (founder price) | $14–20 | $12.87 | $12.23–12.74 |
+| **1,650 Stars (regular)** | **$23–33** | **$21.45** | **$20.38–21.24** |
 
 **Decided: 1,650 Stars**, so each sale pays out at least about $20 even at the high end
 of the fee estimates: 20 ÷ (0.013 × 0.95) ≈ 1,620, rounded up for a small cushion.
@@ -73,9 +74,11 @@ risks are:
 3. **Clear terms.** "Lifetime" means the lifetime of the product, with at least 30 days'
    notice and a chance to export the journal if a bot ever closes. This is in `/terms`.
    Not legal advice: worth a quick check by a professional before launch.
-4. **Founder price.** A lower launch price for the first buyers, raised later. It rewards
-   early users and spreads the word. (Below 1,650 Stars, each sale pays out less than
-   $20.)
+4. **Founder price (decided): 990 Stars for the first 100 buyers.** That's 40% off: buyers
+   pay about $14–20, and we receive about $12.20–12.70 per founder sale. A cap by number
+   rather than by date creates real urgency ("37 founder spots left") and limits the
+   discount's cost to about $780 compared with full price. Founders get a badge in
+   `/settings`. The regular 1,650 Stars applies automatically after that.
 
 ## The unknown: sales volume
 

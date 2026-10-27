@@ -9,7 +9,9 @@ class Settings:
     db_path: str
     admin_chat_id: int | None      # private group where feedback arrives
     admin_user_ids: set[int]       # people allowed to run owner commands like /refund
-    lifetime_stars: int            # Lifetime price in Telegram Stars
+    lifetime_stars: int            # regular Lifetime price in Telegram Stars
+    founder_stars: int = 990       # launch price for the first founder_limit buyers
+    founder_limit: int = 100       # 0 turns the founder price off
 
     @classmethod
     def from_env(cls, prefix, default_db):
@@ -27,4 +29,6 @@ class Settings:
             admin_chat_id=int(chat) if chat else None,
             admin_user_ids=admins,
             lifetime_stars=int(env("LIFETIME_STARS", "1650")),
+            founder_stars=int(env("FOUNDER_STARS", "990")),
+            founder_limit=int(env("FOUNDER_LIMIT", "100")),
         )

@@ -37,7 +37,9 @@ Lifetime unlock in Telegram Stars. The first bot is **Tarot Companion**.
 |---|---|
 | `TAROT_ADMIN_USER_IDS` | Your Telegram user id (comma-separated for several people). Allows `/refund`. |
 | `TAROT_ADMIN_CHAT_ID` | A private group where feedback arrives. Replies there go back to the user. |
-| `TAROT_LIFETIME_STARS` | Lifetime price in Stars (default 1650, which pays out about $20 after fees). |
+| `TAROT_LIFETIME_STARS` | Regular Lifetime price in Stars (default 1650, which pays out about $20 after fees). |
+| `TAROT_FOUNDER_STARS` | Launch price for the first buyers (default 990). |
+| `TAROT_FOUNDER_LIMIT` | How many founder purchases before the regular price applies (default 100; 0 turns it off). |
 | `TAROT_DB_PATH` | Database file (default `data/tarot.sqlite3`). |
 
 To find the ids: send `/myid` to the bot for your user id. For the group, create a

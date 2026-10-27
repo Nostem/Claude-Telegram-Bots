@@ -101,12 +101,12 @@ class Updates:
                           "chat": {"id": user_id, "type": "private"}, "text": "x"}}
         return Update.de_json({"update_id": next(self._ids), "callback_query": cq}, self.bot)
 
-    def pre_checkout(self, payload="lifetime", user_id=USER_ID, amount=750):
+    def pre_checkout(self, payload="lifetime:founder", user_id=USER_ID, amount=990):
         q = {"id": "pcq", "from": self._user(user_id), "currency": "XTR", "total_amount": amount,
              "invoice_payload": payload}
         return Update.de_json({"update_id": next(self._ids), "pre_checkout_query": q}, self.bot)
 
-    def payment(self, user_id=USER_ID, amount=750, charge="charge-abc"):
+    def payment(self, user_id=USER_ID, amount=990, charge="charge-abc", payload="lifetime:founder"):
         return self.message(user_id=user_id, successful_payment={
-            "currency": "XTR", "total_amount": amount, "invoice_payload": "lifetime",
+            "currency": "XTR", "total_amount": amount, "invoice_payload": payload,
             "telegram_payment_charge_id": charge, "provider_payment_charge_id": ""})

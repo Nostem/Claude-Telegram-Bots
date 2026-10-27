@@ -17,7 +17,7 @@ from telegram.ext import (CallbackQueryHandler, CommandHandler, ContextTypes, Me
 
 from .db import utcnow
 from .feedback import KINDS, LIFETIME_MENU
-from .payments import PAYLOAD, REFUND_DAYS
+from .payments import FOUNDER_PAYLOAD, REFUND_DAYS
 
 log = logging.getLogger(__name__)
 LOOP_SECONDS = 30
@@ -171,22 +171,32 @@ async def upgrade(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if is_lifetime(context, update.effective_user.id):
         await reply(update, "You already have Lifetime. Thank you! 💛")
         return
-    brand, stars = s["brand"], s["settings"].lifetime_stars
-    await reply(update, brand.lifetime_pitch)
+    brand, settings = s["brand"], s["settings"]
+    stars, payload, spots_left = s["payments"].price(settings)
+    pitch = brand.lifetime_pitch
+    if payload == FOUNDER_PAYLOAD:
+        pitch += (f"\n\n🌟 <b>Founder price: {stars:,} Stars</b> instead of "
+                  f"{settings.lifetime_stars:,}, for our first {settings.founder_limit} "
+                  f"supporters. {spots_left} founder spot{'s' if spots_left != 1 else ''} left.")
+    await reply(update, pitch)
     await context.bot.send_invoice(
         chat_id=update.effective_chat.id,
         title=brand.lifetime_title,
         description=f"One payment, no subscription. Full refund within {REFUND_DAYS} days if "
                     "you change your mind. See /terms.",
-        payload=PAYLOAD,
+        payload=payload,
         currency="XTR",
-        prices=[LabeledPrice("Lifetime access", stars)],
+        prices=[LabeledPrice("Lifetime (founder price)" if payload == FOUNDER_PAYLOAD
+                             else "Lifetime access", stars)],
     )
 
 
 async def precheckout(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.pre_checkout_query
-    if query.invoice_payload != PAYLOAD:
+    expected = services(context)["payments"].expected_stars(query.invoice_payload,
+                                                            services(context)["settings"])
+    # A founder invoice stays valid even if the last spot went while the buyer was paying.
+    if expected is None or query.total_amount != expected:
         await query.answer(ok=False, error_message="Something went wrong. Please try /upgrade again.")
     elif is_lifetime(context, query.from_user.id):
         await query.answer(ok=False, error_message="You already have Lifetime.")
@@ -196,9 +206,13 @@ async def precheckout(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def successful_payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     s, pay = services(context), update.effective_message.successful_payment
+    founder = pay.invoice_payload == FOUNDER_PAYLOAD
     s["payments"].record(pay.telegram_payment_charge_id, update.effective_user.id,
-                         pay.total_amount, utcnow())
-    await reply(update, s["brand"].lifetime_thanks)
+                         pay.total_amount, utcnow(), founder=founder)
+    thanks = s["brand"].lifetime_thanks
+    if founder:
+        thanks += "\n\n🌟 <b>You're one of our founders.</b> Thank you for believing in this early."
+    await reply(update, thanks)
 
 
 async def refund(update: Update, context: ContextTypes.DEFAULT_TYPE):
