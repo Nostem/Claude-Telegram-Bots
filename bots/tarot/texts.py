@@ -46,15 +46,18 @@ TERMS = (
     "<b>Your journal is yours:</b> it is never used to train AI.\n\n"
     "<b>Feedback</b> is read by a person and used only to improve the bot.\n\n"
     "<b>Deleting:</b> /delete_my_data deletes everything, permanently.\n\n"
-    "<b>Lifetime</b> is a one-time payment in Telegram Stars. Full refund within 7 days on "
-    "request through /paysupport.\n\n"
+    "<b>Lifetime</b> is a one-time payment in Telegram Stars, with no subscription. It "
+    "gives you the paid features for as long as Tarot Companion is running: the lifetime "
+    "of the product, not of a person. If we ever close it, we'll tell you at least 30 days "
+    "ahead so you can export your journal. Full refund within 7 days of buying, on request "
+    "through /paysupport.\n\n"
     "<b>Tarot is for reflection and entertainment.</b> It isn't medical, legal, financial "
     "or psychological advice. If you're struggling, please reach out to someone you trust "
     "or a professional."
 )
 
 LIFETIME_PITCH = (
-    "✨ <b>Lifetime: pay once, keep it forever</b>\n\n"
+    "✨ <b>Lifetime: pay once, no subscription</b>\n\n"
     "Free stays free: card lookup, a daily card, and your last 7 days of journal.\n\n"
     "Lifetime adds:\n"
     "• Your <b>full journal</b>, including every draw you've already made\n"

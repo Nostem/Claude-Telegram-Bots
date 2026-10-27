@@ -173,8 +173,11 @@ The bot sends the file in chat. Filters: all data, or a date range.
 
 - `/upgrade` sends a Telegram Stars invoice (currency XTR) for the lifetime unlock.
 - Unlocks are tied to the Telegram user ID.
-- **[DECIDE]** Price in Stars, aiming for roughly $10–20. Check how many Stars users pay
-  per dollar in each app store.
+- **Decided:** "Lifetime" means the lifetime of the product. If a bot is ever closed,
+  users get at least 30 days' notice to export their journal. Stated in `/terms`.
+- **[DECIDE]** Price in Stars. Decide whether $10–20 is what the buyer pays or what we
+  receive: we get about $0.013 per Star, roughly half to two-thirds of what buyers pay.
+  See `docs/business-model.md`. The default is 750 Stars (`TAROT_LIFETIME_STARS`).
 - **Decided:** full refund within 7 days of purchase, on request through `/paysupport`.
   The bot refunds the Stars and removes the unlock.
 - Later: an all-access bundle that unlocks every bot in the product line.

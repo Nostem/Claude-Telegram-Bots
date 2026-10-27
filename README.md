@@ -7,6 +7,7 @@ Lifetime unlock in Telegram Stars. The first bot is **Tarot Companion**.
 - Tarot bot spec: [`docs/tarot-bot-spec.md`](docs/tarot-bot-spec.md)
 - Card content plan: [`docs/card-content-plan.md`](docs/card-content-plan.md)
 - Card review pages: [`docs/review/`](docs/review/)
+- Business model and costs: [`docs/business-model.md`](docs/business-model.md)
 
 ## Layout
 

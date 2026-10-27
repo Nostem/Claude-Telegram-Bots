@@ -176,8 +176,8 @@ async def upgrade(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_invoice(
         chat_id=update.effective_chat.id,
         title=brand.lifetime_title,
-        description=f"One payment, yours for life. Full refund within {REFUND_DAYS} days if "
-                    "you change your mind.",
+        description=f"One payment, no subscription. Full refund within {REFUND_DAYS} days if "
+                    "you change your mind. See /terms.",
         payload=PAYLOAD,
         currency="XTR",
         prices=[LabeledPrice("Lifetime access", stars)],
