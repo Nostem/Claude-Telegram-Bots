@@ -1,0 +1,26 @@
+# One bot per instance: telegram-bot@tarot runs `python -m bots.tarot`
+# with its settings from /etc/telegram-bots/tarot.env.
+[Unit]
+Description=Telegram bot %i
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=bots
+Group=bots
+WorkingDirectory=/opt/telegram-bots
+EnvironmentFile=/etc/telegram-bots/%i.env
+ExecStart=/opt/telegram-bots/.venv/bin/python -m bots.%i
+Restart=always
+RestartSec=5
+
+# Databases live in /var/lib/telegram-bots; everything else is read-only.
+StateDirectory=telegram-bots
+StateDirectoryMode=0750
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
