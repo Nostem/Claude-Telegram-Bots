@@ -7,8 +7,7 @@ WELCOME = (
     "🌙 <b>Welcome to Tarot Companion.</b>\n\n"
     "Look up any of the 78 cards, get a card each day, and keep a journal of your draws. "
     "Card art is the original 1909 Smith-Waite deck.\n\n"
-    "No subscriptions, no ads, and your journal is never used for AI. Let's set a few "
-    "things up first."
+    "No subscriptions and no ads. Let's set a few things up first."
 )
 
 ASK_TIMEZONE = ("🕰 <b>Where are you?</b>\n\nThis is so your daily card arrives at the right "
@@ -43,7 +42,6 @@ TERMS = (
     "<b>What we store:</b> your Telegram user id, your settings (timezone, reversed cards, "
     "schedule), your journal of draws, and any feedback you send. Nothing else. We never see "
     "your phone number, and we don't sell or share your data.\n\n"
-    "<b>Your journal is yours:</b> it is never used to train AI.\n\n"
     "<b>Feedback</b> is read by a person and used only to improve the bot.\n\n"
     "<b>Deleting:</b> /delete_my_data deletes everything, permanently.\n\n"
     "<b>Lifetime</b> is a one-time payment in Telegram Stars, with no subscription. It "
