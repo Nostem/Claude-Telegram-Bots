@@ -26,5 +26,5 @@ class Settings:
             db_path=env("DB_PATH", default_db),
             admin_chat_id=int(chat) if chat else None,
             admin_user_ids=admins,
-            lifetime_stars=int(env("LIFETIME_STARS", "750")),
+            lifetime_stars=int(env("LIFETIME_STARS", "1650")),
         )

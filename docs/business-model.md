@@ -32,14 +32,20 @@ tens of thousands of users.
 - Buyers pay more than we receive: about $0.014–0.02 per Star, depending on how they buy
   Stars (app-store purchases cost the most).
 
-| Price | Buyer pays (approx.) | We receive, before fees |
-|---|---|---|
-| 750 Stars (current default) | $11–15 | $9.75 |
-| 1,000 Stars | $14–20 | $13.00 |
-| 1,500 Stars | $21–30 | $19.50 |
+| Price | Buyer pays (approx.) | We receive, before fees | After 1–5% fees |
+|---|---|---|---|
+| 750 Stars | $11–15 | $9.75 | $9.26–9.65 |
+| 1,000 Stars | $14–20 | $13.00 | $12.35–12.87 |
+| **1,650 Stars (chosen)** | **$23–33** | **$21.45** | **$20.38–21.24** |
 
-**To decide:** whether the planned $10–20 is the buyer's price or our take. For a $10–20
-take, the price is about 800–1,500 Stars.
+**Decided: 1,650 Stars**, so each sale pays out at least about $20 even at the high end
+of the fee estimates: 20 ÷ (0.013 × 0.95) ≈ 1,620, rounded up for a small cushion.
+
+- **Exchange rate:** payouts arrive as TON, whose dollar value moves. Converting soon
+  after each withdrawal keeps the $20 close to $20.
+- **If Telegram's rate changes,** recalculate: Stars = 20 ÷ (rate × 0.95).
+- **Buyer price:** about $23–33, depending on how they buy Stars. That's above the
+  earlier $10–20 idea, so the free tier needs to show clear value before asking.
 
 ## Break-even
 
@@ -68,12 +74,13 @@ risks are:
    notice and a chance to export the journal if a bot ever closes. This is in `/terms`.
    Not legal advice: worth a quick check by a professional before launch.
 4. **Founder price.** A lower launch price for the first buyers, raised later. It rewards
-   early users and spreads the word.
+   early users and spreads the word. (Below 1,650 Stars, each sale pays out less than
+   $20.)
 
 ## The unknown: sales volume
 
 Free-to-paid conversion is often quoted at around 2–5% of active users, though it varies
-widely. At that rate, 100 sales a year (about $950 net at 750 Stars) needs very roughly
+widely. At that rate, 100 sales a year (about $2,000 net at 1,650 Stars) needs very roughly
 2,000–5,000 active free users. Growth is what matters: the free tier, shareable features
 (inline card sharing, writing your name in runes) and the Reddit and Twitter launch.
 
