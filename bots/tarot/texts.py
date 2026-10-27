@@ -78,7 +78,7 @@ BRAND = Brand(name=NAME, lifetime_title=f"{NAME} Lifetime", lifetime_pitch=LIFET
               lifetime_thanks=LIFETIME_THANKS, terms=TERMS)
 
 # Bot profile, applied with: python -m bots.tarot.profile
-PROFILE_NAME = NAME  # up to 64 characters
+PROFILE_NAME = "Sors Diei - Tarot Companion"  # up to 64 characters
 
 # Profile page and link previews, up to 120 characters.
 SHORT_DESCRIPTION = ("Look up all 78 tarot cards, get a card each day and keep a private journal. "
