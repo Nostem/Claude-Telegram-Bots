@@ -94,6 +94,6 @@ DESCRIPTION = (
     "📓 A private journal of your draws\n"
     "🎨 Original 1909 Smith-Waite art, restored\n\n"
     "Free to use. Unlock Lifetime once for spreads, your full journal, challenges and more.\n\n"
-    "No subscriptions. No ads. Never used for AI.\n\n"
+    "No subscriptions. No ads.\n\n"
     "Tap Start to begin."
 )
