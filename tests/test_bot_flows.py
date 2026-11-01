@@ -305,3 +305,154 @@ async def test_founders_get_a_badge(bot):
     assert "Lifetime 🌟 Founder" in fake.last("sendMessage")["text"]
     await send(updates.payment(user_id=5, charge="z", amount=1650, payload="lifetime"))
     assert "one of our founders" not in fake.last("sendMessage")["text"]
+
+
+async def test_donate_menu_presets_custom_and_help_are_discoverable(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.message("/donate"))
+    message = fake.last("sendMessage")
+    markup = message["reply_markup"]
+    callbacks = [b["callback_data"] for row in markup["inline_keyboard"] for b in row]
+    assert callbacks == ["donate:25", "donate:50", "donate:100", "donate:500", "donate:custom"]
+    assert "Lifetime" in message["text"] and "optional" in message["text"].lower()
+    assert "sendInvoice" not in fake.methods()
+    await send(updates.message("/help"))
+    assert "/donate" in fake.last("sendMessage")["text"]
+    from bots.tarot.bot import COMMANDS
+    assert "donate" in [name for name, _ in COMMANDS]
+
+
+@pytest.mark.parametrize("source", ["preset", "argument", "custom"])
+async def test_donate_sends_a_separate_one_time_stars_invoice(bot, source):
+    app, fake, updates, send, db = bot
+    if source == "preset":
+        await send(updates.callback("donate:50"))
+        amount = 50
+    elif source == "argument":
+        await send(updates.message("/donate 75"))
+        amount = 75
+    else:
+        await send(updates.callback("donate:custom"))
+        await send(updates.message("75"))
+        amount = 75
+    invoice = fake.last("sendInvoice")
+    assert invoice["currency"] == "XTR"
+    assert invoice["payload"] == f"donation:{amount}"
+    assert invoice["prices"] == [{"label": "Voluntary support", "amount": amount}]
+    assert "subscription_period" not in invoice and "max_tip_amount" not in invoice
+    assert "Lifetime" in invoice["description"]
+    assert not db.get_user(USER_ID)["lifetime_at"]
+
+
+@pytest.mark.parametrize("text", ["0", "10001", "-1", "2.5", "no", "9" * 5000])
+async def test_invalid_custom_amount_stays_in_prompt_without_invoice_or_card_lookup(bot, text):
+    app, fake, updates, send, db = bot
+    await send(updates.callback("donate:custom"))
+    await send(updates.message(text))
+    assert "1" in fake.last("sendMessage")["text"] and "10,000" in fake.last("sendMessage")["text"]
+    assert "sendInvoice" not in fake.methods() and "sendPhoto" not in fake.methods()
+    await send(updates.message("25"))
+    assert fake.last("sendInvoice")["payload"] == "donation:25"
+
+
+async def test_cancel_custom_donation_restores_card_lookup(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.callback("donate:custom"))
+    assert app.user_data[USER_ID]["awaiting"]["type"] == "donation"
+    await send(updates.message("/cancel"))
+    await send(updates.message("the tower"))
+    assert "The Tower" in fake.last("sendPhoto")["caption"]
+    assert "sendInvoice" not in fake.methods()
+
+
+@pytest.mark.parametrize("args", ["0", "10001", "25 extra", "2.5"])
+async def test_invalid_donate_arguments_do_not_send_invoice(bot, args):
+    app, fake, updates, send, db = bot
+    await send(updates.message("/donate " + args))
+    assert "sendInvoice" not in fake.methods()
+    assert "10,000" in fake.last("sendMessage")["text"]
+
+
+async def test_lifetime_users_can_donate_and_refund_without_losing_access(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.payment(charge="purchase"))
+    original = db.get_user(USER_ID)["lifetime_at"]
+    await send(updates.pre_checkout(payload="donation:50", amount=50))
+    assert fake.last("answerPreCheckoutQuery")["ok"] is True
+    await send(updates.payment(payload="donation:50", amount=50, charge="tip"))
+    assert db.one("SELECT stars FROM donations WHERE charge_id='tip'")[0] == 50
+    assert app.bot_data["payments"].founders_sold() == 1
+    assert db.get_user(USER_ID)["lifetime_at"] == original
+    await send(updates.message("/refund_donation tip", user_id=ADMIN_USER))
+    assert fake.last("refundStarPayment")["telegram_payment_charge_id"] == "tip"
+    assert db.one("SELECT refunded_at FROM donations WHERE charge_id='tip'")[0]
+    assert db.get_user(USER_ID)["lifetime_at"] == original
+    assert db.one("SELECT refunded_at FROM payments WHERE charge_id='purchase'")[0] is None
+    assert "Lifetime" in fake.texts()[-1] and "unchanged" in fake.texts()[-1]
+
+
+async def test_repeated_donations_and_replays_do_not_unlock_or_duplicate(bot):
+    app, fake, updates, send, db = bot
+    for charge in ["tip-a", "tip-a", "tip-b"]:
+        await send(updates.payment(payload="donation:25", amount=25, charge=charge))
+    assert db.one("SELECT COUNT(*) FROM donations")[0] == 2
+    assert db.one("SELECT SUM(stars) FROM donations")[0] == 50
+    assert db.one("SELECT COUNT(*) FROM payments")[0] == 0
+    assert app.bot_data["payments"].founders_sold() == 0
+    assert not db.get_user(USER_ID)["lifetime_at"]
+    await send(updates.message("/refund_donation tip-a", user_id=ADMIN_USER))
+    await send(updates.payment(payload="donation:25", amount=25, charge="tip-a"))
+    assert db.one("SELECT COUNT(*) FROM donations")[0] == 2
+    assert db.one("SELECT refunded_at FROM donations WHERE charge_id='tip-a'")[0]
+    assert not db.get_user(USER_ID)["lifetime_at"]
+
+
+@pytest.mark.parametrize("payload,amount,currency", [
+    ("donation:50", 25, "XTR"), ("donation:50", 50, "USD"),
+    ("donation:0", 0, "XTR"), ("donation:10001", 10001, "XTR"),
+    ("donation:050", 50, "XTR"), ("unknown", 990, "XTR"),
+    ("lifetime:founder", 990, "USD"), ("lifetime", 1, "XTR"),
+])
+async def test_checkout_and_success_reject_unrecognized_currency_amount_or_payload(bot, payload, amount, currency):
+    app, fake, updates, send, db = bot
+    await send(updates.pre_checkout(payload=payload, amount=amount, currency=currency))
+    assert fake.last("answerPreCheckoutQuery")["ok"] is False
+    await send(updates.payment(payload=payload, amount=amount, currency=currency))
+    assert not db.get_user(USER_ID)["lifetime_at"]
+    assert db.one("SELECT COUNT(*) FROM payments")[0] == 0
+    assert db.one("SELECT COUNT(*) FROM donations")[0] == 0
+
+
+async def test_donation_refunds_are_owner_only_and_cannot_be_sent_twice(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.payment(payload="donation:25", amount=25, charge="tip"))
+    await send(updates.message("/refund_donation tip", user_id=333))
+    assert "refundStarPayment" not in fake.methods()
+    await send(updates.message(f"/refund_donation {USER_ID}", user_id=ADMIN_USER))
+    assert fake.last("refundStarPayment")["telegram_payment_charge_id"] == "tip"
+    await send(updates.message("/refund_donation tip", user_id=ADMIN_USER))
+    assert fake.methods().count("refundStarPayment") == 1
+    await send(updates.message("/refund tip", user_id=ADMIN_USER))
+    assert fake.methods().count("refundStarPayment") == 1
+
+
+async def test_donation_refund_window_and_explicit_force(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.payment(payload="donation:25", amount=25, charge="old-tip"))
+    db.execute("UPDATE donations SET created_at=?", ((utcnow() - timedelta(days=8)).isoformat(),))
+    await send(updates.message("/refund_donation old-tip", user_id=ADMIN_USER))
+    assert "refundStarPayment" not in fake.methods()
+    await send(updates.message("/refund_donation old-tip force", user_id=ADMIN_USER))
+    assert fake.last("refundStarPayment")["telegram_payment_charge_id"] == "old-tip"
+
+
+async def test_deleting_user_data_keeps_only_donation_receipt_for_refunds(bot):
+    app, fake, updates, send, db = bot
+    await onboard(send, updates)
+    await send(updates.payment(payload="donation:25", amount=25, charge="tip"))
+    await send(updates.message("/delete_my_data"))
+    await send(updates.callback("del:yes"))
+    assert db.one("SELECT id FROM users WHERE id=?", (USER_ID,)) is None
+    assert db.one("SELECT charge_id FROM donations")[0] == "tip"
+    await send(updates.message("/refund_donation tip", user_id=ADMIN_USER))
+    assert fake.last("refundStarPayment")["telegram_payment_charge_id"] == "tip"

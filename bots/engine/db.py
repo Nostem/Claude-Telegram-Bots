@@ -73,6 +73,15 @@ CREATE TABLE IF NOT EXISTS payments (
     refunded_at TEXT
 );
 
+CREATE TABLE IF NOT EXISTS donations (
+    charge_id TEXT PRIMARY KEY,         -- separate receipts: never grant Lifetime
+    user_id INTEGER NOT NULL,
+    stars INTEGER NOT NULL CHECK (stars BETWEEN 1 AND 10000),
+    created_at TEXT NOT NULL,
+    refunded_at TEXT
+);
+CREATE INDEX IF NOT EXISTS donations_user ON donations(user_id, created_at);
+
 CREATE TABLE IF NOT EXISTS media (
     key TEXT PRIMARY KEY,               -- image file name plus orientation
     file_id TEXT NOT NULL               -- Telegram's id, so images upload only once

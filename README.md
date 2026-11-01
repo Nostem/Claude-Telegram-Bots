@@ -60,6 +60,33 @@ the bot after setting them.
 **Refunds:** `/refund <user id>` in a private chat with the bot. Payments older than 7
 days need `/refund <user id> force`.
 
+## Optional Stars donations
+
+Users can send `/donate` and choose **25, 50, 100 or 500 Stars**, or choose
+**Custom amount** and type a whole number from **1 to 10,000**. `/donate 75`
+opens an invoice directly; `/cancel` exits a custom-amount prompt. Telegram
+shows its own payment confirmation: opening an invoice does not pay it.
+
+Donations are voluntary, one-time support. They do **not** grant Lifetime,
+founder status or any other perks, and Lifetime users can donate too. Stars
+are credited to the **bot's balance**, not a personal Stars balance. The owner
+can redeem eligible rewards under Telegram's current rules.
+
+Each donation has a separate receipt in the same SQLite database; duplicate
+Telegram payment updates do not record it twice. `/delete_my_data` removes
+personal settings, draws and feedback but retains purchase/donation receipts
+for payment support and refunds. `/terms` discloses this retention.
+
+Users can request a full refund within seven days through `/paysupport`.
+Configure `TAROT_ADMIN_CHAT_ID` to receive support messages in your private
+group. Without that setting, support messages are saved in SQLite but are
+not forwarded to you.
+
+**Owner only:** `/refund_donation <charge id or user id>` refunds a donation;
+using a user id chooses their latest unrefunded donation. Add `force` for a
+payment older than seven days. Donation refunds leave Lifetime untouched.
+The existing `/refund` command continues to handle Lifetime purchases only.
+
 ## Tests
 
 ```

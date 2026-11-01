@@ -16,6 +16,7 @@ from telegram.ext import (CallbackQueryHandler, CommandHandler, ContextTypes, Me
                           PreCheckoutQueryHandler, filters)
 
 from .db import utcnow
+from .donations import Donations, PRESETS
 from .feedback import KINDS, LIFETIME_MENU
 from .payments import FOUNDER_PAYLOAD, REFUND_DAYS
 
@@ -164,6 +165,68 @@ async def admin_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Payments
 
+DONATION_AMOUNT_PROMPT = (
+    "Choose a whole number of Stars from 1 to 10,000. "
+    "For example: <code>/donate 75</code>. Send /cancel to stop."
+)
+
+
+async def donate(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    context.user_data.pop("awaiting", None)
+    if context.args:
+        amount = Donations.amount(context.args[0]) if len(context.args) == 1 else None
+        if amount is None:
+            await reply(update, DONATION_AMOUNT_PROMPT)
+        else:
+            await _donation_invoice(update, context, amount)
+        return
+    await reply(
+        update,
+        "💛 <b>Support the bot</b>\n\n"
+        "An optional, one-time donation helps keep this bot running. "
+        "It does not unlock Lifetime or change your access.\n\n"
+        "Choose an amount in Telegram Stars, or choose Custom. "
+        "For payment support or a refund within 7 days, use /paysupport.",
+        reply_markup=keyboard(
+            [btn(f"⭐ {amount}", f"donate:{amount}") for amount in PRESETS],
+            [btn("Custom amount", "donate:custom")]))
+
+
+async def _donation_invoice(update, context, amount):
+    context.user_data.pop("awaiting", None)
+    await context.bot.send_invoice(
+        chat_id=update.effective_chat.id,
+        title=f"Support {services(context)['brand'].name}",
+        description="Optional one-time support. No subscription or Lifetime unlock. "
+                    "For support or a refund within 7 days, use /paysupport.",
+        payload=f"donation:{amount}", provider_token="", currency="XTR",
+        prices=[LabeledPrice("Voluntary support", amount)],
+    )
+
+
+async def donation_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.callback_query.answer()
+    value = update.callback_query.data.split(":", 1)[1]
+    if value == "custom":
+        context.user_data["awaiting"] = {"type": "donation"}
+        await reply(update, "Type the number of Stars you would like to donate.\n\n" +
+                    DONATION_AMOUNT_PROMPT)
+    else:
+        amount = Donations.amount(value)
+        if amount is None:
+            await reply(update, DONATION_AMOUNT_PROMPT)
+        else:
+            await _donation_invoice(update, context, amount)
+
+
+async def donation_amount(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    amount = Donations.amount(update.effective_message.text)
+    if amount is None:
+        await reply(update, DONATION_AMOUNT_PROMPT)
+    else:
+        await _donation_invoice(update, context, amount)
+
+
 async def upgrade(update: Update, context: ContextTypes.DEFAULT_TYPE):
     s = services(context)
     if update.callback_query:
@@ -193,10 +256,18 @@ async def upgrade(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def precheckout(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.pre_checkout_query
+    donation = Donations.expected_stars(query.invoice_payload)
+    if donation is not None:
+        if query.currency == "XTR" and query.total_amount == donation:
+            await query.answer(ok=True)
+        else:
+            await query.answer(ok=False, error_message="The donation amount is invalid. "
+                               "Please try /donate again.")
+        return
     expected = services(context)["payments"].expected_stars(query.invoice_payload,
                                                             services(context)["settings"])
     # A founder invoice stays valid even if the last spot went while the buyer was paying.
-    if expected is None or query.total_amount != expected:
+    if query.currency != "XTR" or expected is None or query.total_amount != expected:
         await query.answer(ok=False, error_message="Something went wrong. Please try /upgrade again.")
     elif is_lifetime(context, query.from_user.id):
         await query.answer(ok=False, error_message="You already have Lifetime.")
@@ -206,6 +277,17 @@ async def precheckout(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def successful_payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     s, pay = services(context), update.effective_message.successful_payment
+    donation = Donations.expected_stars(pay.invoice_payload)
+    if donation is not None and pay.currency == "XTR" and pay.total_amount == donation:
+        if s["donations"].record(pay.telegram_payment_charge_id, update.effective_user.id,
+                                 donation, utcnow()):
+            await reply(update, f"💛 Thank you for supporting us with {donation:,} Stars!\n\n"
+                        "Your access is unchanged. For payment support, use /paysupport.")
+        return
+    expected = s["payments"].expected_stars(pay.invoice_payload, s["settings"])
+    if pay.currency != "XTR" or expected is None or pay.total_amount != expected:
+        log.warning("Ignored an unrecognized or mismatched payment")
+        return
     founder = pay.invoice_payload == FOUNDER_PAYLOAD
     s["payments"].record(pay.telegram_payment_charge_id, update.effective_user.id,
                          pay.total_amount, utcnow(), founder=founder)
@@ -247,9 +329,40 @@ async def refund(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def paysupport(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await reply(update, f"💳 <b>Payment support</b>\n\nLifetime is a single payment in Telegram "
-                        f"Stars. If you change your mind, you can get a full refund within "
-                        f"{REFUND_DAYS} days of buying.")
+                        f"Stars. Donations are optional, one-time support and do not unlock "
+                        f"Lifetime. You can request a full refund of either within "
+                        f"{REFUND_DAYS} days. Tell us which payment needs help.")
     await start_feedback(update, context, "payment")
+
+
+async def refund_donation(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Owner only; donation refunds must never alter a Lifetime purchase."""
+    s, msg = services(context), update.effective_message
+    if update.effective_user.id not in s["settings"].admin_user_ids:
+        return
+    if not context.args:
+        await msg.reply_text("Usage: /refund_donation <charge id or user id> [force]")
+        return
+    donation = s["donations"].find(context.args[0])
+    now = utcnow()
+    if donation is None:
+        await msg.reply_text("No donation found.")
+        return
+    if donation["refunded_at"]:
+        await msg.reply_text("That donation was already refunded.")
+        return
+    if not s["donations"].within_refund_window(donation, now) and "force" not in context.args[1:]:
+        await msg.reply_text(f"That donation is older than {REFUND_DAYS} days. Add 'force' "
+                             "to refund it anyway.")
+        return
+    await context.bot.refund_star_payment(donation["user_id"], donation["charge_id"])
+    s["donations"].mark_refunded(donation, now)
+    await msg.reply_text(f"Refunded {donation['stars']} donated Stars. Lifetime access is unchanged.")
+    try:
+        await context.bot.send_message(donation["user_id"],
+            "Your donation has been refunded. Your Lifetime access is unchanged.")
+    except Forbidden:
+        pass
 
 
 async def terms(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -262,7 +375,8 @@ async def delete_my_data(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await reply(update, "⚠️ This permanently deletes everything we store about you: settings, "
                         "journal, schedules and feedback. It can't be undone.\n\n"
                         "<i>A Lifetime purchase is tied to your Telegram account and stays valid "
-                        "after deletion; only the payment record itself is kept.</i>",
+                        "after deletion. Purchase and donation receipts are kept for "
+                        "payment support and refunds.</i>",
                 reply_markup=keyboard([btn("Delete everything", "del:yes"), btn("Cancel", "del:no")]))
 
 
@@ -336,10 +450,13 @@ def register(application):
     application.add_handler(CommandHandler("feedback", feedback_command, filters.ChatType.PRIVATE))
     application.add_handler(CallbackQueryHandler(feedback_kind_callback, pattern=r"^fb:"))
     application.add_handler(CommandHandler("upgrade", upgrade, filters.ChatType.PRIVATE))
+    application.add_handler(CommandHandler("donate", donate, filters.ChatType.PRIVATE))
+    application.add_handler(CallbackQueryHandler(donation_callback, pattern=r"^donate:"))
     application.add_handler(CallbackQueryHandler(upgrade, pattern=r"^upgrade$"))
     application.add_handler(PreCheckoutQueryHandler(precheckout))
     application.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment))
     application.add_handler(CommandHandler("refund", refund))
+    application.add_handler(CommandHandler("refund_donation", refund_donation))
     application.add_handler(CommandHandler("paysupport", paysupport, filters.ChatType.PRIVATE))
     application.add_handler(CommandHandler("terms", terms))
     application.add_handler(CommandHandler("delete_my_data", delete_my_data, filters.ChatType.PRIVATE))
