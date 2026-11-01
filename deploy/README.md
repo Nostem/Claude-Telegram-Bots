@@ -88,8 +88,12 @@ The donations release creates a separate `donations` table automatically when
 the bot opens its database. Existing users and Lifetime receipts are preserved.
 Back up before updating; `/donate` appears in the command menu after restart.
 Test `/donate`, choose an amount and inspect the invoice without paying unless
-you intentionally want a real Stars transaction. Configure the feedback group
-(`TAROT_ADMIN_CHAT_ID`) so `/paysupport` requests reach you.
+you intentionally want a real Stars transaction. Verify that a `/paysupport`
+request reaches the feedback group (`TAROT_ADMIN_CHAT_ID`) or, if no group is
+configured, the owner with the lowest numeric `TAROT_ADMIN_USER_IDS` value.
+The fallback owner must have started the bot and not blocked it. Reply to the
+forwarded request and verify the user receives that reply before accepting
+real donations. Ordinary feedback forwarding still needs the private group.
 
 Donation receipts are included in the same nightly database backups. Refund a
 donation with `/refund_donation <charge id or user id> [force]`; use `/refund`

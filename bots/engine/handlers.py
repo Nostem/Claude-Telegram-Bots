@@ -11,7 +11,7 @@ from html import escape
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, LabeledPrice, Update
 from telegram.constants import ParseMode
-from telegram.error import Forbidden
+from telegram.error import BadRequest, Forbidden, NetworkError
 from telegram.ext import (CallbackQueryHandler, CommandHandler, ContextTypes, MessageHandler,
                           PreCheckoutQueryHandler, filters)
 
@@ -22,6 +22,10 @@ from .payments import FOUNDER_PAYLOAD, REFUND_DAYS
 
 log = logging.getLogger(__name__)
 LOOP_SECONDS = 30
+PAYMENT_SUPPORT_LIMIT = (
+    "You've sent several payment-support requests today; your existing requests are saved. "
+    "Please try /paysupport again later. Send /cancel to leave this prompt."
+)
 
 
 @dataclass
@@ -78,9 +82,13 @@ async def start_feedback(update, context, kind, card_id=None, card_name=None):
         await reply(update, "Ideas and card feedback are part of Lifetime. You can always "
                             "report something broken with /feedback.")
         return
-    if not s["feedback"].can_send(user_id, utcnow()):
-        await reply(update, "You've sent several messages today. Thank you! Please try again "
-                            "tomorrow.")
+    if not s["feedback"].can_send(user_id, utcnow(), kind):
+        if kind == "payment":
+            context.user_data["awaiting"] = {"type": "feedback", "kind": "payment"}
+            await reply(update, PAYMENT_SUPPORT_LIMIT)
+        else:
+            await reply(update, "You've sent several messages today. Thank you! Please try again "
+                                "tomorrow.")
         return
     context.user_data["awaiting"] = {"type": "feedback", "kind": kind, "card_id": card_id,
                                      "card_name": card_name}
@@ -99,38 +107,53 @@ async def start_feedback(update, context, kind, card_id=None, card_name=None):
 async def receive_feedback(update: Update, context: ContextTypes.DEFAULT_TYPE, awaiting):
     """Called by the bot's message router while a feedback prompt is open."""
     s, msg = services(context), update.effective_message
-    context.user_data.pop("awaiting", None)
     now = utcnow()
     user = s["db"].get_user(update.effective_user.id)
+    if awaiting["kind"] == "payment" and not s["feedback"].can_send(user["id"], now, "payment"):
+        await reply(update, PAYMENT_SUPPORT_LIMIT)
+        return
+    context.user_data.pop("awaiting", None)
     text = msg.text or msg.caption or ""
     fid = s["feedback"].record(user["id"], awaiting["kind"], text, now, awaiting.get("card_id"))
     admin_chat = s["settings"].admin_chat_id
+    if not admin_chat and awaiting["kind"] == "payment" and s["settings"].admin_user_ids:
+        admin_chat = min(s["settings"].admin_user_ids)
+    forwarded = False
     if admin_chat:
         try:
             header = s["feedback"].header(fid, awaiting["kind"], user, now, awaiting.get("card_name"))
+            if awaiting["kind"] == "payment":
+                header += f" · user id {user['id']}"
             head_msg = await context.bot.send_message(
                 admin_chat, header + "\n\nReply to this message to answer the user. "
                 "Reply /done, /planned or /wontdo to set its status.")
             copy = await context.bot.copy_message(admin_chat, msg.chat_id, msg.message_id,
                                                   reply_to_message_id=head_msg.message_id)
-            s["feedback"].link_admin_message(head_msg.message_id, fid)
-            s["feedback"].link_admin_message(copy.message_id, fid)
+            s["feedback"].link_admin_message(head_msg.message_id, fid, admin_chat)
+            s["feedback"].link_admin_message(copy.message_id, fid, admin_chat)
+            forwarded = True
         except Exception:
             log.exception("could not forward feedback %s", fid)
-    await reply(update, "Thanks, we read every one of these. 🙏")
+    if awaiting["kind"] == "payment" and not forwarded:
+        await reply(update, "Your payment-support request is saved, but I couldn't notify the "
+                            "owner. Please try /paysupport again later.")
+    else:
+        await reply(update, "Thanks, we read every one of these. 🙏")
 
 
 async def admin_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """The owner replied in the feedback group: pass the reply on to the user."""
     s, msg = services(context), update.effective_message
-    fb = s["feedback"].for_admin_message(msg.reply_to_message.message_id)
+    fb = s["feedback"].for_admin_message(msg.reply_to_message.message_id, msg.chat_id)
+    if fb is None and msg.chat_id == s["settings"].admin_chat_id:
+        fb = s["feedback"].for_admin_message(msg.reply_to_message.message_id)
     if fb is None:
         return
     try:
         await context.bot.send_message(fb["user_id"], "💬 <b>Reply from the team</b>",
                                        parse_mode=ParseMode.HTML)
         await context.bot.copy_message(fb["user_id"], msg.chat_id, msg.message_id)
-        s["feedback"].link_admin_message(msg.message_id, fb["id"])
+        s["feedback"].link_admin_message(msg.message_id, fb["id"], msg.chat_id)
         await msg.reply_text("✓ Sent to the user.")
     except Forbidden:
         await msg.reply_text("The user has blocked the bot, so the reply couldn't be sent.")
@@ -142,7 +165,9 @@ async def admin_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not msg.reply_to_message:
         await msg.reply_text("Reply to a feedback message with this command.")
         return
-    fb = s["feedback"].for_admin_message(msg.reply_to_message.message_id)
+    fb = s["feedback"].for_admin_message(msg.reply_to_message.message_id, msg.chat_id)
+    if fb is None and msg.chat_id == s["settings"].admin_chat_id:
+        fb = s["feedback"].for_admin_message(msg.reply_to_message.message_id)
     if fb is None:
         await msg.reply_text("That isn't a feedback message.")
         return
@@ -272,6 +297,8 @@ async def precheckout(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif is_lifetime(context, query.from_user.id):
         await query.answer(ok=False, error_message="You already have Lifetime.")
     else:
+        services(context)["payments"].approve_checkout(
+            query.from_user.id, query.invoice_payload, query.total_amount, utcnow())
         await query.answer(ok=True)
 
 
@@ -285,12 +312,14 @@ async def successful_payment(update: Update, context: ContextTypes.DEFAULT_TYPE)
                         "Your access is unchanged. For payment support, use /paysupport.")
         return
     expected = s["payments"].expected_stars(pay.invoice_payload, s["settings"])
-    if pay.currency != "XTR" or expected is None or pay.total_amount != expected:
+    approved = s["payments"].was_approved(update.effective_user.id, pay.invoice_payload, pay.total_amount)
+    if pay.currency != "XTR" or expected is None or (pay.total_amount != expected and not approved):
         log.warning("Ignored an unrecognized or mismatched payment")
         return
     founder = pay.invoice_payload == FOUNDER_PAYLOAD
-    s["payments"].record(pay.telegram_payment_charge_id, update.effective_user.id,
-                         pay.total_amount, utcnow(), founder=founder)
+    if not s["payments"].record(pay.telegram_payment_charge_id, update.effective_user.id,
+                               pay.total_amount, utcnow(), founder=founder):
+        return
     thanks = s["brand"].lifetime_thanks
     if founder:
         thanks += "\n\n🌟 <b>You're one of our founders.</b> Thank you for believing in this early."
@@ -355,7 +384,20 @@ async def refund_donation(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await msg.reply_text(f"That donation is older than {REFUND_DAYS} days. Add 'force' "
                              "to refund it anyway.")
         return
-    await context.bot.refund_star_payment(donation["user_id"], donation["charge_id"])
+    retry = f"/refund_donation {donation['charge_id']}"
+    if "force" in context.args[1:]:
+        retry += " force"
+    try:
+        confirmed = await context.bot.refund_star_payment(donation["user_id"], donation["charge_id"])
+    except BadRequest as exc:
+        # This explicit provider outcome confirms a previous refund; a timeout does not.
+        confirmed = str(exc).upper() == "CHARGE_ALREADY_REFUNDED"
+    except NetworkError:
+        confirmed = False
+    if confirmed is not True:
+        await msg.reply_text("Telegram did not confirm the refund; it may already have been "
+                             f"processed. The local receipt is unchanged. Retry the same charge: {retry}")
+        return
     s["donations"].mark_refunded(donation, now)
     await msg.reply_text(f"Refunded {donation['stars']} donated Stars. Lifetime access is unchanged.")
     try:
@@ -463,7 +505,8 @@ def register(application):
     application.add_handler(CallbackQueryHandler(delete_confirm, pattern=r"^del:"))
     application.add_handler(CommandHandler("cancel", cancel, filters.ChatType.PRIVATE))
     application.add_handler(CommandHandler("myid", myid))
-    if settings.admin_chat_id:
-        group = filters.Chat(settings.admin_chat_id)
+    if settings.admin_chat_id or settings.admin_user_ids:
+        group = (filters.Chat(settings.admin_chat_id) if settings.admin_chat_id else
+                 filters.Chat(sorted(settings.admin_user_ids)) & filters.User(settings.admin_user_ids))
         application.add_handler(CommandHandler(["done", "planned", "wontdo"], admin_status, group))
         application.add_handler(MessageHandler(group & filters.REPLY & ~filters.COMMAND, admin_reply))

@@ -1,7 +1,9 @@
 """Whole conversations, run against a fake Telegram API."""
 from datetime import timedelta
+import json
 
 import pytest
+from telegram.error import TimedOut
 
 from bots.engine import handlers as engine
 from bots.engine.config import Settings
@@ -13,10 +15,11 @@ ADMIN_USER = 222
 
 
 @pytest.fixture
-async def bot():
+async def bot(request):
     fake = FakeTelegram()
     db = Database(":memory:")
-    settings = Settings(token="123:abc", db_path=":memory:", admin_chat_id=ADMIN_CHAT,
+    settings = Settings(token="123:abc", db_path=":memory:",
+                        admin_chat_id=getattr(request, "param", ADMIN_CHAT),
                         admin_user_ids={ADMIN_USER}, lifetime_stars=1650,
                         founder_stars=990, founder_limit=2)
     app = build_application(settings, db=db, request=fake)
@@ -194,7 +197,7 @@ async def test_owner_reply_and_done_reach_the_user(bot):
     app, fake, updates, send, db = bot
     await send(updates.message("/feedback"))
     await send(updates.message("Typo on the Moon card"))
-    header_id = db.one("SELECT admin_message_id FROM feedback_messages ORDER BY admin_message_id")[0]
+    header_id = db.one("SELECT admin_message_id FROM feedback_routes ORDER BY admin_message_id")[0]
     await send(updates.message("Thanks, fixing it!", user_id=ADMIN_USER, chat_id=ADMIN_CHAT,
                                reply_to=header_id))
     relay = fake.last("copyMessage")
@@ -456,3 +459,141 @@ async def test_deleting_user_data_keeps_only_donation_receipt_for_refunds(bot):
     assert db.one("SELECT charge_id FROM donations")[0] == "tip"
     await send(updates.message("/refund_donation tip", user_id=ADMIN_USER))
     assert fake.last("refundStarPayment")["telegram_payment_charge_id"] == "tip"
+
+
+async def test_refund_timeout_is_ambiguous_and_retry_reconciles_confirmed_refund(bot, monkeypatch):
+    app, fake, updates, send, db = bot
+    await send(updates.payment(payload="donation:25", amount=25, charge="tip-a"))
+    await send(updates.payment(payload="donation:50", amount=50, charge="tip-b"))
+    original_request = fake.do_request
+    provider_refunded = set()
+
+    async def provider_response(url, method, request_data=None, *args, **kwargs):
+        if url.endswith("/refundStarPayment"):
+            charge = request_data.parameters["telegram_payment_charge_id"]
+            if charge in provider_refunded:
+                return 400, json.dumps({"ok": False, "error_code": 400,
+                    "description": "Bad Request: CHARGE_ALREADY_REFUNDED"}).encode()
+            result = await original_request(url, method, request_data, *args, **kwargs)
+            provider_refunded.add(charge)
+            if charge == "tip-b":
+                raise TimedOut()  # provider applied it; its successful response was lost
+            return result
+        return await original_request(url, method, request_data, *args, **kwargs)
+
+    monkeypatch.setattr(fake, "do_request", provider_response)
+    await send(updates.message("/refund_donation tip-b", user_id=ADMIN_USER))
+    assert provider_refunded == {"tip-b"}
+    assert db.one("SELECT refunded_at FROM donations WHERE charge_id='tip-b'")[0] is None
+    assert "/refund_donation tip-b" in fake.texts()[-1]
+    assert "confirm" in fake.texts()[-1].lower()
+    await send(updates.message("/refund_donation tip-b", user_id=ADMIN_USER))
+    assert db.one("SELECT refunded_at FROM donations WHERE charge_id='tip-b'")[0]
+    await send(updates.message(f"/refund_donation {USER_ID}", user_id=ADMIN_USER))
+    assert provider_refunded == {"tip-a", "tip-b"}
+    assert db.one("SELECT COUNT(*) FROM donations WHERE refunded_at IS NULL")[0] == 0
+
+
+async def test_unknown_refund_rejection_is_not_reconciled_as_success(bot, monkeypatch):
+    app, fake, updates, send, db = bot
+    await send(updates.payment(payload="donation:25", amount=25, charge="tip"))
+    original_request = fake.do_request
+
+    async def reject_refund(url, method, request_data=None, *args, **kwargs):
+        if url.endswith("/refundStarPayment"):
+            return 400, json.dumps({"ok": False, "error_code": 400,
+                                   "description": "Bad Request: CHARGE_NOT_FOUND"}).encode()
+        return await original_request(url, method, request_data, *args, **kwargs)
+
+    monkeypatch.setattr(fake, "do_request", reject_refund)
+    await send(updates.message("/refund_donation tip", user_id=ADMIN_USER))
+    assert db.one("SELECT refunded_at FROM donations")[0] is None
+    assert "confirm" in fake.texts()[-1].lower()
+    assert "/refund_donation tip" in fake.texts()[-1]
+
+
+async def test_payment_support_is_not_blocked_by_ordinary_feedback_quota(bot):
+    app, fake, updates, send, db = bot
+    for _ in range(5):
+        await send(updates.message("/feedback"))
+        await send(updates.message("An ordinary bug report"))
+    await send(updates.message("/paysupport"))
+    await send(updates.message("Please refund my donation"))
+    assert db.one("SELECT COUNT(*) FROM feedback WHERE kind='payment'")[0] == 1
+    assert "sendPhoto" not in fake.methods()
+    assert any(n == "sendMessage" and p["chat_id"] == ADMIN_CHAT and
+               "#payment" in p["text"] for n, p in fake.calls)
+
+
+async def test_payment_support_has_its_own_quota_and_keeps_a_limited_request_out_of_lookup(bot):
+    app, fake, updates, send, db = bot
+    for _ in range(5):
+        await send(updates.message("/paysupport"))
+        await send(updates.message("Payment support request"))
+    await send(updates.message("/paysupport"))
+    await send(updates.message("the tower"))
+    assert db.one("SELECT COUNT(*) FROM feedback WHERE kind='payment'")[0] == 5
+    assert "sendPhoto" not in fake.methods()
+    assert "/cancel" in fake.texts()[-1]
+    await send(updates.message("/cancel"))
+    await send(updates.message("/feedback"))
+    await send(updates.message("ordinary feedback has a separate quota"))
+    assert db.one("SELECT COUNT(*) FROM feedback WHERE kind='bug'")[0] == 1
+
+
+@pytest.mark.parametrize("bot", [None], indirect=True)
+async def test_without_group_payment_support_reaches_owner_and_owner_can_reply(bot):
+    app, fake, updates, send, db = bot
+    await send(updates.message("/paysupport"))
+    await send(updates.message("Please refund my donation"))
+    to_owner = [p for n, p in fake.calls if n == "sendMessage" and p["chat_id"] == ADMIN_USER]
+    assert any("#payment" in p["text"] and str(USER_ID) in p["text"] for p in to_owner)
+    header_id = db.one("SELECT MIN(admin_message_id) FROM feedback_routes")[0]
+    await send(updates.message("I can help", user_id=ADMIN_USER, reply_to=header_id))
+    assert fake.last("copyMessage")["chat_id"] == USER_ID
+
+
+@pytest.mark.parametrize("bot", [None], indirect=True)
+async def test_payment_support_admits_saved_but_not_forwarded_when_owner_cannot_be_notified(bot):
+    app, fake, updates, send, db = bot
+    fake.fail_for.add(ADMIN_USER)
+    await send(updates.message("/paysupport"))
+    await send(updates.message("Please refund my donation"))
+    assert db.one("SELECT COUNT(*) FROM feedback WHERE kind='payment'")[0] == 1
+    assert "saved" in fake.texts()[-1].lower()
+    assert "notify" in fake.texts()[-1].lower()
+
+
+@pytest.mark.parametrize("payload,amount,new_price", [
+    ("lifetime:founder", 990, 1200), ("lifetime", 1650, 2000),
+])
+async def test_paid_checkout_approved_before_price_change_still_grants_lifetime(bot, payload, amount, new_price):
+    app, fake, updates, send, db = bot
+    await send(updates.pre_checkout(payload=payload, amount=amount))
+    assert fake.last("answerPreCheckoutQuery")["ok"] is True
+    if payload == "lifetime:founder":
+        app.bot_data["settings"].founder_stars = new_price
+    else:
+        app.bot_data["settings"].lifetime_stars = new_price
+    await send(updates.payment(user_id=333, payload=payload, amount=amount, charge="wrong-user"))
+    assert not db.get_user(333)["lifetime_at"]
+    await send(updates.payment(payload=payload, amount=amount, charge="approved-old-price"))
+    assert db.get_user(USER_ID)["lifetime_at"]
+    assert db.one("SELECT stars FROM payments WHERE charge_id='approved-old-price'")[0] == amount
+    assert db.one("SELECT COUNT(*) FROM approved_checkouts")[0] == 0
+
+
+@pytest.mark.parametrize("refunded", [False, True])
+async def test_lifetime_receipt_replay_never_changes_access_or_resurrects_a_refund(bot, refunded):
+    app, fake, updates, send, db = bot
+    await send(updates.payment(charge="purchase"))
+    if refunded:
+        await send(updates.message("/refund purchase", user_id=ADMIN_USER))
+        assert db.get_user(USER_ID)["lifetime_at"] is None
+    db.update_user(USER_ID, checkin_sent=1)
+    before = dict(db.get_user(USER_ID))
+    await send(updates.payment(charge="purchase"))
+    assert dict(db.get_user(USER_ID)) == before
+    if refunded:
+        assert db.get_user(USER_ID)["lifetime_at"] is None
+        assert db.one("SELECT refunded_at FROM payments WHERE charge_id='purchase'")[0]

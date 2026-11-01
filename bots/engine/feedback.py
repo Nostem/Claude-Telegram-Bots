@@ -29,13 +29,15 @@ class Feedback:
     def allowed(self, kind, lifetime):
         return kind in OPEN_TO_ALL or lifetime
 
-    def sent_today(self, user_id, now):
+    def sent_today(self, user_id, now, kind=None):
         since = iso(now - timedelta(days=1))
-        return self.db.one("SELECT COUNT(*) FROM feedback WHERE user_id = ? AND created_at > ?",
+        bucket = "kind = 'payment'" if kind == "payment" else "kind != 'payment'"
+        return self.db.one("SELECT COUNT(*) FROM feedback WHERE " + bucket +
+                           " AND user_id = ? AND created_at > ?",
                            (user_id, since))[0]
 
-    def can_send(self, user_id, now):
-        return self.sent_today(user_id, now) < DAILY_LIMIT
+    def can_send(self, user_id, now, kind=None):
+        return self.sent_today(user_id, now, kind) < DAILY_LIMIT
 
     def record(self, user_id, kind, text, now, card_id=None):
         cur = self.db.execute(
@@ -43,11 +45,21 @@ class Feedback:
             (user_id, iso(now), kind, card_id, text))
         return cur.lastrowid
 
-    def link_admin_message(self, admin_message_id, feedback_id):
-        self.db.execute("INSERT OR REPLACE INTO feedback_messages (admin_message_id, feedback_id) "
-                        "VALUES (?, ?)", (admin_message_id, feedback_id))
+    def link_admin_message(self, admin_message_id, feedback_id, admin_chat_id=None):
+        if admin_chat_id is None:  # retain compatibility with pre-donation group links
+            self.db.execute("INSERT OR REPLACE INTO feedback_messages (admin_message_id, feedback_id) "
+                            "VALUES (?, ?)", (admin_message_id, feedback_id))
+        else:
+            self.db.execute("INSERT OR REPLACE INTO feedback_routes "
+                            "(admin_chat_id, admin_message_id, feedback_id) VALUES (?, ?, ?)",
+                            (admin_chat_id, admin_message_id, feedback_id))
 
-    def for_admin_message(self, admin_message_id):
+    def for_admin_message(self, admin_message_id, admin_chat_id=None):
+        if admin_chat_id is not None:
+            return self.db.one(
+                "SELECT f.* FROM feedback f JOIN feedback_routes m ON m.feedback_id = f.id "
+                "WHERE m.admin_chat_id = ? AND m.admin_message_id = ?",
+                (admin_chat_id, admin_message_id))
         return self.db.one(
             "SELECT f.* FROM feedback f JOIN feedback_messages m ON m.feedback_id = f.id "
             "WHERE m.admin_message_id = ?", (admin_message_id,))

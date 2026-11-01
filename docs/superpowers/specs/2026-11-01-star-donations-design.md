@@ -20,3 +20,11 @@ Register `/donate` in the shared engine and the tarot command menu/help. Connect
 
 ## Verification and release boundary
 Use real in-memory/on-disk SQLite and the existing fake Telegram transport for offline conversation/payment tests. Cover additive upgrades, bounds, currency/amount/payload tampering, Lifetime donors, duplicates, refunds, cancel, data deletion, and menu registration. Run the entire existing suite and both content validators. Obtain a fresh whole-branch review. Push a feature branch/PR; merging master, production deployment, and spending/refunding real Stars require explicit approval. Do not use the live bot token in tests.
+
+## Review-driven safety requirements
+- Donation refund timeouts preserve the local receipt and provide an exact charge-ID retry. Only provider success or the explicit `CHARGE_ALREADY_REFUNDED` outcome confirms a refund; retry reconciles the receipt without recharging/refunding twice. No separate pending-state table is needed because the durable charge ID plus retry reconciles this outcome.
+- Payment support gets a separate five-requests-per-24-hours quota. A limited support request stays in support state until cancel, rather than turning the next message into card lookup.
+- If the group is absent, payment support forwards to the lowest configured owner ID's private bot chat, with reply relaying. This establishes a monitored alternative for this deployment; ordinary feedback remains group-only. Failed forwarding is acknowledged accurately instead of promising delivery.
+- A Lifetime receipt grants access only on its first atomic insert; duplicate/refunded delivery cannot reset access or check-in state. This fixes an inherited issue identified by the payment-safety review.
+- Persist accepted Lifetime checkout quotes by user, payload and amount, so a price change between checkout approval and successful settlement cannot discard a paid purchase. Remove matched approvals on receipt insertion. An old invoice not yet approved is still checked against current prices; this preserves the existing precheckout policy.
+- Scope new support reply links by chat ID and message ID using additive `feedback_routes`; retain legacy group links for the configured group only. This prevents same-numbered messages in separate chats from crossing support conversations.

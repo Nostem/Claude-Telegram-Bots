@@ -76,16 +76,31 @@ Each donation has a separate receipt in the same SQLite database; duplicate
 Telegram payment updates do not record it twice. `/delete_my_data` removes
 personal settings, draws and feedback but retains purchase/donation receipts
 for payment support and refunds. `/terms` discloses this retention.
+Checkout approvals are stored so an already-approved Lifetime payment remains
+valid if the owner changes prices before Telegram delivers its receipt. The
+matched approval is removed when that purchase is recorded. Reply routes are
+scoped by chat and message ID to keep private owner-chat support distinct from
+group support.
 
 Users can request a full refund within seven days through `/paysupport`.
 Configure `TAROT_ADMIN_CHAT_ID` to receive support messages in your private
-group. Without that setting, support messages are saved in SQLite but are
-not forwarded to you.
+group. Without that setting, **payment-support** messages go to the configured
+owner with the lowest numeric `TAROT_ADMIN_USER_IDS` value, in their private
+bot chat. That owner must first send `/start` and keep the bot unblocked.
+Replies to the forwarded support message are relayed back to the user.
+Ordinary feedback still requires the configured group for forwarding. If
+payment support cannot be forwarded, it is saved and the user is told that
+the owner could not be notified. Payment support has its own five-requests-per-
+24-hours quota, separate from ordinary feedback.
 
 **Owner only:** `/refund_donation <charge id or user id>` refunds a donation;
 using a user id chooses their latest unrefunded donation. Add `force` for a
 payment older than seven days. Donation refunds leave Lifetime untouched.
 The existing `/refund` command continues to handle Lifetime purchases only.
+If a donation refund times out, the bot leaves its receipt unchanged and shows
+the exact charge-ID command to retry. A confirmed `CHARGE_ALREADY_REFUNDED`
+response reconciles an earlier completed refund; an ambiguous timeout alone
+is never recorded as a successful refund.
 
 ## Tests
 

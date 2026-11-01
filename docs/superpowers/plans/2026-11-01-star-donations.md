@@ -29,6 +29,7 @@
 **Files:**
 - Create: `bots/engine/donations.py`, `tests/test_donations.py`
 - Modify: `bots/engine/db.py`, `bots/engine/handlers.py`, `bots/tarot/bot.py`, `bots/tarot/texts.py`
+- Review-driven fixes: `bots/engine/payments.py`, `bots/engine/feedback.py` (idempotent Lifetime receipt insertion and separate support quota).
 - Modify tests: `tests/test_bot_flows.py`, `tests/fake_telegram.py`
 - Documentation: `README.md`, `deploy/README.md`
 

@@ -56,6 +56,8 @@ def test_database_upgrade_preserves_existing_users_and_purchases(tmp_path, now):
     legacy.get_user(1)
     Payments(legacy).record("old-charge", 1, 990, now, founder=True)
     legacy.execute("DROP TABLE IF EXISTS donations")
+    legacy.execute("DROP TABLE IF EXISTS feedback_routes")
+    legacy.execute("DROP TABLE IF EXISTS approved_checkouts")
     legacy.conn.close()
     upgraded = Database(path)
     try:

@@ -64,6 +64,13 @@ CREATE TABLE IF NOT EXISTS feedback_messages (
     feedback_id INTEGER NOT NULL REFERENCES feedback(id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS feedback_routes (
+    admin_chat_id INTEGER NOT NULL,
+    admin_message_id INTEGER NOT NULL,
+    feedback_id INTEGER NOT NULL REFERENCES feedback(id) ON DELETE CASCADE,
+    PRIMARY KEY (admin_chat_id, admin_message_id)
+);
+
 CREATE TABLE IF NOT EXISTS payments (
     charge_id TEXT PRIMARY KEY,         -- telegram_payment_charge_id
     user_id INTEGER NOT NULL,
@@ -71,6 +78,14 @@ CREATE TABLE IF NOT EXISTS payments (
     founder INTEGER NOT NULL DEFAULT 0,  -- bought at the founder price
     created_at TEXT NOT NULL,
     refunded_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS approved_checkouts (
+    user_id INTEGER NOT NULL,
+    payload TEXT NOT NULL,
+    stars INTEGER NOT NULL,
+    approved_at TEXT NOT NULL,
+    PRIMARY KEY (user_id, payload, stars)
 );
 
 CREATE TABLE IF NOT EXISTS donations (
