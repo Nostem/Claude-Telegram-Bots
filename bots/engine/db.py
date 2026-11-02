@@ -64,6 +64,13 @@ CREATE TABLE IF NOT EXISTS feedback_messages (
     feedback_id INTEGER NOT NULL REFERENCES feedback(id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS feedback_routes (
+    admin_chat_id INTEGER NOT NULL,
+    admin_message_id INTEGER NOT NULL,
+    feedback_id INTEGER NOT NULL REFERENCES feedback(id) ON DELETE CASCADE,
+    PRIMARY KEY (admin_chat_id, admin_message_id)
+);
+
 CREATE TABLE IF NOT EXISTS payments (
     charge_id TEXT PRIMARY KEY,         -- telegram_payment_charge_id
     user_id INTEGER NOT NULL,
@@ -72,6 +79,23 @@ CREATE TABLE IF NOT EXISTS payments (
     created_at TEXT NOT NULL,
     refunded_at TEXT
 );
+
+CREATE TABLE IF NOT EXISTS approved_checkouts (
+    user_id INTEGER NOT NULL,
+    payload TEXT NOT NULL,
+    stars INTEGER NOT NULL,
+    approved_at TEXT NOT NULL,
+    PRIMARY KEY (user_id, payload, stars)
+);
+
+CREATE TABLE IF NOT EXISTS donations (
+    charge_id TEXT PRIMARY KEY,         -- separate receipts: never grant Lifetime
+    user_id INTEGER NOT NULL,
+    stars INTEGER NOT NULL CHECK (stars BETWEEN 1 AND 10000),
+    created_at TEXT NOT NULL,
+    refunded_at TEXT
+);
+CREATE INDEX IF NOT EXISTS donations_user ON donations(user_id, created_at);
 
 CREATE TABLE IF NOT EXISTS media (
     key TEXT PRIMARY KEY,               -- image file name plus orientation

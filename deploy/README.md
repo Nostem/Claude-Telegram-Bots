@@ -60,6 +60,45 @@ the packages, runs the tests, installs the services and turns on the nightly bac
 `update.sh` runs the tests before restarting anything. If they fail, it puts the
 previous code back and leaves the bots running as they were.
 
+### Releasing a code update
+
+1. Test, commit and push the change to this repository's `master` branch.
+2. Connect to the server and run:
+
+   ```bash
+   systemctl start telegram-bots-backup.service
+   bash /opt/telegram-bots/deploy/update.sh
+   systemctl is-active telegram-bot@tarot
+   journalctl -u telegram-bot@tarot -n 50 --no-pager
+   ```
+
+Pushing to GitHub does not automatically deploy. The script pulls with
+`--ff-only`, installs dependencies, runs the suite, reloads service definitions
+and restarts active bots. Tokens stay in `/etc/telegram-bots`; databases stay
+in `/var/lib/telegram-bots`. Do not edit application code directly on the server.
+
+The rollback is limited to a failed test run. It does not automatically undo
+database changes or a failure after restart, so verify service health and an
+actual Telegram interaction after each release. Keep raw logs private if a
+dependency prints request URLs; those URLs may contain the bot token.
+
+### Donations release
+
+The donations release creates a separate `donations` table automatically when
+the bot opens its database. Existing users and Lifetime receipts are preserved.
+Back up before updating; `/donate` appears in the command menu after restart.
+Test `/donate`, choose an amount and inspect the invoice without paying unless
+you intentionally want a real Stars transaction. Verify that a `/paysupport`
+request reaches the feedback group (`TAROT_ADMIN_CHAT_ID`) or, if no group is
+configured, the owner with the lowest numeric `TAROT_ADMIN_USER_IDS` value.
+The fallback owner must have started the bot and not blocked it. Reply to the
+forwarded request and verify the user receives that reply before accepting
+real donations. Ordinary feedback forwarding still needs the private group.
+
+Donation receipts are included in the same nightly database backups. Refund a
+donation with `/refund_donation <charge id or user id> [force]`; use `/refund`
+only for Lifetime purchases.
+
 ## Adding another bot
 
 1. Build it as `bots/<name>/` with a `__main__.py`, like `bots/tarot/`, reading its

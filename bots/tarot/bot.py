@@ -13,6 +13,7 @@ from telegram.ext import (Application, CallbackQueryHandler, CommandHandler, Con
 from bots.engine import handlers as engine
 from bots.engine.config import Settings
 from bots.engine.db import Database, utcnow
+from bots.engine.donations import Donations
 from bots.engine.feedback import Feedback
 from bots.engine.handlers import btn, keyboard, reply, services
 from bots.engine.payments import Payments
@@ -37,6 +38,7 @@ COMMANDS = [
     ("settings", "Timezone, reversed cards and more"),
     ("feedback", "Report a problem or share an idea"),
     ("upgrade", "Lifetime access"),
+    ("donate", "Support the bot with Stars"),
     ("help", "What I can do"),
 ]
 
@@ -411,6 +413,8 @@ async def text_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     kind = awaiting["type"] if awaiting else None
     if kind == "feedback":
         await engine.receive_feedback(update, context, awaiting)
+    elif kind == "donation":
+        await engine.donation_amount(update, context)
     elif kind == "timezone" and update.effective_message.text:
         await timezone_typed(update, context)
     elif kind == "time" and update.effective_message.text:
@@ -430,7 +434,8 @@ def build_application(settings, db=None, request=None):
     application = builder.build()
     application.bot_data.update(
         db=db, deck=deck, settings=settings, brand=texts.BRAND, tarot=Tarot(db, deck),
-        schedules=Schedules(db), feedback=Feedback(db), payments=Payments(db))
+        schedules=Schedules(db), feedback=Feedback(db), payments=Payments(db),
+        donations=Donations(db))
 
     private = filters.ChatType.PRIVATE
     application.add_handler(CommandHandler("start", start, private))

@@ -81,6 +81,17 @@ def test_feedback_admin_message_link(db, now):
     assert fb.for_admin_message(555)["status"] == "done"
 
 
+def test_feedback_routes_same_message_id_in_different_owner_chats_without_crossing_users(db, now):
+    feedback = Feedback(db)
+    first = feedback.record(1, "payment", "First user's refund", now)
+    second = feedback.record(2, "payment", "Second user's refund", now)
+    feedback.link_admin_message(100, first, admin_chat_id=222)
+    feedback.link_admin_message(100, second, admin_chat_id=-100500)
+    assert feedback.for_admin_message(100, admin_chat_id=222)["user_id"] == 1
+    assert feedback.for_admin_message(100, admin_chat_id=-100500)["user_id"] == 2
+    assert feedback.for_admin_message(100, admin_chat_id=333) is None
+
+
 def test_payments_and_refund_window(db, now):
     db.get_user(1)
     pay = Payments(db)

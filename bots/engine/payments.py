@@ -36,18 +36,37 @@ class Payments:
         """The amount an invoice with this payload was sent for, or None if unknown."""
         return {PAYLOAD: settings.lifetime_stars, FOUNDER_PAYLOAD: settings.founder_stars}.get(payload)
 
+    def approve_checkout(self, user_id, payload, stars, now):
+        """Remember an approved quote so settlement can survive a price change/restart."""
+        self.db.execute("INSERT OR REPLACE INTO approved_checkouts "
+                        "(user_id, payload, stars, approved_at) VALUES (?, ?, ?, ?)",
+                        (user_id, payload, stars, iso(now)))
+
+    def was_approved(self, user_id, payload, stars):
+        return self.db.one("SELECT 1 FROM approved_checkouts "
+                           "WHERE user_id = ? AND payload = ? AND stars = ?",
+                           (user_id, payload, stars)) is not None
+
     def is_founder(self, user_id):
         return self.db.one("SELECT 1 FROM payments WHERE user_id = ? AND founder = 1 "
                            "AND refunded_at IS NULL", (user_id,)) is not None
 
     def record(self, charge_id, user_id, stars, now, founder=False):
-        self.db.get_user(user_id)   # make sure the user row exists before granting Lifetime
+        """Grant access atomically only for a new receipt, never a replay/refund."""
         with self.db.conn:
-            self.db.conn.execute(
+            cur = self.db.conn.execute(
                 "INSERT OR IGNORE INTO payments (charge_id, user_id, stars, founder, created_at) "
                 "VALUES (?, ?, ?, ?, ?)", (charge_id, user_id, stars, int(founder), iso(now)))
+            if cur.rowcount != 1:
+                return False
+            self.db.conn.execute("INSERT OR IGNORE INTO users (id, created_at) VALUES (?, ?)",
+                                 (user_id, iso(now)))
             self.db.conn.execute("UPDATE users SET lifetime_at = ?, checkin_sent = 0 WHERE id = ?",
                                  (iso(now), user_id))
+            self.db.conn.execute("DELETE FROM approved_checkouts "
+                                 "WHERE user_id = ? AND payload = ? AND stars = ?",
+                                 (user_id, FOUNDER_PAYLOAD if founder else PAYLOAD, stars))
+        return True
 
     def latest_for_user(self, user_id):
         return self.db.one("SELECT * FROM payments WHERE user_id = ? AND refunded_at IS NULL "
