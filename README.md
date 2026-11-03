@@ -60,6 +60,33 @@ the bot after setting them.
 **Refunds:** `/refund <user id>` in a private chat with the bot. Payments older than 7
 days need `/refund <user id> force`.
 
+## Inline card sharing
+
+In any Telegram chat, type `@SorsDiei_bot ` (including the trailing space)
+to browse all 78 cards. Add a card name to search, for example
+`@SorsDiei_bot moon`, `@SorsDiei_bot 3 cups` or `@SorsDiei_bot queen of coins`.
+Partial searches such as `queen`, `cups` and `major arcana` also work.
+Scroll for more results; browsing returns 20 cards per page.
+
+Tap a preview to send the **card image, name, keywords and short upright
+meaning** into that chat. Its **Open full interpretation** link opens a
+private conversation with the bot, showing the full meaning, symbolism and
+reflection prompts. It works without completing onboarding and does not
+change a daily draw or existing settings. Inline sharing is free and upright
+only; it is not a new random draw and does not add a journal entry.
+
+Enable inline mode for your bot using BotFather's `/setinline` if needed.
+The production bot already has inline mode enabled. Photo results determine
+the gallery layout in Telegram; the bot answers empty queries to offer browsing.
+The bot does not store inline search text or send private test messages when
+someone searches. It cannot see the other messages in the chat where it is used.
+
+For cold media caches, Telegram fetches the existing public JPEG artwork
+from a pinned commit in this public GitHub repository. Previously uploaded
+upright Telegram photo IDs are reused when available. No whole-deck upload
+or owner-chat prewarming is required. Forks/private copies must change
+`ARTWORK_BASE` in `bots/tarot/inline.py` to a public immutable artwork host.
+
 ## Optional Stars donations
 
 Users can send `/donate` and choose **25, 50, 100 or 500 Stars**, or choose

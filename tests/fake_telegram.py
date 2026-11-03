@@ -95,6 +95,11 @@ class Updates:
                                                                      "first_name": "Tarot"}}
         return Update.de_json({"update_id": next(self._ids), "message": msg}, self.bot)
 
+    def inline(self, query, offset="", user_id=USER_ID):
+        q = {"id": str(next(self._ids)), "from": self._user(user_id),
+             "query": query, "offset": offset, "chat_type": "group"}
+        return Update.de_json({"update_id": next(self._ids), "inline_query": q}, self.bot)
+
     def callback(self, data, user_id=USER_ID):
         cq = {"id": str(next(self._ids)), "from": self._user(user_id), "chat_instance": "c", "data": data,
               "message": {"message_id": next(self._ids), "date": 0,
