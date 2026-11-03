@@ -10,7 +10,7 @@ from telegram.ext import ContextTypes
 
 from . import render
 
-from .cards import Card, Deck, RANKS, ROMAN, SUIT_ALIASES, SUITS, _words
+from .cards import Card, Deck, MAJOR_ALIASES, RANKS, ROMAN, SUIT_ALIASES, SUITS, _words
 
 PAGE_SIZE = 20
 # Immutable public artwork: no bot-token URLs, live uploads or owner-chat prewarming.
@@ -33,11 +33,22 @@ def search_cards(deck: Deck, query: str) -> list[Card]:
     if words in (["major"], ["major", "arcana"], ["arcana"]):
         return deck.in_group('major')
 
+    # Expand partial suit/rank aliases before fuzzy matching: "coi" means coins,
+    # and an ambiguous "prin" must keep both prince/knight and princess/page.
+    aliases = {**SUIT_ALIASES, **RANKS}
+    canonical_options = [
+        {_canonical(q)} | ({str(value) for alias, value in aliases.items() if alias.startswith(q)}
+                            if q not in aliases else set())
+        for q in words
+    ]
     matches = []
     for card in ordered:
-        name = _words(card.name)
-        if all(any(w.startswith(q) or _canonical(w) == _canonical(q) for w in name)
-               for q in words):
+        forms = [_words(card.name)]
+        if card.arcana == 'major':
+            forms.extend(_words(alias) for alias, number in MAJOR_ALIASES.items()
+                         if number == card.data['number'])
+        if any(all(any(w.startswith(q) or _canonical(w) in options for w in form)
+                   for q, options in zip(words, canonical_options)) for form in forms):
             matches.append(card)
     if len(words) == 1 and (words[0].isascii() and words[0].isdigit() or words[0] in ROMAN):
         numbered_major = deck.find(query)

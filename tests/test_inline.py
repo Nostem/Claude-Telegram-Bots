@@ -39,6 +39,8 @@ def test_empty_query_browses_all_cards_in_deck_order(deck):
     ("THE MOON", "major-18-the-moon"),
     ("3 cups", "cups-03"),
     ("queen of coins", "pentacles-queen"),
+    ("prince of cups", "cups-knight"),
+    ("princess of cups", "cups-page"),
     ("III swords", "swords-03"),
     ("hanged", "major-12-the-hanged-man"),
     ("pope", "major-05-the-hierophant"),
@@ -179,6 +181,26 @@ async def test_inline_no_match_and_bad_offsets_always_answer_empty(inline_bot, q
     assert fake.methods().count("answerInlineQuery") == 1
     answer = fake.last("answerInlineQuery")
     assert answer["results"] == [] and answer["next_offset"] == ""
+
+
+@pytest.mark.parametrize("query,expected_ids", [
+    ("queen of co", {"pentacles-queen"}),
+    ("queen of coi", {"pentacles-queen"}),
+    ("chal", {"cups-01", "cups-02", "cups-03", "cups-04", "cups-05", "cups-06", "cups-07",
+              "cups-08", "cups-09", "cups-10", "cups-page", "cups-knight", "cups-queen", "cups-king"}),
+    ("prin", {"wands-page", "cups-page", "swords-page", "pentacles-page",
+              "wands-knight", "cups-knight", "swords-knight", "pentacles-knight"}),
+    ("fort", {"major-08-strength", "major-10-wheel-of-fortune"}),
+    ("last judg", {"major-20-judgement"}),
+])
+async def test_partial_aliases_return_all_relevant_inline_results_before_fuzzy_fallback(
+        inline_bot, query, expected_ids):
+    app, fake, updates, db = inline_bot
+    await app.process_update(updates.inline(query))
+    results = fake.last("answerInlineQuery")["results"]
+    assert {r["id"] for r in results} == expected_ids
+    assert len(results) == len(expected_ids)
+    assert set(fake.methods()) <= {"getMe", "answerInlineQuery"}
 
 
 async def test_repeated_inline_search_has_stable_ids_and_preserves_private_prompt(inline_bot):
