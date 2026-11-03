@@ -8,7 +8,7 @@ from PIL import Image
 from telegram import BotCommand, InlineKeyboardMarkup, Update
 from telegram.constants import ParseMode
 from telegram.ext import (Application, CallbackQueryHandler, CommandHandler, ContextTypes,
-                          MessageHandler, filters)
+                          InlineQueryHandler, MessageHandler, filters)
 
 from bots.engine import handlers as engine
 from bots.engine.config import Settings
@@ -21,6 +21,7 @@ from bots.engine.schedules import Schedules, parse_time
 from bots.engine.timezones import COMMON, describe, find_timezones
 
 from . import render, texts
+from .inline import inline_query
 from .cards import Deck
 from .service import Tarot
 
@@ -97,6 +98,16 @@ async def send_scheduled(application, row):
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = user_row(context, update)
+    if context.args and context.args[0].startswith("card_"):
+        card_id = context.args[0][len("card_"):]
+        card = services(context)["deck"].cards.get(card_id)
+        if len(context.args) != 1 or card is None:
+            await reply(update, "That card link isn't valid. Use /cards to browse the deck.")
+            return
+        assert update.effective_chat is not None  # This is a private /start command.
+        await send_card(context.bot, services(context)["db"], update.effective_chat.id, card, False)
+        await reply(update, render.full_text(card, False))
+        return
     if user["onboarded"]:
         await reply(update, "🌙 Welcome back. Here's what I can do:\n\n" + texts.HELP)
         return
@@ -438,6 +449,7 @@ def build_application(settings, db=None, request=None):
         donations=Donations(db))
 
     private = filters.ChatType.PRIVATE
+    application.add_handler(InlineQueryHandler(inline_query))
     application.add_handler(CommandHandler("start", start, private))
     application.add_handler(CommandHandler("help", help_command, private))
     application.add_handler(CommandHandler("daily", daily_command, private))

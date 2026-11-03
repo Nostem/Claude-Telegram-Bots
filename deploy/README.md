@@ -99,6 +99,28 @@ Donation receipts are included in the same nightly database backups. Refund a
 donation with `/refund_donation <charge id or user id> [force]`; use `/refund`
 only for Lifetime purchases.
 
+### Inline cards release
+
+Inline support needs both BotFather's `/setinline` setting and the application's
+`InlineQueryHandler`; enabling only the setting leaves searches unanswered.
+The existing Sors Diei bot already reports inline support enabled. The service
+uses `Update.ALL_TYPES`, so inline updates are accepted after the code restart.
+No new environment setting, dependency or database migration is required.
+
+Verify `@SorsDiei_bot moon` in Saved Messages, select a card and inspect its
+photo/caption and full-interpretation link. Then query `@SorsDiei_bot ` with
+a trailing space and scroll through all four pages. Unknown text should stop
+loading with no results. Check an alias such as `queen of coins` and verify
+that a new user can open the full-meaning link without being forced through
+onboarding. Telegram may reuse an inline answer for up to 60 seconds.
+
+Cold-cache results use public immutable GitHub JPEG URLs; the host must remain
+public and reachable by Telegram. Existing cached photo IDs are an optimization,
+not a prerequisite. The offline suite covers every card and payload limit;
+real Telegram selection/posting is a separate release check. Normal updates
+and inline searches never broadcast deployment messages. Keep any explicitly
+authorized live tests owner-only, minimal and silent where possible.
+
 ## Adding another bot
 
 1. Build it as `bots/<name>/` with a `__main__.py`, like `bots/tarot/`, reading its

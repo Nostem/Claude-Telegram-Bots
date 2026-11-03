@@ -35,7 +35,9 @@ HELP = (
     "/donate · optional support in Telegram Stars\n"
     "/delete_my_data · delete everything we store\n"
     "/terms · terms and privacy\n\n"
-    "You can also just type a card's name."
+    "You can also just type a card's name.\n\n"
+    "<b>Share cards in any chat:</b> type this bot's @username, a space, then a card name. "
+    "Leave the name blank to browse all cards, then tap a preview to send it."
 )
 
 TERMS = (
